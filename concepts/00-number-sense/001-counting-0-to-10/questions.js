@@ -1,0 +1,69 @@
+window.OMF = window.OMF || {};
+window.OMF.currentQuiz = {
+  "conceptId": "001-counting-0-to-10",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "drag-counter",
+      "prompt": "Put 3 apples into the basket.",
+      "target": 3,
+      "itemType": "apple",
+      "totalItems": 6,
+      "hint": "Drag apples or tap them one by one until there are exactly 3 apples in the basket.",
+      "mistakePatterns": {
+        "2": "undercounts",
+        "4": "overcounts"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "drag-counter",
+      "prompt": "Put 6 stars into the basket.",
+      "target": 6,
+      "itemType": "star",
+      "totalItems": 8,
+      "hint": "Count slowly: 1, 2, 3, 4, 5, 6.",
+      "mistakePatterns": {
+        "5": "undercounts",
+        "7": "overcounts"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "How many cherries do you see below? <br><br> 🍒 🍒 🍒 🍒",
+      "options": [
+        {"label": "3", "value": 3},
+        {"label": "4", "value": 4},
+        {"label": "5", "value": 5}
+      ],
+      "target": 4,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "drag-counter",
+      "prompt": "Put 8 cars into the basket.",
+      "target": 8,
+      "itemType": "car",
+      "totalItems": 10,
+      "hint": "Check the basket counter and stop when it shows 8.",
+      "mistakePatterns": {
+        "7": "undercounts",
+        "9": "overcounts"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "How many balloons do you see? <br><br> 🎈 🎈 🎈 🎈 🎈 🎈 🎈",
+      "options": [
+        {"label": "6", "value": 6},
+        {"label": "7", "value": 7},
+        {"label": "8", "value": 8}
+      ],
+      "target": 7,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+};

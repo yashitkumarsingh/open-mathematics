@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counting 0 to 10 - Open Mathematics Foundation</title>
+  <link rel="stylesheet" href="../../../framework/styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Counting 0 to 10</h1>
+      <a href="../../../examples/parent-dashboard.html" class="child-badge">🏠 Parent Dashboard</a>
+    </header>
+
+    <main>
+      <!-- Renders the interactive quiz layout -->
+      <quiz-runner concept-id="001-counting-0-to-10" data-src="test.json"></quiz-runner>
+    </main>
+
+    <footer>
+      <details class="parent-guide-details">
+        <summary class="parent-guide-summary"></summary>
+        <div class="parent-guide-content">
+          <h3>💡 What this concept means</h3>
+          <p>Counting is the ability to match each number name to exactly one object (one-to-one correspondence) and understand that the last number said represents the total size of the group (cardinality).</p>
+          
+          <h3>❓ Common Misconceptions to watch for</h3>
+          <ul>
+            <li><strong>Rushing:</strong> Saying numbers faster or slower than they touch/drag objects (e.g. reciting 1 to 5 while only moving 3 apples).</li>
+            <li><strong>Double Counting:</strong> Moving the same item twice or forgetting which items have already been dragged.</li>
+            <li><strong>Conservation:</strong> Thinking that rearrange-spreading the apples after counting them changes the count.</li>
+          </ul>
+
+          <h3>🏡 Off-screen Hands-on Activities</h3>
+          <ul>
+            <li><strong>Treasure Gather:</strong> Ask the child: "Can you find and bring back 7 small stones or toys?" Count them together in a line.</li>
+            <li><strong>Movement Claps:</strong> "Let's clap exactly 6 times!" Count claps rhythmically together.</li>
+          </ul>
+
+          <h3>🌟 Extension Challenge</h3>
+          <p>Put 5 spoons in a circle. Ask the child to count. Then scatter them across the counter and ask "how many are there now?" to see if they understand that arrangement doesn't change quantity.</p>
+        </div>
+      </details>
+    </footer>
+  </div>
+
+  <!-- Quiz data pre-loader -->
+  <script src="questions.js"></script>
+
+  <!-- Framework Scripts -->
+  <script src="../../../framework/engine/progress.js"></script>
+  <script src="../../../framework/components/mastery-badge.js"></script>
+  <script src="../../../framework/components/drag-counter.js"></script>
+  <script src="../../../framework/components/ten-frame.js"></script>
+  <script src="../../../framework/components/number-line.js"></script>
+  <script src="../../../framework/engine/quiz-runner.js"></script>
+</body>
+</html>

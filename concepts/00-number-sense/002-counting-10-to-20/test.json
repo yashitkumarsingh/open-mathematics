@@ -1,0 +1,68 @@
+{
+  "conceptId": "002-counting-10-to-20",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "drag-counter",
+      "prompt": "Put 12 cherries into the basket.",
+      "target": 12,
+      "itemType": "cherry",
+      "totalItems": 15,
+      "hint": "Put 10 in the basket first, then count on: 11, 12.",
+      "mistakePatterns": {
+        "11": "undercounts",
+        "13": "overcounts"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "How many stars do you see below? <br><br> ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ <br> ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐",
+      "options": [
+        {"label": "13", "value": 13},
+        {"label": "14", "value": 14},
+        {"label": "15", "value": 15}
+      ],
+      "target": 14,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q3",
+      "type": "drag-counter",
+      "prompt": "Put 15 apples into the basket.",
+      "target": 15,
+      "itemType": "apple",
+      "totalItems": 18,
+      "hint": "Drag apples or click them until the basket counter reaches 15.",
+      "mistakePatterns": {
+        "14": "undercounts",
+        "16": "overcounts"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Count the cars: <br><br> 🚗 🚗 🚗 🚗 🚗 🚗 🚗 🚗 🚗 🚗 <br> 🚗 🚗 🚗 🚗 🚗 🚗 🚗",
+      "options": [
+        {"label": "16", "value": 16},
+        {"label": "17", "value": 17},
+        {"label": "18", "value": 18}
+      ],
+      "target": 17,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q5",
+      "type": "drag-counter",
+      "prompt": "Put 11 balloons into the basket.",
+      "target": 11,
+      "itemType": "balloon",
+      "totalItems": 13,
+      "hint": "One more than ten is eleven.",
+      "mistakePatterns": {
+        "10": "undercounts",
+        "12": "overcounts"
+      }
+    }
+  ]
+}

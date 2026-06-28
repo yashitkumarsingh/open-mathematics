@@ -1,0 +1,60 @@
+{
+  "conceptId": "003-compare-more-less-equal",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Which collection has MORE items?",
+      "options": [
+        {"label": "🍎 🍎 🍎", "value": 3},
+        {"label": "🍎 🍎 🍎 🍎 🍎", "value": 5}
+      ],
+      "target": 5,
+      "mistakePattern": "space_bias"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which collection has FEWER (less) items?",
+      "options": [
+        {"label": "🍒 🍒", "value": 2},
+        {"label": "🍒 🍒 🍒 🍒 🍒 🍒", "value": 6}
+      ],
+      "target": 2,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Are these two groups EQUAL (the same)? <br><br> Group A: ⭐ ⭐ ⭐ <br> Group B: ⭐ ⭐ ⭐",
+      "options": [
+        {"label": "Yes, they are equal!", "value": 1},
+        {"label": "No, they are different.", "value": 2}
+      ],
+      "target": 1,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Which group has MORE items?",
+      "options": [
+        {"label": "🚗 🚗 🚗 🚗 🚗 🚗 🚗", "value": 7},
+        {"label": "🚗 🚗 🚗 🚗", "value": 4}
+      ],
+      "target": 7,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Are these two groups EQUAL? <br><br> Group A: 🎈 🎈 🎈 🎈 <br> Group B: 🎈 🎈 🎈",
+      "options": [
+        {"label": "Yes, they are equal!", "value": 1},
+        {"label": "No, they are different.", "value": 2}
+      ],
+      "target": 2,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educator Dashboard - Open Mathematics Foundation</title>
+  <link rel="stylesheet" href="../framework/styles/main.css">
+  <style>
+    /* Dashboard-specific styling */
+    .summary-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .stat-card {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border: 1px solid var(--primary-light);
+    }
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    .stat-lbl {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    .profile-card {
+      background-color: var(--primary-light);
+      padding: 24px;
+      border-radius: var(--border-radius-lg);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .profile-info h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+    }
+    .profile-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .concept-link {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+    .concept-link:hover {
+      color: hsl(205, 27%, 25%);
+      text-decoration: underline;
+    }
+    .weakness-badge {
+      display: inline-block;
+      background-color: var(--warning-light);
+      color: var(--warning-color);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+    /* Printable overrides */
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+        padding: 0;
+      }
+      .btn, .profile-actions, .child-badge, input, select, header a, .stat-card button {
+        display: none !important;
+      }
+      .card, .stat-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+      }
+      .dashboard-grid {
+        display: block !important;
+      }
+      .dashboard-card {
+        margin-bottom: 16px;
+        border: 1px solid #ccc !important;
+        padding: 16px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Open Mathematics Foundation</h1>
+      <span class="child-badge" id="lbl-header-nickname">Explorer's Path</span>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-card animate-pop">
+      <div class="profile-info">
+        <h3 id="lbl-nickname-title">Hello, Explorer!</h3>
+        <p style="color: var(--primary-color); font-weight: 500;">Stage: Foundation Number Sense</p>
+      </div>
+      <div class="profile-actions">
+        <button class="btn btn-secondary" id="btn-edit-profile">✏️ Edit Profile</button>
+        <button class="btn btn-secondary" id="btn-print" onclick="window.print()">🖨️ Print Plan</button>
+        <button class="btn btn-secondary" id="btn-export">📥 Export Progress</button>
+        <button class="btn btn-secondary" id="btn-import-trigger">📤 Import Progress</button>
+        <input type="file" id="file-import" style="display: none;" accept=".json">
+      </div>
+    </section>
+
+    <!-- Dynamic Edit Profile Modal (Hidden by default) -->
+    <section id="profile-edit-form" class="card animate-pop" style="display: none;">
+      <h3>Edit Student Profile</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <label style="font-weight: 600;">Student Nickname:</label>
+        <input type="text" id="input-nickname" class="stat-lbl" style="padding: 10px; font-size: 1rem; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-light);" placeholder="E.g. Aarav">
+        
+        <label style="font-weight: 600;">Year Level:</label>
+        <select id="select-grade" style="padding: 10px; font-size: 1rem; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-light);">
+          <option value="Kindergarten">Foundation / Kindergarten</option>
+          <option value="Grade 1">Grade 1</option>
+          <option value="Grade 2">Grade 2</option>
+        </select>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 8px;">
+        <button class="btn btn-success" id="btn-save-profile">Save Settings</button>
+        <button class="btn btn-secondary" id="btn-cancel-profile">Cancel</button>
+      </div>
+    </section>
+
+    <!-- Stats Summary Section -->
+    <section class="summary-stats">
+      <div class="stat-card">
+        <span class="stat-num" id="stat-completed">0 / 10</span>
+        <span class="stat-lbl">CONCEPTS MASTERED</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-attempts">0</span>
+        <span class="stat-lbl">TOTAL ATTEMPTS</span>
+      </div>
+      <div class="stat-card" style="grid-column: span 1;">
+        <span class="stat-lbl">NEXT RECOMMENDED CONCEPT</span>
+        <p style="font-weight: 700; margin-top: 4px; color: var(--primary-color);" id="lbl-recommendation">Counting 0 to 10</p>
+      </div>
+    </section>
+
+    <!-- Weak Areas / Mistakes Alert -->
+    <section class="card" id="card-weakness" style="display: none;">
+      <h3 style="color: var(--warning-color); display: flex; align-items: center; gap: 8px;">⚠️ Areas Needing Support</h3>
+      <p>The student has logged specific mistake patterns on these concepts. Try physical hands-on games to clarify their understanding:</p>
+      <div id="weakness-container" style="margin-top: 10px;"></div>
+    </section>
+
+    <!-- Concept progression cards -->
+    <h2>Foundation Stage 0: Number Sense</h2>
+    <section class="dashboard-grid" id="dashboard-grid">
+      <!-- Generated concepts go here -->
+    </section>
+  </div>
+
+  <script src="../framework/engine/progress.js"></script>
+  <script src="../framework/components/mastery-badge.js"></script>
+  <script>
+    // Concept data map for Stage 0
+    const STAGE_CONCEPTS = [
+      { id: "001-counting-0-to-10", title: "Counting 0 to 10", path: "../concepts/00-number-sense/001-counting-0-to-10/child.html" },
+      { id: "002-counting-10-to-20", title: "Counting 10 to 20", path: "../concepts/00-number-sense/002-counting-10-to-20/child.html" },
+      { id: "003-compare-more-less-equal", title: "Compare More, Less, Equal", path: "../concepts/00-number-sense/003-compare-more-less-equal/child.html" },
+      { id: "004-match-number-quantity", title: "Match Number to Quantity", path: "../concepts/00-number-sense/004-match-number-quantity/child.html" },
+      { id: "005-ten-frame-basics", title: "Ten Frame Basics", path: "../concepts/00-number-sense/005-ten-frame-basics/child.html" },
+      { id: "006-number-line-0-to-10", title: "Number Line 0 to 10", path: "../concepts/00-number-sense/006-number-line-0-to-10/child.html" },
+      { id: "007-number-bonds-to-5", title: "Number Bonds to 5", path: "../concepts/00-number-sense/007-number-bonds-to-5/child.html" },
+      { id: "008-number-bonds-to-10", title: "Number Bonds to 10", path: "../concepts/00-number-sense/008-number-bonds-to-10/child.html" },
+      { id: "009-zero-as-number", title: "Zero as a Number", path: "../concepts/00-number-sense/009-zero-as-number/child.html" },
+      { id: "010-mixed-mastery-test", title: "Mixed Mastery Test", path: "../concepts/00-number-sense/010-mixed-mastery-test/child.html" }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      refreshDashboard();
+      setupProfileEvents();
+      setupImportExport();
+    });
+
+    function refreshDashboard() {
+      const profile = OMF.Progress.getUserProfile();
+      const progress = OMF.Progress.getAll();
+
+      // Render profile texts
+      document.getElementById("lbl-header-nickname").innerText = `${profile.nickname}'s Path`;
+      document.getElementById("lbl-nickname-title").innerText = `Hello, ${profile.nickname}!`;
+      document.getElementById("input-nickname").value = profile.nickname;
+      document.getElementById("select-grade").value = profile.gradeLevel || "Kindergarten";
+
+      // Compute stats
+      let masteredCount = 0;
+      let totalAttempts = 0;
+      let recommendedFound = false;
+      let nextRecommended = STAGE_CONCEPTS[0];
+      const weaknesses = [];
+
+      const grid = document.getElementById("dashboard-grid");
+      grid.innerHTML = "";
+
+      STAGE_CONCEPTS.forEach((concept, index) => {
+        const state = progress[concept.id] || {
+          attempts: 0,
+          bestScore: 0,
+          mastered: false,
+          mistakePatterns: []
+        };
+
+        totalAttempts += state.attempts;
+        if (state.mastered) {
+          masteredCount += 1;
+        } else if (!recommendedFound) {
+          nextRecommended = concept;
+          recommendedFound = true;
+        }
+
+        // Catch weakness patterns
+        if (state.mistakePatterns && state.mistakePatterns.length > 0) {
+          weaknesses.push({
+            title: concept.title,
+            patterns: state.mistakePatterns
+          });
+        }
+
+        // Render card
+        let statusCls = "unlocked";
+        let statusText = "Ready to Play";
+
+        if (state.mastered) {
+          statusCls = "mastered";
+          statusText = "Mastered";
+        } else if (state.attempts > 0) {
+          statusCls = "attempted";
+          statusText = "In Progress";
+        }
+
+        const card = document.createElement("div");
+        card.className = `card dashboard-card ${statusCls} animate-pop`;
+        card.innerHTML = `
+          <span class="dashboard-card-status ${statusCls}">${statusText}</span>
+          <h3 style="margin-top: 10px;">${concept.title}</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">
+            Best score: ${state.bestScore}/10 | Attempts: ${state.attempts}
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+            <a href="${concept.path}" class="concept-link">Play Activity ➡️</a>
+            <mastery-badge state="${state.mastered ? 'mastered' : 'locked'}" style="transform: scale(0.6); transform-origin: right center;"></mastery-badge>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Update summaries
+      document.getElementById("stat-completed").innerText = `${masteredCount} / ${STAGE_CONCEPTS.length}`;
+      document.getElementById("stat-attempts").innerText = totalAttempts;
+      
+      if (masteredCount === STAGE_CONCEPTS.length) {
+        document.getElementById("lbl-recommendation").innerText = "🎉 All Mastered! Ready for Stage 1!";
+      } else {
+        document.getElementById("lbl-recommendation").innerText = nextRecommended.title;
+      }
+
+      // Render weak areas drawer
+      const weakCard = document.getElementById("card-weakness");
+      const weakContainer = document.getElementById("weakness-container");
+      if (weaknesses.length > 0) {
+        weakCard.style.display = "flex";
+        weakContainer.innerHTML = "";
+        weaknesses.forEach(w => {
+          const row = document.createElement("div");
+          row.style.marginBottom = "12px";
+          
+          const title = document.createElement("strong");
+          title.innerText = w.title + ": ";
+          row.appendChild(title);
+
+          w.patterns.forEach(pat => {
+            const badge = document.createElement("span");
+            badge.className = "weakness-badge";
+            badge.innerText = formatPatternName(pat);
+            row.appendChild(badge);
+          });
+          weakContainer.appendChild(row);
+        });
+      } else {
+        weakCard.style.display = "none";
+      }
+    }
+
+    function formatPatternName(name) {
+      // Maps technical strings to parent friendly text
+      const mapping = {
+        undercounts: "skipping objects or counting short",
+        overcounts: "double counting objects or counting past target",
+        incorrect_choice: "confusing visual sets",
+        space_bias: "thinking spread-out items are 'more'",
+        part_confusion: "confusing the parts making up a whole",
+        before_target: "selecting numbers before the target",
+        after_target: "selecting numbers after the target",
+        incorrect_matching: "associating digits with the wrong count"
+      };
+      return mapping[name] || name;
+    }
+
+    function setupProfileEvents() {
+      const editBtn = document.getElementById("btn-edit-profile");
+      const editForm = document.getElementById("profile-edit-form");
+      const saveBtn = document.getElementById("btn-save-profile");
+      const cancelBtn = document.getElementById("btn-cancel-profile");
+
+      editBtn.addEventListener("click", () => {
+        editForm.style.display = "flex";
+        editForm.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      cancelBtn.addEventListener("click", () => {
+        editForm.style.display = "none";
+      });
+
+      saveBtn.addEventListener("click", () => {
+        const nickname = document.getElementById("input-nickname").value.trim() || "Explorer";
+        const gradeLevel = document.getElementById("select-grade").value;
+        
+        const profile = OMF.Progress.getUserProfile();
+        profile.nickname = nickname;
+        profile.gradeLevel = gradeLevel;
+        OMF.Progress.saveUserProfile(profile);
+
+        editForm.style.display = "none";
+        refreshDashboard();
+      });
+    }
+
+    function setupImportExport() {
+      const exportBtn = document.getElementById("btn-export");
+      const importTrigger = document.getElementById("btn-import-trigger");
+      const importInput = document.getElementById("file-import");
+
+      // Export file download
+      exportBtn.addEventListener("click", () => {
+        const jsonStr = OMF.Progress.exportProgressJSON();
+        const profile = OMF.Progress.getUserProfile();
+        
+        const blob = new Blob([jsonStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `omf_progress_${profile.nickname.toLowerCase()}_2026.json`;
+        document.body.appendChild(a);
+        a.click();
+        
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      // Import file upload click helper
+      importTrigger.addEventListener("click", () => {
+        importInput.click();
+      });
+
+      // File select callback
+      importInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const success = OMF.Progress.importProgressJSON(evt.target.result);
+          if (success) {
+            alert("Progress imported successfully!");
+            refreshDashboard();
+          } else {
+            alert("Error: Could not import file. Please check if the file format is correct.");
+          }
+        };
+        reader.readAsText(file);
+      });
+    }
+  </script>
+</body>
+</html>

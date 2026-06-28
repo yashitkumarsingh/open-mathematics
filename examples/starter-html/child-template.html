@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Concept Title] - Open Mathematics Foundation</title>
+  <!-- Load the main styling system. Make sure the relative path matches your directory level -->
+  <link rel="stylesheet" href="../../../framework/styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>[Concept Title]</h1>
+      <a href="../../../examples/parent-dashboard.html" class="child-badge">🏠 Parent Dashboard</a>
+    </header>
+
+    <main>
+      <!-- 
+        Change the concept-id to match your concept folder name. 
+        It will load questions from the local "test.json" file.
+      -->
+      <quiz-runner concept-id="[concept-id]" data-src="test.json"></quiz-runner>
+    </main>
+
+    <footer>
+      <!-- Collapsible Educator/Parent notes drawer -->
+      <details class="parent-guide-details">
+        <summary class="parent-guide-summary"></summary>
+        <div class="parent-guide-content">
+          <h3>💡 What this concept means</h3>
+          <p>[Explain what the concept is and why it's important.]</p>
+          
+          <h3>❓ Common Misconceptions to watch for</h3>
+          <ul>
+            <li><strong>[Misconception 1]:</strong> [Explain the error and how a parent can help resolve it.]</li>
+            <li><strong>[Misconception 2]:</strong> [Explain another common error.]</li>
+          </ul>
+
+          <h3>🏡 Off-screen Hands-on Activities</h3>
+          <ul>
+            <li><strong>[Activity 1]:</strong> [Explain how to play it with spoons, cereal, bricks, etc.]</li>
+            <li><strong>[Activity 2]:</strong> [Another off-screen activity.]</li>
+          </ul>
+        </div>
+      </details>
+    </footer>
+  </div>
+
+  <!-- 
+    Load progress tracker and Web Component libraries. 
+    Ensure paths match relative offsets. 
+  -->
+  <script src="../../../framework/engine/progress.js"></script>
+  <script src="../../../framework/components/mastery-badge.js"></script>
+  <script src="../../../framework/components/drag-counter.js"></script>
+  <script src="../../../framework/components/ten-frame.js"></script>
+  <script src="../../../framework/components/number-line.js"></script>
+  <script src="../../../framework/engine/quiz-runner.js"></script>
+</body>
+</html>

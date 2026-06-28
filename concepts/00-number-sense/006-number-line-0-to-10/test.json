@@ -1,0 +1,68 @@
+{
+  "conceptId": "006-number-line-0-to-10",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "number-line",
+      "prompt": "Find the number <strong>4</strong> on the number line.",
+      "min": 0,
+      "max": 10,
+      "target": 4,
+      "hint": "Count from 0 up to 4, then click that point.",
+      "mistakePatterns": {
+        "3": "before_target",
+        "5": "after_target"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "number-line",
+      "prompt": "Find the number <strong>7</strong> on the number line.",
+      "min": 0,
+      "max": 10,
+      "target": 7,
+      "hint": "It is one number before 8.",
+      "mistakePatterns": {
+        "6": "before_target",
+        "8": "after_target"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which number comes just <strong>before 3</strong>?",
+      "options": [
+        {"label": "1", "value": 1},
+        {"label": "2", "value": 2},
+        {"label": "4", "value": 4}
+      ],
+      "target": 2,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "number-line",
+      "prompt": "What number is between 8 and 10? Find it on the line.",
+      "min": 0,
+      "max": 10,
+      "target": 9,
+      "hint": "Look at the empty spot right between 8 and 10.",
+      "mistakePatterns": {
+        "8": "before_target",
+        "10": "after_target"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Which number comes just <strong>after 5</strong>?",
+      "options": [
+        {"label": "4", "value": 4},
+        {"label": "6", "value": 6},
+        {"label": "7", "value": 7}
+      ],
+      "target": 6,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+}

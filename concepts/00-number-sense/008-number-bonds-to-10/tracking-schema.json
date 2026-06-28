@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Local Progress Tracking Schema",
+  "type": "object",
+  "properties": {
+    "conceptId": { "type": "string", "example": "008-number-bonds-to-10" },
+    "attempts": { "type": "integer", "minimum": 0 },
+    "bestScore": { "type": "integer", "minimum": 0, "maximum": 10 },
+    "lastScore": { "type": "integer", "minimum": 0 },
+    "mastered": { "type": "boolean" },
+    "lastPracticed": { "type": "string", "format": "date" },
+    "mistakePatterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["undercounts", "part_confusion", "incorrect_choice"]
+      }
+    }
+  }
+}

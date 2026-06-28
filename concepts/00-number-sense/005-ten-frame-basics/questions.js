@@ -1,0 +1,66 @@
+window.OMF = window.OMF || {};
+window.OMF.currentQuiz = {
+  "conceptId": "005-ten-frame-basics",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "ten-frame",
+      "prompt": "Show 3 on the ten frame by clicking squares.",
+      "start": 0,
+      "target": 3,
+      "hint": "Click 3 squares on the grid to add dots.",
+      "mistakePatterns": {
+        "2": "undercounts",
+        "4": "overcounts"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "ten-frame",
+      "prompt": "Show 5 on the ten frame.",
+      "start": 0,
+      "target": 5,
+      "hint": "Try filling the whole top row!",
+      "mistakePatterns": {
+        "4": "undercounts",
+        "6": "overcounts"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "How many dots are in this ten frame? <br><br> (Top row is full, bottom row has 2 dots)",
+      "options": [
+        {"label": "5", "value": 5},
+        {"label": "7", "value": 7},
+        {"label": "8", "value": 8}
+      ],
+      "target": 7,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "ten-frame",
+      "prompt": "Show 8 on the ten frame.",
+      "start": 0,
+      "target": 8,
+      "hint": "Fill the top row (5) first, then add 3 more on the bottom row.",
+      "mistakePatterns": {
+        "7": "undercounts",
+        "9": "overcounts"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "How many empty spaces are left in a full ten frame?",
+      "options": [
+        {"label": "0 spaces", "value": 0},
+        {"label": "1 space", "value": 1},
+        {"label": "5 spaces", "value": 5}
+      ],
+      "target": 0,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+};
