@@ -10,6 +10,13 @@ The goal is simple: make the foundations of mathematics understandable, playful,
 
 ---
 
+## 🎮 Try it now (Live Demos)
+
+- **[Parent Progress Dashboard](https://yashitkumarsingh.github.io/open-mathematics/examples/parent-dashboard.html)**: Track completed lessons, review logged mistake patterns, and manage profiles.
+- **[Concept 001: Counting 0 to 10](https://yashitkumarsingh.github.io/open-mathematics/concepts/00-number-sense/001-counting-0-to-10/child.html)**: Try the interactive apple basket drag counter.
+
+---
+
 ## 🚀 Key Highlights
 
 * **Offline-First & Serverless**: Runs directly under the `file://` protocol. Just double-click `child.html` or `parent-dashboard.html` to start.

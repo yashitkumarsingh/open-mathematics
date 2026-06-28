@@ -1,71 +1,37 @@
-# Roadmap
+# Roadmap & Milestones
 
 This roadmap sets out our plan for building the Open Mathematics Foundation from early primary level upward.
 
 ---
 
-## Phase 1: MVP - Foundation Number Sense Pack (Current)
-We are currently building the first vertical slice of the framework: **Stage 0 (Number Sense)**. This includes:
-- Core Web Components (`<ten-frame>`, `<number-line>`, `<drag-counter>`, `<mastery-badge>`).
-- Core Engine (`progress.js`, `quiz-runner.js`).
-- 10 interactive concepts (001 to 010).
-- Reusable Parent Dashboard (`parent-dashboard.html`).
+## 🎯 Release Milestones
 
----
+### 1. MVP (Current Release)
+- **Focus**: Stage 0: Number Sense (Foundation Level).
+- **Deliverables**:
+  - Core Web Components (`<ten-frame>`, `<number-line>`, `<drag-counter>`, `<mastery-badge>`).
+  - Core Engine (`progress.js`, `quiz-runner.js`) with offline CORS-safe loading.
+  - 10 interactive concepts (001 to 010) fully documented and playable.
+  - Reusable Parent Dashboard (`parent-dashboard.html`) with JSON progress import/export.
+  - Curriculum alignments (Australian Curriculum V9, US Common Core).
 
-## Stage Progression Plan
+### 2. Beta (Q3 2026)
+- **Focus**: Basic Arithmetic & Place Value.
+- **Deliverables**:
+  - **Stage 1 (Addition & Subtraction)**: Adding visual combining, counting on, fact families, and word problems.
+  - **Stage 2 (Place Value)**: Visualizing tens and ones utilizing our `<base-ten-blocks>` element.
+  - **Automated Validation**: Running automated validations for all newly added concepts in pull requests.
 
-### Stage 0: Number Sense (Foundation / Kindergarten)
-- Counting 0–10 & 10–20
-- One-to-one correspondence
-- Comparing quantities (More, Less, Same)
-- Ten-frame basics & number lines
-- The concept of Zero
-- Part-whole relationships (making 5 and 10)
+### 3. v1.0 (Q1 2027)
+- **Focus**: Full Primary Curriculum Coverage.
+- **Deliverables**:
+  - **Stage 3 to Stage 8**: Interactive shapes, fractions, data bar graphs, arrays, and problem-solving heuristics.
+  - **Printable Worksheet Generator**: Ability to print offline worksheets matching visual activities.
+  - **Accessibility AA Compliance**: Complete screen-reader testing and keyboard controls on all elements.
 
-### Stage 1: Addition and Subtraction (Grade 1)
-- Addition as combining & counting on
-- Subtraction as taking away & finding difference
-- Number bonds to 5, 10, 20
-- Visual word problems
-
-### Stage 2: Place Value & Two-Digit Numbers (Grade 2)
-- Tens and ones (bundling, base-ten blocks)
-- Expanded forms
-- Skip counting & basic rounding
-
-### Stage 3: Multiplication and Division (Grade 3)
-- Equal groups & repeated addition
-- Array representations
-- Times tables as visual patterns
-- Division as sharing & grouping
-
-### Stage 4: Fractions (Grade 3-4)
-- Equal parts of shapes & groups (Half, Third, Quarter)
-- Fraction number line
-- Equivalent fractions
-
-### Stage 5: Measurement & Time (Grade 3-4)
-- Length, Mass, Capacity estimation
-- Reading clocks (Time)
-- Basic perimeter and area
-
-### Stage 6: Geometry & Shapes (Grade 1-4)
-- 2D shapes & 3D objects
-- Symmetry & transformations
-- Angles and directions
-
-### Stage 7: Data & Probability (Grade 2-4)
-- Sorting, Tally marks, Pictographs, Bar graphs
-- Understanding chance events
-
-### Stage 8: Problem Solving (Integrated Across All Stages)
-- Applying heuristic strategies (e.g. Draw a picture, act it out, find a pattern)
-- Mathematical reasoning & writing explanations
-
----
-
-## Technical Engine Roadmap
-- [ ] **Multi-language Translation engine**: Add fallback JSON translation files so parent guides can be toggled between English, Spanish, Hindi, etc., with zero build requirements.
-- [ ] **Printable generator**: Enable exporting worksheets matching the interactive quiz layouts for offline paper-based practice.
-- [ ] **Accessibility / Screen-Reader compatibility**: Auditing and improving custom elements for keyboard control and ARIA speech narration.
+### 4. Later / Backlog
+- **Focus**: Multi-Language & Multi-Curriculum expansion.
+- **Deliverables**:
+  - **Multi-language translation engine**: Fallback translation matrices for Spanish, Hindi, and regional languages.
+  - **Curriculum mappings**: Mappings for UK, Singapore Math, and Indian NCERT frameworks.
+  - **Offline Android/iOS Wraps**: Packaging static HTML files via Cordova or Capacitor for app stores.
