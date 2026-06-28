@@ -103,7 +103,10 @@
             <div class="quiz-progress-dots">${dotsHtml}</div>
           </div>
 
-          <div class="quiz-prompt">${question.prompt}</div>
+          <div class="quiz-prompt">
+            ${question.prompt}
+            <button id="quiz-speak-btn" aria-label="Read prompt aloud" style="background: none; border: none; cursor: pointer; font-size: 1.3rem; margin-left: 8px; vertical-align: middle; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">🔊</button>
+          </div>
           
           <div id="quiz-workspace" style="display: flex; flex-direction: column; align-items: center; margin: 16px 0;">
             <!-- Interactive component gets injected here -->
@@ -119,6 +122,20 @@
       `;
 
       this.renderWorkspace(question);
+
+      // Bind Speak Button listener
+      const speakBtn = this.querySelector("#quiz-speak-btn");
+      if (speakBtn) {
+        speakBtn.addEventListener("click", () => {
+          if (window.OMF && window.OMF.Accessibility) {
+            // Strip HTML tags for cleaner speech synthesis
+            const cleanText = question.prompt.replace(/<[^>]*>/g, '');
+            window.OMF.Accessibility.speak(cleanText);
+          } else {
+            console.warn("OMF Accessibility helper is not loaded on this page.");
+          }
+        });
+      }
 
       this.querySelector("#quiz-check-btn").addEventListener("click", () => this.checkAnswer());
       if (this.mode === 'practice') {
