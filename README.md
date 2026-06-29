@@ -55,6 +55,17 @@ open-mathematics-foundation/
 
 ---
 
+## ♿ Neurodiversity & Sensory Design
+
+The Open Mathematics Foundation is built from the ground up to support neurodiverse children (ADHD, ASD, dyscalculia, dyslexia, and dyspraxia):
+- **TTS Voice Narration**: Prompts can be read aloud using the integrated speaker button (🔊) next to each question.
+- **Calm Layouts**: Pure nature pastel colors, zero flashing elements, zero autoplay sound effects, and no timers or speed checks.
+- **Dual-Input Fallback**: Interactive tasks support both tactile drag-and-drop and simple tap-to-move click inputs.
+
+Developers and AI agents can learn more by checking out the custom OMF skill: [.agents/skills/neurodiversity-design/SKILL.md](file:///Users/yashitkumarsingh/dev/open-mathematics/.agents/skills/neurodiversity-design/SKILL.md).
+
+---
+
 ## 🤝 Contributing & License
 
 We love contributions! Please read [CONTRIBUTING.md](file:///Users/yashitkumarsingh/dev/open-mathematics/CONTRIBUTING.md) to understand how to add new concept nodes.

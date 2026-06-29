@@ -38,3 +38,12 @@ When creating a new mathematical concept folder, always include exactly:
 * Components must expose a standard `getValue()` method returning the child's numerical/logical answer.
 * Touch target sizes must be at least `48px x 48px` to ensure young children can easily tap and drag items.
 * Support dual input: dragging items via drag-and-drop and simple tap-to-move clicks.
+
+---
+
+## 5. Neurodiversity & Sensory Accessibility Design
+* **Voice Narration**: Every child interactive prompt must include the read-aloud TTS speaker button linked to the `Accessibility.speak()` module.
+* **Calm Interface Limits**: Do **NOT** use flashing banners, autoplay sounds, or aggressive rewards. Use soft pastels.
+* **Dual Input**: Every click action on items (e.g. apple baskets, number lines) must support both dragging and simple clicking.
+* **Zero Speed pressure**: Strictly forbid countdowns or time-limits in practice modes.
+
