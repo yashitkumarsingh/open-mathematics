@@ -102,10 +102,33 @@ When opening a Pull Request, please copy and fill this description template:
 
 ---
 
+## Local Development & Git Hooks
+
+To maintain repository standards and prevent broken concept files from being committed, we use **Husky** to run automated pre-commit hook checks. 
+
+While the learning framework itself runs 100% serverless without Node/npm, contributors are encouraged to set up the validation hook:
+
+### ⚙️ Setup Pre-commit Validation:
+1. Ensure you have **Node.js** installed locally.
+2. In the repository root, run:
+   ```bash
+   npm install
+   ```
+   This will automatically install Husky and map the Git pre-commit hook path.
+
+### 🔍 Manual Hook Test:
+You can manually run the concept validator at any time:
+```bash
+npm run validate
+```
+
+---
+
 ## Pull Request Process
 
 1. Fork the repository.
 2. Create a feature branch: `git checkout -b feature/concept-name`.
-3. Implement your concept using the boilerplate in `examples/starter-html/child-template.html`.
-4. Open the concept in multiple browsers locally (`file:///...`) to verify interactivity, responsive styling, and accessibility.
-5. Submit a Pull Request describing your changes.
+3. Set up local validation via `npm install`.
+4. Implement your concept using the boilerplate in `examples/starter-html/child-template.html`.
+5. Run tests locally via double-clicking `child.html` and verify the CLI check passes (`npm run validate`).
+6. Submit a Pull Request describing your changes.

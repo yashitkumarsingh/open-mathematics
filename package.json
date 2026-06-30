@@ -1,0 +1,17 @@
+{
+  "name": "open-mathematics-foundation",
+  "version": "1.0.0",
+  "description": "An open-source offline-first primary mathematics learning foundation.",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-concepts.js"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate"
+    }
+  }
+}
