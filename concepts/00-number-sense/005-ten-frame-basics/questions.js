@@ -1,6 +1,41 @@
 window.OMF = window.OMF || {};
 window.OMF.currentQuiz = {
   "conceptId": "005-ten-frame-basics",
+  "parentGuide": {
+  "en": {
+    "concept": "A ten-frame is a 2-by-5 grid. It helps children recognize visual representations of numbers. A full top row is always exactly 5; a full frame is 10. This builds <strong>subitising</strong> (knowing counts instantly without counting one by one).",
+    "misconceptions": [
+      "<strong>Unstructured Placing:</strong> Putting counters in random slots (corners first). Guide them to fill left-to-right on the top row first.",
+      "<strong>Blank Space Counting:</strong> Confusing empty boxes with counters. Guide them to count active orange circles only."
+    ],
+    "activities": [
+      "<strong>Egg carton board:</strong> Cut an egg carton to 10 holes. Roll a die and have your child place matching marbles inside.",
+      "<strong>Chalk grids:</strong> Draw a large 2x5 grid on the pavement. Call numbers and have them place toys in the slots."
+    ]
+  },
+  "es": {
+    "concept": "A ten-frame is a 2-by-5 grid. It helps children recognize visual representations of numbers. A full top row is always exactly 5; a full frame is 10. This builds <strong>subitising</strong> (knowing counts instantly without counting one by one).",
+    "misconceptions": [
+      "<strong>Unstructured Placing:</strong> Putting counters in random slots (corners first). Guide them to fill left-to-right on the top row first.",
+      "<strong>Blank Space Counting:</strong> Confusing empty boxes with counters. Guide them to count active orange circles only."
+    ],
+    "activities": [
+      "<strong>Egg carton board:</strong> Cut an egg carton to 10 holes. Roll a die and have your child place matching marbles inside.",
+      "<strong>Chalk grids:</strong> Draw a large 2x5 grid on the pavement. Call numbers and have them place toys in the slots."
+    ]
+  },
+  "hi": {
+    "concept": "A ten-frame is a 2-by-5 grid. It helps children recognize visual representations of numbers. A full top row is always exactly 5; a full frame is 10. This builds <strong>subitising</strong> (knowing counts instantly without counting one by one).",
+    "misconceptions": [
+      "<strong>Unstructured Placing:</strong> Putting counters in random slots (corners first). Guide them to fill left-to-right on the top row first.",
+      "<strong>Blank Space Counting:</strong> Confusing empty boxes with counters. Guide them to count active orange circles only."
+    ],
+    "activities": [
+      "<strong>Egg carton board:</strong> Cut an egg carton to 10 holes. Roll a die and have your child place matching marbles inside.",
+      "<strong>Chalk grids:</strong> Draw a large 2x5 grid on the pavement. Call numbers and have them place toys in the slots."
+    ]
+  }
+},
   "questions": [
     {
       "id": "q1",

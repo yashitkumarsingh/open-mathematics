@@ -20,64 +20,13 @@
     </main>
 
     <footer>
-      <details class="parent-guide-details">
-        <summary class="parent-guide-summary"></summary>
-        <div class="parent-guide-content">
-          <!-- English Guide -->
-          <div class="lang-en">
-            <h3>💡 What this concept means</h3>
-            <p>Number bonds to 10 are pairs of numbers that combine to make exactly 10 (e.g. 8+2, 7+3). Spotting these combinations is a critical skill for mental math, enabling strategies like "make-a-ten" when adding larger numbers later (e.g., adding 8+6 is seen as 8+2+4).</p>
-            
-            <h3>❓ Common Misconceptions to watch for</h3>
-            <ul>
-              <li><strong>Missing Addend Confusion:</strong> Confusing the target sum (10) with the added part. They hear "make 10" and represent 10 instead of the missing portion.</li>
-              <li><strong>Bridging Five:</strong> Finding it harder to calculate pairs when both numbers are not visualised together. A ten-frame makes the missing part visible immediately as empty squares.</li>
-            </ul>
-
-            <h3>🏡 Off-screen Hands-on Activities</h3>
-            <ul>
-              <li><strong>Clothes Hanger Pegs:</strong> Clip 10 pegs on a coat hanger. Slide them into two groups (e.g., 6 and 4) to visually prove they make 10.</li>
-              <li><strong>Ten Fingers:</strong> Hold up 10 fingers. Bend down 3 fingers. Ask: "How many are standing? (7) How many are bent? (3) So 7 and 3 make 10!"</li>
-            </ul>
-          </div>
-
-          <!-- Spanish Guide -->
-          <div class="lang-es" style="display: none;">
-            <h3>💡 Lo que significa este concepto</h3>
-            <p>Las combinaciones numéricas hasta 10 son parejas de números que se combinan para hacer exactamente 10. Identificar estas combinaciones es clave para el cálculo mental posterior.</p>
-            
-            <h3>❓ Errores comunes a tener en cuenta</h3>
-            <ul>
-              <li><strong>Falta de soporte visual:</strong> Encontrar difícil calcular la diferencia. Un marco de diez ayuda al mostrar las celdas vacías como la parte faltante.</li>
-            </ul>
-
-            <h3>🏡 Actividades prácticas fuera de pantalla</h3>
-            <ul>
-              <li><strong>Pinzas en percha:</strong> Coloca 10 pinzas en una percha. Deslízalas en dos grupos (p. ej., 6 y 4) para comprobar que suman 10.</li>
-            </ul>
-          </div>
-
-          <!-- Hindi Guide -->
-          <div class="lang-hi" style="display: none;">
-            <h3>💡 इस विषय का अर्थ क्या है</h3>
-            <p>10 तक संख्या बंधन संख्याओं के जोड़े हैं जो मिलकर ठीक 10 बनाते हैं (जैसे 8+2, 7+3)। इन संयोजनों को पहचानना मानसिक गणित के लिए एक महत्वपूर्ण कौशल है।</p>
-          </div>
-        </div>
-      </details>
+      <parent-guide></parent-guide>
     </footer>
   </div>
 
   <!-- Quiz data pre-loader -->
   <script src="questions.js"></script>
-
-  <!-- Framework Scripts -->
-  <script src="../../../framework/engine/accessibility.js"></script>
-  <script src="../../../framework/engine/i18n.js"></script>
-  <script src="../../../framework/engine/progress.js"></script>
-  <script src="../../../framework/components/mastery-badge.js"></script>
-  <script src="../../../framework/components/drag-counter.js"></script>
-  <script src="../../../framework/components/ten-frame.js"></script>
-  <script src="../../../framework/components/number-line.js"></script>
-  <script src="../../../framework/engine/quiz-runner.js"></script>
+  <!-- Framework Bootstrapper -->
+  <script src="../../../framework/loader.js"></script>
 </body>
 </html>

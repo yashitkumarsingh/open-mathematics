@@ -1,6 +1,41 @@
 window.OMF = window.OMF || {};
 window.OMF.currentQuiz = {
   "conceptId": "004-match-number-quantity",
+  "parentGuide": {
+  "en": {
+    "concept": "This lesson bridges abstract written digits (the numerals 0–10) with physical counts. Many children can count verbally like a song, but struggle to understand that the visual shape '7' represents a collection of exactly seven objects.",
+    "misconceptions": [
+      "<strong>Shape Confusion:</strong> Misidentifying digits that look similar (like confusing 6 and 9, or writing 2 and 5 backwards).",
+      "<strong>Disconnected Counts:</strong> Counting a set of 5 blocks correctly, but selecting a card that says '3' because they don't associate the count with the symbol."
+    ],
+    "activities": [
+      "<strong>Numbered Parking:</strong> Draw parking spaces numbered 1 to 5. Have your child park the correct number of toy cars in each space.",
+      "<strong>Snack Match:</strong> Place numeral cards (1 to 5) next to paper plates. Have your child place the matching number of grapes or crackers on each plate."
+    ]
+  },
+  "es": {
+    "concept": "This lesson bridges abstract written digits (the numerals 0–10) with physical counts. Many children can count verbally like a song, but struggle to understand that the visual shape '7' represents a collection of exactly seven objects.",
+    "misconceptions": [
+      "<strong>Shape Confusion:</strong> Misidentifying digits that look similar (like confusing 6 and 9, or writing 2 and 5 backwards).",
+      "<strong>Disconnected Counts:</strong> Counting a set of 5 blocks correctly, but selecting a card that says '3' because they don't associate the count with the symbol."
+    ],
+    "activities": [
+      "<strong>Numbered Parking:</strong> Draw parking spaces numbered 1 to 5. Have your child park the correct number of toy cars in each space.",
+      "<strong>Snack Match:</strong> Place numeral cards (1 to 5) next to paper plates. Have your child place the matching number of grapes or crackers on each plate."
+    ]
+  },
+  "hi": {
+    "concept": "This lesson bridges abstract written digits (the numerals 0–10) with physical counts. Many children can count verbally like a song, but struggle to understand that the visual shape '7' represents a collection of exactly seven objects.",
+    "misconceptions": [
+      "<strong>Shape Confusion:</strong> Misidentifying digits that look similar (like confusing 6 and 9, or writing 2 and 5 backwards).",
+      "<strong>Disconnected Counts:</strong> Counting a set of 5 blocks correctly, but selecting a card that says '3' because they don't associate the count with the symbol."
+    ],
+    "activities": [
+      "<strong>Numbered Parking:</strong> Draw parking spaces numbered 1 to 5. Have your child park the correct number of toy cars in each space.",
+      "<strong>Snack Match:</strong> Place numeral cards (1 to 5) next to paper plates. Have your child place the matching number of grapes or crackers on each plate."
+    ]
+  }
+},
   "questions": [
     {
       "id": "q1",

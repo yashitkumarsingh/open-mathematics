@@ -1,6 +1,41 @@
 window.OMF = window.OMF || {};
 window.OMF.currentQuiz = {
   "conceptId": "010-mixed-mastery-test",
+  "parentGuide": {
+  "en": {
+    "concept": "This is a cumulative review that mixes various Stage 0 concepts (counting, ten-frames, number lines, comparison, number bonds). Solving mixed problems (interleaved practice) helps lock skills into long-term memory rather than just short-term recitation.",
+    "misconceptions": [
+      "<strong>Context Switch Friction:</strong> Young children might struggle initially when switching from counting apples to clicking numbers on a line. Give them time to read each prompt.",
+      "<strong>Fatigue:</strong> A 10-question test is longer than average. Support your child, encourage them, and take breaks if they get tired. There are no timers."
+    ],
+    "activities": [
+      "<strong>The Kitchen Decathlon:</strong> Set up 3 stations at a table. Station 1 asks them to count spoons, Station 2 asks them to split 5 beans into two parts, and Station 3 asks which bowl has more berries. Let them complete the circuit.",
+      "<strong>Flash Cards Mix:</strong> Shuffle cards of various Stage 0 off-screen activities and play them in a random order."
+    ]
+  },
+  "es": {
+    "concept": "This is a cumulative review that mixes various Stage 0 concepts (counting, ten-frames, number lines, comparison, number bonds). Solving mixed problems (interleaved practice) helps lock skills into long-term memory rather than just short-term recitation.",
+    "misconceptions": [
+      "<strong>Context Switch Friction:</strong> Young children might struggle initially when switching from counting apples to clicking numbers on a line. Give them time to read each prompt.",
+      "<strong>Fatigue:</strong> A 10-question test is longer than average. Support your child, encourage them, and take breaks if they get tired. There are no timers."
+    ],
+    "activities": [
+      "<strong>The Kitchen Decathlon:</strong> Set up 3 stations at a table. Station 1 asks them to count spoons, Station 2 asks them to split 5 beans into two parts, and Station 3 asks which bowl has more berries. Let them complete the circuit.",
+      "<strong>Flash Cards Mix:</strong> Shuffle cards of various Stage 0 off-screen activities and play them in a random order."
+    ]
+  },
+  "hi": {
+    "concept": "This is a cumulative review that mixes various Stage 0 concepts (counting, ten-frames, number lines, comparison, number bonds). Solving mixed problems (interleaved practice) helps lock skills into long-term memory rather than just short-term recitation.",
+    "misconceptions": [
+      "<strong>Context Switch Friction:</strong> Young children might struggle initially when switching from counting apples to clicking numbers on a line. Give them time to read each prompt.",
+      "<strong>Fatigue:</strong> A 10-question test is longer than average. Support your child, encourage them, and take breaks if they get tired. There are no timers."
+    ],
+    "activities": [
+      "<strong>The Kitchen Decathlon:</strong> Set up 3 stations at a table. Station 1 asks them to count spoons, Station 2 asks them to split 5 beans into two parts, and Station 3 asks which bowl has more berries. Let them complete the circuit.",
+      "<strong>Flash Cards Mix:</strong> Shuffle cards of various Stage 0 off-screen activities and play them in a random order."
+    ]
+  }
+},
   "questions": [
     {
       "id": "q1",

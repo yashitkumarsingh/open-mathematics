@@ -20,64 +20,13 @@
     </main>
 
     <footer>
-      <details class="parent-guide-details">
-        <summary class="parent-guide-summary"></summary>
-        <div class="parent-guide-content">
-          <!-- English Guide -->
-          <div class="lang-en">
-            <h3>💡 What this concept means</h3>
-            <p>A ten-frame is a 2-by-5 grid. It helps children recognize visual representations of numbers. A full top row is always exactly 5; a full frame is 10. This builds <strong>subitising</strong> (knowing counts instantly without counting one by one).</p>
-            
-            <h3>❓ Common Misconceptions to watch for</h3>
-            <ul>
-              <li><strong>Unstructured Placing:</strong> Putting counters in random slots (corners first). Guide them to fill left-to-right on the top row first.</li>
-              <li><strong>Blank Space Counting:</strong> Confusing empty boxes with counters. Guide them to count active orange circles only.</li>
-            </ul>
-
-            <h3>🏡 Off-screen Hands-on Activities</h3>
-            <ul>
-              <li><strong>Egg carton board:</strong> Cut an egg carton to 10 holes. Roll a die and have your child place matching marbles inside.</li>
-              <li><strong>Chalk grids:</strong> Draw a large 2x5 grid on the pavement. Call numbers and have them place toys in the slots.</li>
-            </ul>
-          </div>
-
-          <!-- Spanish Guide -->
-          <div class="lang-es" style="display: none;">
-            <h3>💡 Lo que significa este concepto</h3>
-            <p>Un marco de diez es una cuadrícula de 2 por 5. Ayuda a los niños a reconocer representaciones visuales de números. Una fila superior completa siempre es exactamente 5; un marco completo es 10. Esto construye la **subitización** (saber los conteos instantáneamente sin contar uno por uno).</p>
-            
-            <h3>❓ Errores comunes a tener en cuenta</h3>
-            <ul>
-              <li><strong>Colocación no estructurada:</strong> Colocar fichas en ranuras aleatorias. Guíelos para que llenen de izquierda a derecha en la fila superior primero.</li>
-            </ul>
-
-            <h3>🏡 Actividades prácticas fuera de pantalla</h3>
-            <ul>
-              <li><strong>Tablero de cartón de huevos:</strong> Corta un cartón de huevos a 10 agujeros. Lanza un dado y pídele a tu hijo que coloque canicas adentro.</li>
-            </ul>
-          </div>
-
-          <!-- Hindi Guide -->
-          <div class="lang-hi" style="display: none;">
-            <h3>💡 इस विषय का अर्थ क्या है</h3>
-            <p>दस-फ्रेम 2-बाय-5 की ग्रिड है। यह बच्चों को संख्याओं के दृश्य प्रतिनिधित्व को पहचानने में मदद करता है। एक पूरी शीर्ष पंक्ति हमेशा ठीक 5 होती है; एक पूरा फ्रेम 10 होता है। यह **सबीटाइजिंग** (एक-एक करके गिने बिना तुरंत संख्या जानना) का निर्माण करता है।</p>
-          </div>
-        </div>
-      </details>
+      <parent-guide></parent-guide>
     </footer>
   </div>
 
   <!-- Quiz data pre-loader -->
   <script src="questions.js"></script>
-
-  <!-- Framework Scripts -->
-  <script src="../../../framework/engine/accessibility.js"></script>
-  <script src="../../../framework/engine/i18n.js"></script>
-  <script src="../../../framework/engine/progress.js"></script>
-  <script src="../../../framework/components/mastery-badge.js"></script>
-  <script src="../../../framework/components/drag-counter.js"></script>
-  <script src="../../../framework/components/ten-frame.js"></script>
-  <script src="../../../framework/components/number-line.js"></script>
-  <script src="../../../framework/engine/quiz-runner.js"></script>
+  <!-- Framework Bootstrapper -->
+  <script src="../../../framework/loader.js"></script>
 </body>
 </html>

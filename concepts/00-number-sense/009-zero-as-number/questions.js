@@ -1,6 +1,41 @@
 window.OMF = window.OMF || {};
 window.OMF.currentQuiz = {
   "conceptId": "009-zero-as-number",
+  "parentGuide": {
+  "en": {
+    "concept": "Zero represents the count of an empty collection. It is more than just the word 'nothing'; it is the mathematical symbol '0' that denotes empty containers or sets. Children learn to identify this quantity and place it at the start of number lines.",
+    "misconceptions": [
+      "<strong>Action Bias:</strong> In interactive digital tasks (like dragging items into a basket), children often feel they must take action (e.g. dragging 1 or 2 items) rather than leaving the workspace empty for a count of 0.",
+      "<strong>Skipping Zero:</strong> Omitting zero when reciting or writing down sequence bounds (e.g. writing number scales starting at 1)."
+    ],
+    "activities": [
+      "<strong>Plate Matching:</strong> Get three plates. Put strawberries in two of them and leave the third plate empty. Match label notes containing '3', '1', and '0' to the plates.",
+      "<strong>Disappearing Cups:</strong> Place 3 counters under a cup. Lift the cup, count them. Take them away one by one until none are left. Ask: 'How many are left under the cup? (Zero).'"
+    ]
+  },
+  "es": {
+    "concept": "Zero represents the count of an empty collection. It is more than just the word 'nothing'; it is the mathematical symbol '0' that denotes empty containers or sets. Children learn to identify this quantity and place it at the start of number lines.",
+    "misconceptions": [
+      "<strong>Action Bias:</strong> In interactive digital tasks (like dragging items into a basket), children often feel they must take action (e.g. dragging 1 or 2 items) rather than leaving the workspace empty for a count of 0.",
+      "<strong>Skipping Zero:</strong> Omitting zero when reciting or writing down sequence bounds (e.g. writing number scales starting at 1)."
+    ],
+    "activities": [
+      "<strong>Plate Matching:</strong> Get three plates. Put strawberries in two of them and leave the third plate empty. Match label notes containing '3', '1', and '0' to the plates.",
+      "<strong>Disappearing Cups:</strong> Place 3 counters under a cup. Lift the cup, count them. Take them away one by one until none are left. Ask: 'How many are left under the cup? (Zero).'"
+    ]
+  },
+  "hi": {
+    "concept": "Zero represents the count of an empty collection. It is more than just the word 'nothing'; it is the mathematical symbol '0' that denotes empty containers or sets. Children learn to identify this quantity and place it at the start of number lines.",
+    "misconceptions": [
+      "<strong>Action Bias:</strong> In interactive digital tasks (like dragging items into a basket), children often feel they must take action (e.g. dragging 1 or 2 items) rather than leaving the workspace empty for a count of 0.",
+      "<strong>Skipping Zero:</strong> Omitting zero when reciting or writing down sequence bounds (e.g. writing number scales starting at 1)."
+    ],
+    "activities": [
+      "<strong>Plate Matching:</strong> Get three plates. Put strawberries in two of them and leave the third plate empty. Match label notes containing '3', '1', and '0' to the plates.",
+      "<strong>Disappearing Cups:</strong> Place 3 counters under a cup. Lift the cup, count them. Take them away one by one until none are left. Ask: 'How many are left under the cup? (Zero).'"
+    ]
+  }
+},
   "questions": [
     {
       "id": "q1",

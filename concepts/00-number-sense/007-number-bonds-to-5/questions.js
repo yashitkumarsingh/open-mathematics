@@ -1,6 +1,41 @@
 window.OMF = window.OMF || {};
 window.OMF.currentQuiz = {
   "conceptId": "007-number-bonds-to-5",
+  "parentGuide": {
+  "en": {
+    "concept": "Number bonds show how a whole number splits into smaller parts. For the number 5, the core splits are: 5+0, 4+1, and 3+2. Knowing these by heart helps children add and subtract mentally without counting individual items on their fingers.",
+    "misconceptions": [
+      "<strong>Part vs. Whole Confusion:</strong> Handed 3 dots and asked: 'How many more to make 5?', the child counts out 5 more, confusing the target sum with the added part.",
+      "<strong>Lack of Visual Anchors:</strong> Rote reciting '2 and 3 is 5' without understanding how two-color groupings partition 5."
+    ],
+    "activities": [
+      "<strong>The Fist Game:</strong> Hide 5 beans between your two hands. Open one hand to show 3. Ask: 'How many are hidden in the other hand to make 5?'",
+      "<strong>Divided Plate:</strong> Draw a line down the middle of a paper plate. Split 5 pretzels or carrot slices into two sides (e.g. 4 on one side, 1 on the other) and count them."
+    ]
+  },
+  "es": {
+    "concept": "Number bonds show how a whole number splits into smaller parts. For the number 5, the core splits are: 5+0, 4+1, and 3+2. Knowing these by heart helps children add and subtract mentally without counting individual items on their fingers.",
+    "misconceptions": [
+      "<strong>Part vs. Whole Confusion:</strong> Handed 3 dots and asked: 'How many more to make 5?', the child counts out 5 more, confusing the target sum with the added part.",
+      "<strong>Lack of Visual Anchors:</strong> Rote reciting '2 and 3 is 5' without understanding how two-color groupings partition 5."
+    ],
+    "activities": [
+      "<strong>The Fist Game:</strong> Hide 5 beans between your two hands. Open one hand to show 3. Ask: 'How many are hidden in the other hand to make 5?'",
+      "<strong>Divided Plate:</strong> Draw a line down the middle of a paper plate. Split 5 pretzels or carrot slices into two sides (e.g. 4 on one side, 1 on the other) and count them."
+    ]
+  },
+  "hi": {
+    "concept": "Number bonds show how a whole number splits into smaller parts. For the number 5, the core splits are: 5+0, 4+1, and 3+2. Knowing these by heart helps children add and subtract mentally without counting individual items on their fingers.",
+    "misconceptions": [
+      "<strong>Part vs. Whole Confusion:</strong> Handed 3 dots and asked: 'How many more to make 5?', the child counts out 5 more, confusing the target sum with the added part.",
+      "<strong>Lack of Visual Anchors:</strong> Rote reciting '2 and 3 is 5' without understanding how two-color groupings partition 5."
+    ],
+    "activities": [
+      "<strong>The Fist Game:</strong> Hide 5 beans between your two hands. Open one hand to show 3. Ask: 'How many are hidden in the other hand to make 5?'",
+      "<strong>Divided Plate:</strong> Draw a line down the middle of a paper plate. Split 5 pretzels or carrot slices into two sides (e.g. 4 on one side, 1 on the other) and count them."
+    ]
+  }
+},
   "questions": [
     {
       "id": "q1",
