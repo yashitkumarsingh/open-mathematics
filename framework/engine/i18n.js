@@ -109,6 +109,7 @@
     setLang(lang) {
       if (SUPPORTED_LANGUAGES.includes(lang)) {
         localStorage.setItem(LANGUAGE_KEY, lang);
+        document.dispatchEvent(new CustomEvent("omf-language-changed", { detail: { language: lang } }));
         window.location.reload();
       }
     },
