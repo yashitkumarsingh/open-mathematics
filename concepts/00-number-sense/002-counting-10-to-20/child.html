@@ -20,76 +20,13 @@
     </main>
 
     <footer>
-      <details class="parent-guide-details">
-        <summary class="parent-guide-summary"></summary>
-        <div class="parent-guide-content">
-          <!-- English Guide -->
-          <div class="lang-en">
-            <h3>💡 What this concept means</h3>
-            <p>Counting to 20 builds on the foundation of single-digit numbers. Young children often find teen numbers difficult because their English names do not follow a simple pattern (e.g. "eleven" instead of "one-ten"). We teach them to view these numbers as a bundle of ten and some extra ones.</p>
-            
-            <h3>❓ Common Misconceptions to watch for</h3>
-            <ul>
-              <li><strong>Reversal:</strong> Reversing written digits (e.g. writing 51 for fifteen, or 21 for twelve) because they hear the second digit first.</li>
-              <li><strong>Teen vs. Ty Confusions:</strong> Confusing "thirteen" with "thirty" or "fourteen" with "forty".</li>
-              <li><strong>Teen Sequences:</strong> Skittering or forgetting numbers in the 13–15 range when reciting.</li>
-            </ul>
-
-            <h3>🏡 Off-screen Hands-on Activities</h3>
-            <ul>
-              <li><strong>Bundling sticks:</strong> Count out 10 twigs or pencils, wrap a rubber band around them (the "ten bundle"). Put 3 single sticks next to it and count: "10... 11, 12, 13!"</li>
-              <li><strong>Egg Carton Fill:</strong> Use a standard 12-hole egg carton. Place objects in all holes to represent 12, then add more outside to count to 15 or 18.</li>
-            </ul>
-          </div>
-
-          <!-- Spanish Guide -->
-          <div class="lang-es" style="display: none;">
-            <h3>💡 Lo que significa este concepto</h3>
-            <p>Contar hasta 20 se basa en la base de los números de un solo dígito. Los niños pequeños a menudo encuentran difíciles los números del 11 al 19 porque sus nombres no siguen un patrón simple. Les enseñamos a ver estos números como un paquete de diez y algunas unidades adicionales.</p>
-            
-            <h3>❓ Errores comunes a tener en cuenta</h3>
-            <ul>
-              <li><strong>Inversión:</strong> Invertir los dígitos escritos (p. ej., escribir 51 por quince) porque escuchan el segundo dígito primero.</li>
-              <li><strong>Secuencias numéricas:</strong> Olvidar números en el rango de 13 a 15 al recitar.</li>
-            </ul>
-
-            <h3>🏡 Actividades prácticas fuera de pantalla</h3>
-            <ul>
-              <li><strong>Paquetes de palitos:</strong> Cuenta 10 lápices y únelos con una banda elástica (el "paquete de diez"). Pon 3 palitos sueltos al lado y cuenta: "10... 11, 12, 13".</li>
-            </ul>
-          </div>
-
-          <!-- Hindi Guide -->
-          <div class="lang-hi" style="display: none;">
-            <h3>💡 इस विषय का अर्थ क्या है</h3>
-            <p>20 तक गिनती करना एक अंक की संख्याओं की नींव पर बनाया गया है। छोटे बच्चों को अक्सर 11 से 19 तक की संख्याओं को बोलने में कठिनाई होती है। हम उन्हें इन संख्याओं को दस के बंडल और कुछ अतिरिक्त इकाइयों के रूप में देखना सिखाते हैं।</p>
-            
-            <h3>❓ सामान्य गलतियाँ जिन पर ध्यान देना चाहिए</h3>
-            <ul>
-              <li><strong>अंकों का उलटना:</strong> लिखे गए अंकों को उलटना (जैसे पंद्रह के लिए 51 लिखना)।</li>
-            </ul>
-
-            <h3>🏡 ऑफ-स्क्रीन व्यावहारिक गतिविधियां</h3>
-            <ul>
-              <li><strong>लकड़ी के बंडल:</strong> 10 तीलियों को गिनें और उनके चारों ओर एक रबर बैंड लपेटें (एक "दस का बंडल")। इसके बगल में 3 तीलियाँ रखें और गिनें: "10... 11, 12, 13!"</li>
-            </ul>
-          </div>
-        </div>
-      </details>
+      <parent-guide></parent-guide>
     </footer>
   </div>
 
   <!-- Quiz data pre-loader -->
   <script src="questions.js"></script>
-
-  <!-- Framework Scripts -->
-  <script src="../../../framework/engine/accessibility.js"></script>
-  <script src="../../../framework/engine/i18n.js"></script>
-  <script src="../../../framework/engine/progress.js"></script>
-  <script src="../../../framework/components/mastery-badge.js"></script>
-  <script src="../../../framework/components/drag-counter.js"></script>
-  <script src="../../../framework/components/ten-frame.js"></script>
-  <script src="../../../framework/components/number-line.js"></script>
-  <script src="../../../framework/engine/quiz-runner.js"></script>
+  <!-- Framework Bootstrapper -->
+  <script src="../../../framework/loader.js"></script>
 </body>
 </html>
