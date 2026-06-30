@@ -71,7 +71,16 @@
         point.dataset.value = val;
 
         if (this.interactive) {
+          point.setAttribute("tabindex", "0");
+          point.setAttribute("role", "button");
+          point.setAttribute("aria-label", `Select number ${val}`);
           point.addEventListener("click", () => this.selectValue(val));
+          point.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              this.selectValue(val);
+            }
+          });
         } else {
           point.style.pointerEvents = "none";
         }

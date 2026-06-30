@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Worksheet Generator - Open Mathematics Foundation</title>
+  <link rel="stylesheet" href="../framework/styles/main.css">
+  <style>
+    /* Worksheet Generator Layout */
+    .generator-controls {
+      background-color: var(--primary-light);
+      padding: 20px;
+      border-radius: var(--border-radius-lg);
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      border: 1px solid var(--primary-color);
+    }
+    .worksheet-paper {
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-radius: 4px;
+      padding: 40px;
+      margin-top: 20px;
+      min-height: 800px;
+      color: black;
+    }
+    .worksheet-header {
+      border-bottom: 2px solid #333;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .worksheet-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #111;
+      margin: 0;
+    }
+    .worksheet-meta {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: right;
+    }
+    .worksheet-question-item {
+      margin-bottom: 36px;
+      page-break-inside: avoid;
+    }
+    .question-prompt {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 12px;
+    }
+    .question-canvas {
+      border: 1px dashed #aaa;
+      padding: 16px;
+      border-radius: 4px;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+    }
+    /* Blank Printable Components */
+    .print-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 50px);
+      grid-template-rows: repeat(2, 50px);
+      gap: 4px;
+      background-color: #333;
+      padding: 4px;
+      border-radius: 4px;
+      margin: 8px auto;
+    }
+    .print-grid-cell {
+      background-color: white;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+    .print-grid-cell.filled::after {
+      content: "●";
+      color: #222;
+    }
+    .print-number-line-container {
+      width: 100%;
+      max-width: 480px;
+      height: 60px;
+      position: relative;
+      margin: 12px auto;
+      display: flex;
+      align-items: center;
+    }
+    .print-number-line-bar {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      position: relative;
+    }
+    .print-number-line-tick {
+      position: absolute;
+      width: 3px;
+      height: 16px;
+      background-color: #333;
+      top: -6px;
+    }
+    .print-number-line-lbl {
+      position: absolute;
+      top: 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transform: translateX(-50%);
+    }
+    .print-bubble-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .print-bubble-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .print-bubble-circle {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #333;
+      border-radius: 50%;
+    }
+    .print-answer-line {
+      border-bottom: 2px dotted #444;
+      width: 80px;
+      display: inline-block;
+      margin-left: 8px;
+      height: 1.2rem;
+    }
+    
+    /* Media Print overrides */
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+        margin: 0;
+      }
+      .generator-controls, header, .child-badge, .btn {
+        display: none !important;
+      }
+      .worksheet-paper {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .question-canvas {
+        background: white !important;
+        border: 1px solid #ddd !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        <h1 class="lang-en">Printable Worksheet Generator</h1>
+        <h1 class="lang-es">Generador de Hojas de Trabajo</h1>
+        <h1 class="lang-hi">कार्यपत्रक (Worksheet) जनरेटर</h1>
+      </div>
+      <a href="../examples/parent-dashboard.html" class="child-badge">🏠 Parent Dashboard</a>
+    </header>
+
+    <!-- Generator Control Box -->
+    <section class="generator-controls">
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px;">
+        <label style="font-weight: 700;">Select a Concept Pack:</label>
+        <select id="select-concept" style="padding: 10px; font-size: 1rem; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-color);">
+          <option value="001-counting-0-to-10">001 - Counting 0 to 10</option>
+          <option value="002-counting-10-to-20">002 - Counting 10 to 20</option>
+          <option value="003-compare-more-less-equal">003 - Compare More, Less, Equal</option>
+          <option value="004-match-number-quantity">004 - Match Number to Quantity</option>
+          <option value="005-ten-frame-basics">005 - Ten Frame Basics</option>
+          <option value="006-number-line-0-to-10">006 - Number Line 0 to 10</option>
+          <option value="007-number-bonds-to-5">007 - Number Bonds to 5</option>
+          <option value="008-number-bonds-to-10">008 - Number Bonds to 10</option>
+          <option value="009-zero-as-number">009 - Zero as a Number</option>
+          <option value="010-mixed-mastery-test">010 - Mixed Mastery Test</option>
+        </select>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 18px;">
+        <button class="btn btn-primary" id="btn-generate">⚡ Generate</button>
+        <button class="btn btn-success" id="btn-print" onclick="window.print()">🖨️ Print Sheet</button>
+      </div>
+    </section>
+
+    <!-- Worksheet Paper A4 preview -->
+    <div class="worksheet-paper" id="worksheet-paper">
+      <div class="worksheet-header">
+        <div>
+          <h2 class="worksheet-title" id="lbl-worksheet-title">Worksheet</h2>
+          <span style="font-size: 0.95rem; color: #666;" id="lbl-worksheet-subtitle">Open Mathematics Foundation</span>
+        </div>
+        <div class="worksheet-meta">
+          <p style="margin: 0; font-weight: 600;">Student Name: _______________________</p>
+          <p style="margin: 4px 0 0 0; font-weight: 600;">Date: _________________</p>
+        </div>
+      </div>
+
+      <div id="worksheet-content">
+        <!-- Rendered printable questions will go here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="../framework/engine/i18n.js"></script>
+  <script>
+    // Concept meta dictionary
+    const CONCEPT_TITLES = {
+      "001-counting-0-to-10": { en: "Counting 0 to 10", es: "Contar del 0 al 10", hi: "0 से 10 तक गिनती" },
+      "002-counting-10-to-20": { en: "Counting 10 to 20", es: "Contar del 10 al 20", hi: "10 से 20 तक गिनती" },
+      "003-compare-more-less-equal": { en: "Compare More, Less, Equal", es: "Comparar más, menos, igual", hi: "अधिक, कम, समान की तुलना करें" },
+      "004-match-number-quantity": { en: "Match Number to Quantity", es: "Emparejar número y cantidad", hi: "संख्या को मात्रा से मिलाएँ" },
+      "005-ten-frame-basics": { en: "Ten Frame Basics", es: "Conceptos básicos del marco de diez", hi: "दस-फ्रेम की बुनियादी बातें" },
+      "006-number-line-0-to-10": { en: "Number Line 0 to 10", es: "Recta numérica del 0 al 10", hi: "संख्या रेखा 0 से 10" },
+      "007-number-bonds-to-5": { en: "Number Bonds to 5", es: "Combinaciones numéricas hasta 5", hi: "5 तक संख्या बंधन" },
+      "008-number-bonds-to-10": { en: "Number Bonds to 10", es: "Combinaciones numéricas hasta 10", hi: "10 तक संख्या बंधन" },
+      "009-zero-as-number": { en: "Zero as a Number", es: "El cero como número", hi: "शून्य एक संख्या के रूप में" },
+      "010-mixed-mastery-test": { en: "Mixed Mastery Test", es: "Prueba de maestría mixta", hi: "मिश्रित महारत परीक्षण" }
+    };
+
+    window.OMF = window.OMF || {};
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("btn-generate").addEventListener("click", () => {
+        loadConceptQuestions();
+      });
+
+      // Load initial default
+      loadConceptQuestions();
+    });
+
+    function loadConceptQuestions() {
+      const select = document.getElementById("select-concept");
+      const conceptId = select.value;
+      const lang = OMF.i18n ? OMF.i18n.getLang() : 'en';
+
+      // Title translation
+      const transObj = CONCEPT_TITLES[conceptId] || { en: "Worksheet" };
+      const conceptTitle = transObj[lang] || transObj['en'];
+      
+      const sheetTitleText = lang === 'es' ? `Hoja de Trabajo: ${conceptTitle}` : (lang === 'hi' ? `कार्यपत्रक: ${conceptTitle}` : `Worksheet: ${conceptTitle}`);
+      document.getElementById("lbl-worksheet-title").innerText = sheetTitleText;
+
+      // To prevent CORS violations under file://, inject a script tag dynamically
+      const scriptId = "dynamic-questions-preloader";
+      const oldScript = document.getElementById(scriptId);
+      if (oldScript) {
+        oldScript.remove();
+      }
+
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = `../concepts/00-number-sense/${conceptId}/questions.js`;
+      
+      script.onload = () => {
+        if (window.OMF && window.OMF.currentQuiz && window.OMF.currentQuiz.conceptId === conceptId) {
+          renderWorksheet(window.OMF.currentQuiz.questions);
+        } else {
+          showError("Could not verify preloaded quiz content.");
+        }
+      };
+
+      script.onerror = () => {
+        showError("Failed to load local questions file. Make sure you are in the correct directory.");
+      };
+
+      document.body.appendChild(script);
+    }
+
+    function showError(msg) {
+      const container = document.getElementById("worksheet-content");
+      container.innerHTML = `<p style="color: red; font-weight: 600; text-align: center; padding: 20px;">❌ ${msg}</p>`;
+    }
+
+    function renderWorksheet(questions) {
+      const container = document.getElementById("worksheet-content");
+      container.innerHTML = "";
+      const lang = OMF.i18n ? OMF.i18n.getLang() : 'en';
+
+      questions.forEach((q, idx) => {
+        const item = document.createElement("div");
+        item.className = "worksheet-question-item";
+
+        // Localize prompt
+        const promptText = OMF.i18n ? OMF.i18n.translatePrompt(q.prompt) : q.prompt;
+
+        const promptHeader = document.createElement("div");
+        promptHeader.className = "question-prompt";
+        promptHeader.innerHTML = `Question ${idx + 1}: ${promptText}`;
+        item.appendChild(promptHeader);
+
+        const canvas = document.createElement("div");
+        canvas.className = "question-canvas";
+
+        // Render visual placeholders depending on type
+        switch (q.type) {
+          case "multiple-choice":
+            // Render MCQ emojis, draw checkboxes below
+            let itemsHtml = "";
+            // Extract visual count if possible from prompt or guess from target
+            const emojiMatch = q.prompt && typeof q.prompt === 'string' && q.prompt.match(/🍒|🎈|⭐|🍎/g);
+            if (emojiMatch) {
+              itemsHtml = `<div style="font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 8px;">${emojiMatch.join(" ")}</div>`;
+            } else {
+              itemsHtml = `<div style="font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 8px;">${Array(q.target).fill("⭐").join(" ")}</div>`;
+            }
+
+            let bubbleRow = `<div class="print-bubble-row">`;
+            q.options.forEach(opt => {
+              const label = OMF.i18n ? OMF.i18n.translatePrompt(opt.label) : opt.label;
+              bubbleRow += `
+                <div class="print-bubble-item">
+                  <div class="print-bubble-circle"></div>
+                  <span>${label}</span>
+                </div>
+              `;
+            });
+            bubbleRow += `</div>`;
+
+            canvas.innerHTML = `
+              <div style="text-align: center;">
+                ${itemsHtml}
+                ${bubbleRow}
+              </div>
+            `;
+            break;
+
+          case "ten-frame":
+            // Draw blank ten-frame grid
+            let cells = "";
+            for (let c = 0; c < 10; c++) {
+              cells += `<div class="print-grid-cell"></div>`;
+            }
+            canvas.innerHTML = `
+              <div style="text-align: center;">
+                <div class="print-grid">${cells}</div>
+                <p style="font-size: 0.95rem; margin-top: 8px; color: #555;">
+                  ${lang === 'es' ? 'Dibuja los círculos arriba.' : (lang === 'hi' ? 'ऊपर दिए गए ग्रिड में वृत्त बनाएं।' : 'Draw dots in the grid above.')}
+                </p>
+              </div>
+            `;
+            break;
+
+          case "number-line":
+            const min = q.min !== undefined ? q.min : 0;
+            const max = q.max !== undefined ? q.max : 10;
+            const range = max - min;
+            let ticks = "";
+            let labels = "";
+            for (let i = 0; i <= range; i++) {
+              const leftPercent = (i / range) * 100;
+              ticks += `<div class="print-number-line-tick" style="left: ${leftPercent}%"></div>`;
+              labels += `<div class="print-number-line-lbl" style="left: ${leftPercent}%">${min + i}</div>`;
+            }
+            canvas.innerHTML = `
+              <div class="print-number-line-container">
+                <div class="print-number-line-bar">
+                  ${ticks}
+                  ${labels}
+                </div>
+              </div>
+            `;
+            break;
+
+          case "drag-counter":
+            // Draw blank box with emojis on side
+            const itemEmoji = q.itemType === 'apple' ? '🍎' : (q.itemType === 'star' ? '⭐' : (q.itemType === 'car' ? '🚗' : '🍒'));
+            canvas.innerHTML = `
+              <div style="display: flex; justify-content: space-around; width: 100%; align-items: center;">
+                <div style="border: 2px dashed #777; width: 120px; height: 80px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #666;">
+                  Basket / Canasta
+                </div>
+                <div style="font-size: 1.5rem; border: 1px solid #ccc; padding: 12px; border-radius: 4px; display: flex; gap: 6px;">
+                  ${Array(q.totalItems || 6).fill(itemEmoji).join(" ")}
+                </div>
+              </div>
+            `;
+            break;
+
+          default:
+            canvas.innerHTML = `<div class="print-answer-line" style="width: 200px;"></div>`;
+        }
+
+        item.appendChild(canvas);
+        container.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

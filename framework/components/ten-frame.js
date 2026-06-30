@@ -40,13 +40,24 @@
         cell.className = "ten-frame-cell";
         cell.dataset.index = i;
 
-        if (i < this.currentVal) {
+        const isFilled = i < this.currentVal;
+        if (isFilled) {
           cell.classList.add("filled");
           cell.innerHTML = `<div class="ten-frame-counter"></div>`;
         }
 
         if (this.interactive) {
+          cell.setAttribute("tabindex", "0");
+          cell.setAttribute("role", "checkbox");
+          cell.setAttribute("aria-checked", isFilled ? "true" : "false");
+          cell.setAttribute("aria-label", `Cell ${i + 1}`);
           cell.addEventListener("click", () => this.toggleCell(i));
+          cell.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              this.toggleCell(i);
+            }
+          });
         }
 
         grid.appendChild(cell);
@@ -58,14 +69,17 @@
     updateCells() {
       const cells = this.querySelectorAll(".ten-frame-cell");
       cells.forEach((cell, i) => {
-        if (i < this.currentVal) {
+        const shouldFill = i < this.currentVal;
+        if (shouldFill) {
           if (!cell.classList.contains("filled")) {
             cell.classList.add("filled");
             cell.innerHTML = `<div class="ten-frame-counter"></div>`;
           }
+          if (this.interactive) cell.setAttribute("aria-checked", "true");
         } else {
           cell.classList.remove("filled");
           cell.innerHTML = "";
+          if (this.interactive) cell.setAttribute("aria-checked", "false");
         }
       });
     }
@@ -79,9 +93,11 @@
       if (cell.classList.contains("filled")) {
         cell.classList.remove("filled");
         cell.innerHTML = "";
+        cell.setAttribute("aria-checked", "false");
       } else {
         cell.classList.add("filled");
         cell.innerHTML = `<div class="ten-frame-counter"></div>`;
+        cell.setAttribute("aria-checked", "true");
       }
 
       // Compute total filled
@@ -94,7 +110,6 @@
     }
 
     getValue() {
-      // Return count of filled cells
       return this.querySelectorAll(".ten-frame-cell.filled").length;
     }
   }

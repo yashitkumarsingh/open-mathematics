@@ -130,6 +130,11 @@
       el.draggable = true;
       el.id = item.id;
 
+      // Accessibility Attributes
+      el.setAttribute("tabindex", "0");
+      el.setAttribute("role", "button");
+      el.setAttribute("aria-label", `${item.symbol} item. Press to move.`);
+
       el.addEventListener("dragstart", (e) => {
         e.dataTransfer.setData("text/plain", item.id);
       });
@@ -140,6 +145,18 @@
           this.moveToSource(item.id);
         } else {
           this.moveToBasket(item.id);
+        }
+      });
+
+      // Keyboard support for space and enter keypress
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (isInBasket) {
+            this.moveToSource(item.id);
+          } else {
+            this.moveToBasket(item.id);
+          }
         }
       });
 

@@ -51,6 +51,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      align-items: center;
     }
     .concept-link {
       display: block;
@@ -103,8 +104,12 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Open Mathematics Foundation</h1>
+    <header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        <h1 class="lang-en">Open Mathematics Foundation</h1>
+        <h1 class="lang-es">Fundación Abierta de Matemáticas</h1>
+        <h1 class="lang-hi">ओपन मैथमेटिक्स फाउंडेशन</h1>
+      </div>
       <span class="child-badge" id="lbl-header-nickname">Explorer's Path</span>
     </header>
 
@@ -112,25 +117,61 @@
     <section class="profile-card animate-pop">
       <div class="profile-info">
         <h3 id="lbl-nickname-title">Hello, Explorer!</h3>
-        <p style="color: var(--primary-color); font-weight: 500;">Stage: Foundation Number Sense</p>
+        <p style="color: var(--primary-color); font-weight: 500;" class="lang-en">Stage: Foundation Number Sense</p>
+        <p style="color: var(--primary-color); font-weight: 500;" class="lang-es">Etapa: Sentido Numérico Básico</p>
+        <p style="color: var(--primary-color); font-weight: 500;" class="lang-hi">चरण: बुनियादी संख्या ज्ञान</p>
       </div>
       <div class="profile-actions">
-        <button class="btn btn-secondary" id="btn-edit-profile">✏️ Edit Profile</button>
-        <button class="btn btn-secondary" id="btn-print" onclick="window.print()">🖨️ Print Plan</button>
-        <button class="btn btn-secondary" id="btn-export">📥 Export Progress</button>
-        <button class="btn btn-secondary" id="btn-import-trigger">📤 Import Progress</button>
+        <!-- Language Selector -->
+        <select id="select-lang" style="padding: 8px 12px; font-size: 0.95rem; font-weight: 600; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-color); background: white; cursor: pointer; height: 42px;">
+          <option value="en">🇺🇸 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+        </select>
+        
+        <button class="btn btn-secondary" id="btn-edit-profile">
+          <span class="lang-en">✏️ Edit Profile</span>
+          <span class="lang-es">✏️ Editar Perfil</span>
+          <span class="lang-hi">✏️ प्रोफ़ाइल बदलें</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-print" onclick="window.print()">
+          <span class="lang-en">🖨️ Print Plan</span>
+          <span class="lang-es">🖨️ Imprimir Plan</span>
+          <span class="lang-hi">🖨️ प्रिंट करें</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-export">
+          <span class="lang-en">📥 Export Progress</span>
+          <span class="lang-es">📥 Exportar Progreso</span>
+          <span class="lang-hi">📥 प्रगति सहेजें</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-import-trigger">
+          <span class="lang-en">📤 Import Progress</span>
+          <span class="lang-es">📤 Importar Progreso</span>
+          <span class="lang-hi">📤 प्रगति लोड करें</span>
+        </button>
         <input type="file" id="file-import" style="display: none;" accept=".json">
       </div>
     </section>
 
     <!-- Dynamic Edit Profile Modal (Hidden by default) -->
-    <section id="profile-edit-form" class="card animate-pop" style="display: none;">
-      <h3>Edit Student Profile</h3>
+    <section id="profile-edit-form" class="card animate-pop" style="display: none; flex-direction: column; gap: 16px;">
+      <h3 class="lang-en">Edit Student Profile</h3>
+      <h3 class="lang-es">Editar Perfil del Estudiante</h3>
+      <h3 class="lang-hi">छात्र प्रोफ़ाइल बदलें</h3>
+      
       <div style="display: flex; flex-direction: column; gap: 12px;">
-        <label style="font-weight: 600;">Student Nickname:</label>
+        <label style="font-weight: 600;">
+          <span class="lang-en">Student Nickname:</span>
+          <span class="lang-es">Apodo del Estudiante:</span>
+          <span class="lang-hi">छात्र का नाम:</span>
+        </label>
         <input type="text" id="input-nickname" class="stat-lbl" style="padding: 10px; font-size: 1rem; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-light);" placeholder="E.g. Aarav">
         
-        <label style="font-weight: 600;">Year Level:</label>
+        <label style="font-weight: 600;">
+          <span class="lang-en">Year Level:</span>
+          <span class="lang-es">Nivel del Año:</span>
+          <span class="lang-hi">कक्षा स्तर:</span>
+        </label>
         <select id="select-grade" style="padding: 10px; font-size: 1rem; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-light);">
           <option value="Kindergarten">Foundation / Kindergarten</option>
           <option value="Grade 1">Grade 1</option>
@@ -138,8 +179,16 @@
         </select>
       </div>
       <div style="display: flex; gap: 12px; margin-top: 8px;">
-        <button class="btn btn-success" id="btn-save-profile">Save Settings</button>
-        <button class="btn btn-secondary" id="btn-cancel-profile">Cancel</button>
+        <button class="btn btn-success" id="btn-save-profile">
+          <span class="lang-en">Save Settings</span>
+          <span class="lang-es">Guardar Ajustes</span>
+          <span class="lang-hi">सेटिंग्स सहेजें</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-cancel-profile">
+          <span class="lang-en">Cancel</span>
+          <span class="lang-es">Cancelar</span>
+          <span class="lang-hi">रद्द करें</span>
+        </button>
       </div>
     </section>
 
@@ -147,50 +196,88 @@
     <section class="summary-stats">
       <div class="stat-card">
         <span class="stat-num" id="stat-completed">0 / 10</span>
-        <span class="stat-lbl">CONCEPTS MASTERED</span>
+        <span class="stat-lbl lang-en">CONCEPTS MASTERED</span>
+        <span class="stat-lbl lang-es">CONCEPTOS DOMINADOS</span>
+        <span class="stat-lbl lang-hi">महारत हासिल अवधारणाएं</span>
       </div>
       <div class="stat-card">
         <span class="stat-num" id="stat-attempts">0</span>
-        <span class="stat-lbl">TOTAL ATTEMPTS</span>
+        <span class="stat-lbl lang-en">TOTAL ATTEMPTS</span>
+        <span class="stat-lbl lang-es">INTENTOS TOTALES</span>
+        <span class="stat-lbl lang-hi">कुल प्रयास</span>
       </div>
-      <div class="stat-card" style="grid-column: span 1;">
-        <span class="stat-lbl">NEXT RECOMMENDED CONCEPT</span>
-        <p style="font-weight: 700; margin-top: 4px; color: var(--primary-color);" id="lbl-recommendation">Counting 0 to 10</p>
+      <div class="stat-card">
+        <span class="stat-lbl lang-en">NEXT RECOMMENDED CONCEPT</span>
+        <span class="stat-lbl lang-es">SIGUIENTE RECOMENDADO</span>
+        <span class="stat-lbl lang-hi">अगला अनुशंसित विषय</span>
+        <p style="font-weight: 700; margin-top: 4px; color: var(--primary-color);" id="lbl-recommendation"></p>
       </div>
     </section>
 
     <!-- Weak Areas / Mistakes Alert -->
-    <section class="card" id="card-weakness" style="display: none;">
-      <h3 style="color: var(--warning-color); display: flex; align-items: center; gap: 8px;">⚠️ Areas Needing Support</h3>
-      <p>The student has logged specific mistake patterns on these concepts. Try physical hands-on games to clarify their understanding:</p>
+    <section class="card" id="card-weakness" style="display: none; flex-direction: column;">
+      <h3 style="color: var(--warning-color); display: flex; align-items: center; gap: 8px;">
+        <span class="lang-en">⚠️ Areas Needing Support</span>
+        <span class="lang-es">⚠️ Áreas que Necesitan Apoyo</span>
+        <span class="lang-hi">⚠️ सहायता की आवश्यकता वाले क्षेत्र</span>
+      </h3>
+      <p class="lang-en">The student has logged specific mistake patterns on these concepts. Try physical hands-on games to clarify their understanding:</p>
+      <p class="lang-es">El estudiante ha registrado errores específicos en estos conceptos. Prueba juegos físicos para aclarar su comprensión:</p>
+      <p class="lang-hi">छात्र ने इन विषयों में विशिष्ट त्रुटि पैटर्न दर्ज किए हैं। उनकी समझ को स्पष्ट करने के लिए भौतिक खेल आजमाएँ:</p>
       <div id="weakness-container" style="margin-top: 10px;"></div>
     </section>
 
     <!-- Concept progression cards -->
-    <h2>Foundation Stage 0: Number Sense</h2>
+    <h2 class="lang-en">Foundation Stage 0: Number Sense</h2>
+    <h2 class="lang-es">Etapa de Fundación 0: Sentido Numérico</h2>
+    <h2 class="lang-hi">बुनियादी चरण 0: संख्या ज्ञान</h2>
     <section class="dashboard-grid" id="dashboard-grid">
       <!-- Generated concepts go here -->
     </section>
+
+    <h2 class="lang-en">Stage 1: Addition & Subtraction</h2>
+    <h2 class="lang-es">Etapa 1: Suma y Resta</h2>
+    <h2 class="lang-hi">चरण 1: जोड़ और घटाव</h2>
+    <section class="dashboard-grid" id="dashboard-grid-stage1">
+      <!-- Generated Stage 1 concepts go here -->
+    </section>
   </div>
 
+  <script src="../framework/engine/accessibility.js"></script>
+  <script src="../framework/engine/i18n.js"></script>
   <script src="../framework/engine/progress.js"></script>
   <script src="../framework/components/mastery-badge.js"></script>
   <script>
-    // Concept data map for Stage 0
-    const STAGE_CONCEPTS = [
-      { id: "001-counting-0-to-10", title: "Counting 0 to 10", path: "../concepts/00-number-sense/001-counting-0-to-10/child.html" },
-      { id: "002-counting-10-to-20", title: "Counting 10 to 20", path: "../concepts/00-number-sense/002-counting-10-to-20/child.html" },
-      { id: "003-compare-more-less-equal", title: "Compare More, Less, Equal", path: "../concepts/00-number-sense/003-compare-more-less-equal/child.html" },
-      { id: "004-match-number-quantity", title: "Match Number to Quantity", path: "../concepts/00-number-sense/004-match-number-quantity/child.html" },
-      { id: "005-ten-frame-basics", title: "Ten Frame Basics", path: "../concepts/00-number-sense/005-ten-frame-basics/child.html" },
-      { id: "006-number-line-0-to-10", title: "Number Line 0 to 10", path: "../concepts/00-number-sense/006-number-line-0-to-10/child.html" },
-      { id: "007-number-bonds-to-5", title: "Number Bonds to 5", path: "../concepts/00-number-sense/007-number-bonds-to-5/child.html" },
-      { id: "008-number-bonds-to-10", title: "Number Bonds to 10", path: "../concepts/00-number-sense/008-number-bonds-to-10/child.html" },
-      { id: "009-zero-as-number", title: "Zero as a Number", path: "../concepts/00-number-sense/009-zero-as-number/child.html" },
-      { id: "010-mixed-mastery-test", title: "Mixed Mastery Test", path: "../concepts/00-number-sense/010-mixed-mastery-test/child.html" }
+    // Concept data map for Stage 0 with localized titles
+    const STAGE_0_CONCEPTS = [
+      { id: "001-counting-0-to-10", title: { en: "Counting 0 to 10", es: "Contar del 0 al 10", hi: "0 से 10 तक गिनती" }, path: "../concepts/00-number-sense/001-counting-0-to-10/child.html" },
+      { id: "002-counting-10-to-20", title: { en: "Counting 10 to 20", es: "Contar del 10 al 20", hi: "10 से 20 तक गिनती" }, path: "../concepts/00-number-sense/002-counting-10-to-20/child.html" },
+      { id: "003-compare-more-less-equal", title: { en: "Compare More, Less, Equal", es: "Comparar más, menos, igual", hi: "अधिक, कम, समान की तुलना करें" }, path: "../concepts/00-number-sense/003-compare-more-less-equal/child.html" },
+      { id: "004-match-number-quantity", title: { en: "Match Number to Quantity", es: "Emparejar número y cantidad", hi: "संख्या को मात्रा से मिलाएँ" }, path: "../concepts/00-number-sense/004-match-number-quantity/child.html" },
+      { id: "005-ten-frame-basics", title: { en: "Ten Frame Basics", es: "Conceptos básicos del marco de diez", hi: "दस-फ्रेम की बुनियादी बातें" }, path: "../concepts/00-number-sense/005-ten-frame-basics/child.html" },
+      { id: "006-number-line-0-to-10", title: { en: "Number Line 0 to 10", es: "Recta numérica del 0 al 10", hi: "संख्या रेखा 0 से 10" }, path: "../concepts/00-number-sense/006-number-line-0-to-10/child.html" },
+      { id: "007-number-bonds-to-5", title: { en: "Number Bonds to 5", es: "Combinaciones numéricas hasta 5", hi: "5 तक संख्या बंधन" }, path: "../concepts/00-number-sense/007-number-bonds-to-5/child.html" },
+      { id: "008-number-bonds-to-10", title: { en: "Number Bonds to 10", es: "Combinaciones numéricas hasta 10", hi: "10 तक संख्या बंधन" }, path: "../concepts/00-number-sense/008-number-bonds-to-10/child.html" },
+      { id: "009-zero-as-number", title: { en: "Zero as a Number", es: "El cero como número", hi: "शून्य एक संख्या के रूप में" }, path: "../concepts/00-number-sense/009-zero-as-number/child.html" },
+      { id: "010-mixed-mastery-test", title: { en: "Mixed Mastery Test", es: "Prueba de maestría mixta", hi: "मिश्रित महारत परीक्षण" }, path: "../concepts/00-number-sense/010-mixed-mastery-test/child.html" }
     ];
 
+    const STAGE_1_CONCEPTS = [
+      { id: "011-addition-as-combining", title: { en: "Addition as Combining", es: "Suma como Combinación", hi: "संयोजन के रूप में जोड़" }, path: "../concepts/01-addition-subtraction/011-addition-as-combining/child.html" }
+    ];
+
+    const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS);
+
     document.addEventListener("DOMContentLoaded", () => {
+      // Sync language selector value
+      const selectLang = document.getElementById("select-lang");
+      if (OMF.i18n) {
+        selectLang.value = OMF.i18n.getLang();
+        selectLang.addEventListener("change", (e) => {
+          OMF.i18n.setLang(e.target.value);
+        });
+      }
+
       refreshDashboard();
       setupProfileEvents();
       setupImportExport();
@@ -199,10 +286,21 @@
     function refreshDashboard() {
       const profile = OMF.Progress.getUserProfile();
       const progress = OMF.Progress.getAll();
+      const lang = OMF.i18n ? OMF.i18n.getLang() : 'en';
 
       // Render profile texts
-      document.getElementById("lbl-header-nickname").innerText = `${profile.nickname}'s Path`;
-      document.getElementById("lbl-nickname-title").innerText = `Hello, ${profile.nickname}!`;
+      let nicknameLabel = `${profile.nickname}'s Path`;
+      let titleLabel = `Hello, ${profile.nickname}!`;
+      if (lang === 'es') {
+        nicknameLabel = `Ruta de ${profile.nickname}`;
+        titleLabel = `¡Hola, ${profile.nickname}!`;
+      } else if (lang === 'hi') {
+        nicknameLabel = `${profile.nickname} का पथ`;
+        titleLabel = `नमस्ते, ${profile.nickname}!`;
+      }
+      
+      document.getElementById("lbl-header-nickname").innerText = nicknameLabel;
+      document.getElementById("lbl-nickname-title").innerText = titleLabel;
       document.getElementById("input-nickname").value = profile.nickname;
       document.getElementById("select-grade").value = profile.gradeLevel || "Kindergarten";
 
@@ -215,8 +313,12 @@
 
       const grid = document.getElementById("dashboard-grid");
       grid.innerHTML = "";
+      const grid1 = document.getElementById("dashboard-grid-stage1");
+      if (grid1) {
+        grid1.innerHTML = "";
+      }
 
-      STAGE_CONCEPTS.forEach((concept, index) => {
+      STAGE_CONCEPTS.forEach((concept) => {
         const state = progress[concept.id] || {
           attempts: 0,
           bestScore: 0,
@@ -232,10 +334,12 @@
           recommendedFound = true;
         }
 
+        const conceptTitle = OMF.i18n ? OMF.i18n.translatePrompt(concept.title) : concept.title;
+
         // Catch weakness patterns
         if (state.mistakePatterns && state.mistakePatterns.length > 0) {
           weaknesses.push({
-            title: concept.title,
+            title: conceptTitle,
             patterns: state.mistakePatterns
           });
         }
@@ -243,29 +347,44 @@
         // Render card
         let statusCls = "unlocked";
         let statusText = "Ready to Play";
+        let scoreLabel = `Best score: ${state.bestScore}/10 | Attempts: ${state.attempts}`;
+        let playLabel = "Play Activity ➡️";
+
+        if (OMF.i18n) {
+          scoreLabel = OMF.i18n.t('bestScore', { best: state.bestScore, attempts: state.attempts });
+        }
 
         if (state.mastered) {
           statusCls = "mastered";
-          statusText = "Mastered";
+          statusText = lang === 'es' ? "Dominado" : (lang === 'hi' ? "महारत हासिल" : "Mastered");
         } else if (state.attempts > 0) {
           statusCls = "attempted";
-          statusText = "In Progress";
+          statusText = lang === 'es' ? "En Progreso" : (lang === 'hi' ? "प्रगति पर" : "In Progress");
+        } else {
+          statusText = lang === 'es' ? "Listo para Jugar" : (lang === 'hi' ? "खेलने के लिए तैयार" : "Ready to Play");
         }
+
+        playLabel = lang === 'es' ? "Jugar Actividad ➡️" : (lang === 'hi' ? "गतिविधि खेलें ➡️" : "Play Activity ➡️");
 
         const card = document.createElement("div");
         card.className = `card dashboard-card ${statusCls} animate-pop`;
         card.innerHTML = `
           <span class="dashboard-card-status ${statusCls}">${statusText}</span>
-          <h3 style="margin-top: 10px;">${concept.title}</h3>
+          <h3 style="margin-top: 10px;">${conceptTitle}</h3>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">
-            Best score: ${state.bestScore}/10 | Attempts: ${state.attempts}
+            ${scoreLabel}
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
-            <a href="${concept.path}" class="concept-link">Play Activity ➡️</a>
+            <a href="${concept.path}" class="concept-link">${playLabel}</a>
             <mastery-badge state="${state.mastered ? 'mastered' : 'locked'}" style="transform: scale(0.6); transform-origin: right center;"></mastery-badge>
           </div>
         `;
-        grid.appendChild(card);
+        
+        if (STAGE_0_CONCEPTS.some(c => c.id === concept.id)) {
+          grid.appendChild(card);
+        } else if (grid1) {
+          grid1.appendChild(card);
+        }
       });
 
       // Update summaries
@@ -273,9 +392,9 @@
       document.getElementById("stat-attempts").innerText = totalAttempts;
       
       if (masteredCount === STAGE_CONCEPTS.length) {
-        document.getElementById("lbl-recommendation").innerText = "🎉 All Mastered! Ready for Stage 1!";
+        document.getElementById("lbl-recommendation").innerText = lang === 'es' ? "🎉 ¡Todo Dominado! ¡Listo para la Etapa 1!" : (lang === 'hi' ? "🎉 सब पर महारत! चरण 1 के लिए तैयार!" : "🎉 All Mastered! Ready for Stage 1!");
       } else {
-        document.getElementById("lbl-recommendation").innerText = nextRecommended.title;
+        document.getElementById("lbl-recommendation").innerText = OMF.i18n ? OMF.i18n.translatePrompt(nextRecommended.title) : nextRecommended.title;
       }
 
       // Render weak areas drawer
@@ -306,18 +425,40 @@
     }
 
     function formatPatternName(name) {
-      // Maps technical strings to parent friendly text
+      const lang = OMF.i18n ? OMF.i18n.getLang() : 'en';
       const mapping = {
-        undercounts: "skipping objects or counting short",
-        overcounts: "double counting objects or counting past target",
-        incorrect_choice: "confusing visual sets",
-        space_bias: "thinking spread-out items are 'more'",
-        part_confusion: "confusing the parts making up a whole",
-        before_target: "selecting numbers before the target",
-        after_target: "selecting numbers after the target",
-        incorrect_matching: "associating digits with the wrong count"
+        en: {
+          undercounts: "skipping objects or counting short",
+          overcounts: "double counting objects or counting past target",
+          incorrect_choice: "confusing visual sets",
+          space_bias: "thinking spread-out items are 'more'",
+          part_confusion: "confusing the parts making up a whole",
+          before_target: "selecting numbers before the target",
+          after_target: "selecting numbers after the target",
+          incorrect_matching: "associating digits with the wrong count"
+        },
+        es: {
+          undercounts: "saltarse objetos o contar de menos",
+          overcounts: "contar dos veces u omitir el límite",
+          incorrect_choice: "confundir conjuntos visuales",
+          space_bias: "pensar que las cosas dispersas son 'más'",
+          part_confusion: "confundir las partes de un todo",
+          before_target: "elegir números anteriores al objetivo",
+          after_target: "elegir números posteriores al objetivo",
+          incorrect_matching: "asociar dígitos con el conteo incorrecto"
+        },
+        hi: {
+          undercounts: "वस्तुओं को छोड़ना या कम गिनना",
+          overcounts: "वस्तुओं को दोबारा गिनना या लक्ष्य के पार जाना",
+          incorrect_choice: "दृश्य सेटों को भ्रमित करना",
+          space_bias: "यह सोचना कि फैली हुई वस्तुएं 'अधिक' हैं",
+          part_confusion: "पूरे को बनाने वाले भागों को भ्रमित करना",
+          before_target: "लक्ष्य से पहले संख्या का चयन करना",
+          after_target: "लक्ष्य के बाद संख्या का चयन करना",
+          incorrect_matching: "गलत गिनती के साथ अंकों को जोड़ना"
+        }
       };
-      return mapping[name] || name;
+      return (mapping[lang] && mapping[lang][name]) || (mapping['en'][name]) || name;
     }
 
     function setupProfileEvents() {
@@ -329,6 +470,11 @@
       editBtn.addEventListener("click", () => {
         editForm.style.display = "flex";
         editForm.scrollIntoView({ behavior: 'smooth' });
+        if (window.OMF && window.OMF.Accessibility) {
+          window.OMF.Accessibility.trapFocus(editForm);
+        }
+        const firstInput = editForm.querySelector("input");
+        if (firstInput) firstInput.focus();
       });
 
       cancelBtn.addEventListener("click", () => {
@@ -354,7 +500,6 @@
       const importTrigger = document.getElementById("btn-import-trigger");
       const importInput = document.getElementById("file-import");
 
-      // Export file download
       exportBtn.addEventListener("click", () => {
         const jsonStr = OMF.Progress.exportProgressJSON();
         const profile = OMF.Progress.getUserProfile();
@@ -372,12 +517,10 @@
         URL.revokeObjectURL(url);
       });
 
-      // Import file upload click helper
       importTrigger.addEventListener("click", () => {
         importInput.click();
       });
 
-      // File select callback
       importInput.addEventListener("change", (e) => {
         const file = e.target.files[0];
         if (!file) return;

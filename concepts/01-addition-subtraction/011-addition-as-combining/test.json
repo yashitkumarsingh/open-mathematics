@@ -1,0 +1,63 @@
+{
+  "conceptId": "011-addition-as-combining",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Combine 3 apples and 2 apples. How many do we have in total? <br><br> 🍎 🍎 🍎 &nbsp;&nbsp; + &nbsp;&nbsp; 🍎 🍎",
+      "options": [
+        {"label": "4", "value": 4},
+        {"label": "5", "value": 5},
+        {"label": "6", "value": 6}
+      ],
+      "target": 5,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q2",
+      "type": "ten-frame",
+      "prompt": "Show 4 + 2 on the ten-frame below.",
+      "target": 6,
+      "hint": "Fill 4 slots first, then add 2 more slots.",
+      "mistakePatterns": {
+        "5": "undercounts",
+        "7": "overcounts"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Combine 5 stars and 3 stars. How many do we have? <br><br> ⭐ ⭐ ⭐ ⭐ ⭐ &nbsp;&nbsp; + &nbsp;&nbsp; ⭐ ⭐ ⭐",
+      "options": [
+        {"label": "7", "value": 7},
+        {"label": "8", "value": 8},
+        {"label": "9", "value": 9}
+      ],
+      "target": 8,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "drag-counter",
+      "prompt": "Combine groups. Drag items to make a total of 7 in the basket.",
+      "target": 7,
+      "itemType": "apple",
+      "totalItems": 10,
+      "hint": "Count up to 7 and check the basket counter.",
+      "mistakePatterns": {
+        "6": "undercounts",
+        "8": "overcounts"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "ten-frame",
+      "prompt": "Show 5 + 5 on the ten-frame below.",
+      "target": 10,
+      "hint": "Fill the entire frame! A full frame is exactly 10.",
+      "mistakePatterns": {
+        "9": "undercounts"
+      }
+    }
+  ]
+}
