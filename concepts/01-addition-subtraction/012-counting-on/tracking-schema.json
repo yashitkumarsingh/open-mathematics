@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage 1: Counting On - Student Progress Tracking Schema",
+  "type": "object",
+  "properties": {
+    "conceptId": {
+      "type": "string",
+      "const": "012-counting-on"
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "bestScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "mastered": {
+      "type": "boolean"
+    },
+    "mistakePatterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["before_target", "after_target", "incorrect_choice"]
+      }
+    }
+  },
+  "required": ["conceptId", "attempts", "bestScore", "mastered", "mistakePatterns"]
+}
