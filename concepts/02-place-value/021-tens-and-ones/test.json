@@ -1,0 +1,64 @@
+{
+  "conceptId": "021-tens-and-ones",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "base-ten-blocks",
+      "prompt": "What number is shown by these base-ten blocks?",
+      "tens": 1,
+      "ones": 4,
+      "interactive": false,
+      "target": 14,
+      "hint": "Count the Ten rod as 10, then count on the Ones: 11, 12, 13, 14."
+    },
+    {
+      "id": "q2",
+      "type": "base-ten-blocks",
+      "prompt": "Represent the number 12 using blocks. Add 1 Ten and 2 Ones.",
+      "tens": 0,
+      "ones": 0,
+      "interactive": true,
+      "target": 12,
+      "hint": "Click '+10' once to add a Ten rod, then click '+1' twice to add 2 Ones.",
+      "mistakePatterns": {
+        "21": "reversal",
+        "2": "missed_ten",
+        "3": "reversal_like"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "base-ten-blocks",
+      "prompt": "What number is shown by these base-ten blocks?",
+      "tens": 2,
+      "ones": 6,
+      "interactive": false,
+      "target": 26,
+      "hint": "Count the tens first: 10, 20. Then count on the six ones: 21, 22, 23, 24, 25, 26."
+    },
+    {
+      "id": "q4",
+      "type": "base-ten-blocks",
+      "prompt": "Represent the number 25 using blocks. Add the correct number of Tens and Ones.",
+      "tens": 0,
+      "ones": 0,
+      "interactive": true,
+      "target": 25,
+      "hint": "You need 2 Ten rods (20) and 5 Ones blocks (5) to make 25.",
+      "mistakePatterns": {
+        "52": "reversal",
+        "7": "added_instead_of_place"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "base-ten-blocks",
+      "prompt": "What number is shown by these base-ten blocks?",
+      "tens": 3,
+      "ones": 0,
+      "interactive": false,
+      "target": 30,
+      "hint": "Count by tens: 10, 20, 30. There are no ones blocks."
+    }
+  ]
+}

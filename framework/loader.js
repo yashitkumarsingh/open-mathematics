@@ -18,6 +18,7 @@
     "components/drag-counter.js",
     "components/ten-frame.js",
     "components/number-line.js",
+    "components/base-ten-blocks.js",
     "components/parent-guide.js",
     "engine/quiz-runner.js"
   ];

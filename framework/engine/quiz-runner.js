@@ -214,6 +214,21 @@
           this.activeComponent = dragCounter;
           break;
 
+        case "base-ten-blocks":
+          const baseTen = document.createElement("base-ten-blocks");
+          if (question.tens !== undefined) {
+            baseTen.setAttribute("tens", question.tens);
+          }
+          if (question.ones !== undefined) {
+            baseTen.setAttribute("ones", question.ones);
+          }
+          if (question.interactive !== false) {
+            baseTen.setAttribute("interactive", "true");
+          }
+          container.appendChild(baseTen);
+          this.activeComponent = baseTen;
+          break;
+
         default:
           container.innerHTML = `<p style="color: var(--warning-color);">Unsupported question type: ${question.type}</p>`;
       }
@@ -238,6 +253,8 @@
         } else if (question.type === "number-line") {
           userAnswer = this.activeComponent.getValue();
         } else if (question.type === "drag-counter") {
+          userAnswer = this.activeComponent.getValue();
+        } else if (question.type === "base-ten-blocks") {
           userAnswer = this.activeComponent.getValue();
         }
       }

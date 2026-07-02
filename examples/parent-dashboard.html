@@ -241,6 +241,13 @@
     <section class="dashboard-grid" id="dashboard-grid-stage1">
       <!-- Generated Stage 1 concepts go here -->
     </section>
+
+    <h2 class="lang-en">Stage 2: Place Value</h2>
+    <h2 class="lang-es">Etapa 2: Valor de Posición</h2>
+    <h2 class="lang-hi">चरण 2: स्थानीय मान</h2>
+    <section class="dashboard-grid" id="dashboard-grid-stage2">
+      <!-- Generated Stage 2 concepts go here -->
+    </section>
   </div>
 
   <script src="../framework/engine/accessibility.js"></script>
@@ -267,7 +274,11 @@
       { id: "012-counting-on", title: { en: "Counting On", es: "Contar Hacia Adelante", hi: "आगे गिनना" }, path: "../concepts/01-addition-subtraction/012-counting-on/child.html" }
     ];
 
-    const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS);
+    const STAGE_2_CONCEPTS = [
+      { id: "021-tens-and-ones", title: { en: "Tens and Ones", es: "Decenas y Unidades", hi: "दहाई और इकाई" }, path: "../concepts/02-place-value/021-tens-and-ones/child.html" }
+    ];
+
+    const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS).concat(STAGE_2_CONCEPTS);
 
     document.addEventListener("DOMContentLoaded", () => {
       // Sync language selector value
@@ -317,6 +328,10 @@
       const grid1 = document.getElementById("dashboard-grid-stage1");
       if (grid1) {
         grid1.innerHTML = "";
+      }
+      const grid2 = document.getElementById("dashboard-grid-stage2");
+      if (grid2) {
+        grid2.innerHTML = "";
       }
 
       STAGE_CONCEPTS.forEach((concept) => {
@@ -383,8 +398,10 @@
         
         if (STAGE_0_CONCEPTS.some(c => c.id === concept.id)) {
           grid.appendChild(card);
-        } else if (grid1) {
+        } else if (STAGE_1_CONCEPTS.some(c => c.id === concept.id) && grid1) {
           grid1.appendChild(card);
+        } else if (grid2) {
+          grid2.appendChild(card);
         }
       });
 
@@ -393,7 +410,7 @@
       document.getElementById("stat-attempts").innerText = totalAttempts;
       
       if (masteredCount === STAGE_CONCEPTS.length) {
-        document.getElementById("lbl-recommendation").innerText = lang === 'es' ? "🎉 ¡Todo Dominado! ¡Listo para la Etapa 1!" : (lang === 'hi' ? "🎉 सब पर महारत! चरण 1 के लिए तैयार!" : "🎉 All Mastered! Ready for Stage 1!");
+        document.getElementById("lbl-recommendation").innerText = lang === 'es' ? "🎉 ¡Todo Dominado! ¡Eres un súper campeón!" : (lang === 'hi' ? "🎉 सब पर महारत! आप एक गणित स्टार हैं!" : "🎉 All Mastered! You're a math superstar!");
       } else {
         document.getElementById("lbl-recommendation").innerText = OMF.i18n ? OMF.i18n.translatePrompt(nextRecommended.title) : nextRecommended.title;
       }
