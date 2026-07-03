@@ -1,0 +1,62 @@
+{
+  "conceptId": "022-comparing-two-digit-numbers",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Which group of blocks shows the LARGER value? <br><br> Group A: 21 | Group B: 19",
+      "options": [
+        {"label": "Group A", "value": 1},
+        {"label": "Group B", "value": 2}
+      ],
+      "target": 1,
+      "mistakePattern": "ones_digit_bias"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Compare the blocks. Choose the correct symbol: 13 [?] 13",
+      "options": [
+        {"label": "<", "value": 1},
+        {"label": "=", "value": 2},
+        {"label": ">", "value": 3}
+      ],
+      "target": 2,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which group of blocks shows the SMALLER value? Group A: 15 | Group B: 25",
+      "options": [
+        {"label": "Group A", "value": 1},
+        {"label": "Group B", "value": 2}
+      ],
+      "target": 1,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Choose the correct symbol: 24 [?] 21",
+      "options": [
+        {"label": "<", "value": 1},
+        {"label": "=", "value": 2},
+        {"label": ">", "value": 3}
+      ],
+      "target": 3,
+      "mistakePattern": "symbol_confusion"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Which group of blocks shows the LARGER value? Group A: 30 | Group B: 12",
+      "options": [
+        {"label": "Group A", "value": 1},
+        {"label": "Group B", "value": 2}
+      ],
+      "target": 1,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+}

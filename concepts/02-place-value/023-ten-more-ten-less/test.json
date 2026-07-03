@@ -1,0 +1,71 @@
+{
+  "conceptId": "023-ten-more-ten-less",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What is 10 more than 14?",
+      "options": [
+        {"label": "15", "value": 15},
+        {"label": "24", "value": 24},
+        {"label": "20", "value": 20}
+      ],
+      "target": 24,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q2",
+      "type": "base-ten-blocks",
+      "prompt": "The blocks show 15. Make 10 MORE than this number by adding blocks.",
+      "tens": 1,
+      "ones": 5,
+      "interactive": true,
+      "target": 25,
+      "hint": "Click '+10' once to add another Ten rod. 15 + 10 = 25.",
+      "mistakePatterns": {
+        "16": "added_one_instead_of_ten",
+        "15": "no_change",
+        "26": "added_ten_and_one"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is 10 less than 23?",
+      "options": [
+        {"label": "13", "value": 13},
+        {"label": "22", "value": 22},
+        {"label": "33", "value": 33}
+      ],
+      "target": 13,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "base-ten-blocks",
+      "prompt": "The blocks show 27. Make 10 LESS than this number by removing blocks.",
+      "tens": 2,
+      "ones": 7,
+      "interactive": true,
+      "target": 17,
+      "hint": "Click '-10' once to remove one Ten rod. 27 - 10 = 17.",
+      "mistakePatterns": {
+        "26": "removed_one_instead_of_ten",
+        "27": "no_change",
+        "16": "removed_ten_and_one"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "What is 10 more than 8?",
+      "options": [
+        {"label": "9", "value": 9},
+        {"label": "10", "value": 10},
+        {"label": "18", "value": 18}
+      ],
+      "target": 18,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+}
