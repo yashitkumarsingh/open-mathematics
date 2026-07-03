@@ -26,4 +26,14 @@
   deps.forEach(dep => {
     document.write(`<script src="${basePath}${dep}"></script>`);
   });
+
+  // Apply parent accessibility preference modes on DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("omf_dyslexia") === "true") {
+      document.body.classList.add("dyslexia-mode");
+    }
+    if (localStorage.getItem("omf_warm") === "true") {
+      document.body.classList.add("warm-mode");
+    }
+  });
 })();

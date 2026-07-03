@@ -704,3 +704,17 @@ header h1 {
   .quiz-option-btn { font-size: 1.6rem; }
   header h1 { font-size: 1.6rem; }
 }
+
+/* --- Parent Neurodiversity & Sensory Assist Modes --- */
+body.dyslexia-mode,
+body.dyslexia-mode *,
+html.dyslexia-mode,
+html.dyslexia-mode * {
+  letter-spacing: 0.11em !important;
+  word-spacing: 0.16em !important;
+  line-height: 1.8 !important;
+}
+
+body.warm-mode {
+  filter: sepia(0.32) contrast(0.96) saturate(0.9) !important;
+}

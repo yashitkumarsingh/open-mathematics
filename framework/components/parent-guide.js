@@ -30,24 +30,27 @@
       }
 
       // Localized labels
-      let titleLabel = "💡 What this concept means";
-      let misconceptionsLabel = "❓ Common Misconceptions to watch for";
-      let activitiesLabel = "🏡 Off-screen Hands-on Activities";
+      let titleLabel = "What this concept means";
+      let misconceptionsLabel = "Common Misconceptions to watch for";
+      let activitiesLabel = "Off-screen Hands-on Activities";
       let buttonOpen = "💡 Open Parent Educator Guide";
       let buttonClose = "✖ Close Guide";
+      let speakLabel = "🔊 Listen to Guide";
 
       if (lang === "es") {
-        titleLabel = "💡 Lo que significa este concepto";
-        misconceptionsLabel = "❓ Errores comunes a tener en cuenta";
-        activitiesLabel = "🏡 Actividades prácticas fuera de pantalla";
+        titleLabel = "Lo que significa este concepto";
+        misconceptionsLabel = "Errores comunes a tener en cuenta";
+        activitiesLabel = "Actividades prácticas fuera de pantalla";
         buttonOpen = "💡 Abrir Guía para Padres";
         buttonClose = "✖ Cerrar Guía";
+        speakLabel = "🔊 Escuchar Guía";
       } else if (lang === "hi") {
-        titleLabel = "💡 इस विषय का अर्थ क्या है";
-        misconceptionsLabel = "❓ सामान्य गलतियाँ जिन पर ध्यान देना चाहिए";
-        activitiesLabel = "🏡 ऑफ-स्क्रीन व्यावहारिक गतिविधियां";
+        titleLabel = "इस विषय का अर्थ क्या है";
+        misconceptionsLabel = "सामान्य गलतियाँ जिन पर ध्यान देना चाहिए";
+        activitiesLabel = "ऑफ-स्क्रीन व्यावहारिक गतिविधियां";
         buttonOpen = "💡 अभिभावक मार्गदर्शिका खोलें";
         buttonClose = "✖ मार्गदर्शिका बंद करें";
+        speakLabel = "🔊 मार्गदर्शिका सुनें";
       }
 
       this.innerHTML = `
@@ -57,17 +60,20 @@
             <span class="guide-toggle-lbl">${buttonOpen}</span>
           </summary>
           <div class="parent-guide-content">
-            <h3>${titleLabel}</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+              <h3 style="margin: 0; border: none; padding: 0;">💡 ${titleLabel}</h3>
+              <button id="parent-guide-speak-btn" aria-label="Listen to parent guide" style="background: var(--primary-light); border: none; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--primary-color); border-radius: 20px; padding: 6px 12px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">${speakLabel}</button>
+            </div>
             <p>${data.concept}</p>
             
-            <h3>${misconceptionsLabel}</h3>
+            <h3 style="margin-top: 14px;">❓ ${misconceptionsLabel}</h3>
             <ul>
               ${data.misconceptions && data.misconceptions.length > 0
                 ? data.misconceptions.map(m => `<li>${m}</li>`).join("")
                 : `<li>None documented.</li>`}
             </ul>
 
-            <h3>${activitiesLabel}</h3>
+            <h3 style="margin-top: 14px;">🏡 ${activitiesLabel}</h3>
             <ul>
               ${data.activities && data.activities.length > 0
                 ? data.activities.map(a => `<li>${a}</li>`).join("")
@@ -77,7 +83,7 @@
         </details>
       `;
 
-      // Update button text toggle state
+      // Update button text toggle state and speak events
       const details = this.querySelector(".parent-guide-details");
       const label = this.querySelector(".guide-toggle-lbl");
       if (details && label) {
@@ -86,6 +92,30 @@
             label.innerText = buttonClose;
           } else {
             label.innerText = buttonOpen;
+          }
+        });
+      }
+
+      const speakBtn = this.querySelector("#parent-guide-speak-btn");
+      if (speakBtn) {
+        speakBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.OMF && window.OMF.Accessibility) {
+            let textToRead = data.concept + ". ";
+            if (data.misconceptions && data.misconceptions.length > 0) {
+              textToRead += misconceptionsLabel + ": ";
+              data.misconceptions.forEach(m => {
+                textToRead += m.replace(/<[^>]*>/g, '') + ". ";
+              });
+            }
+            if (data.activities && data.activities.length > 0) {
+              textToRead += activitiesLabel + ": ";
+              data.activities.forEach(a => {
+                textToRead += a.replace(/<[^>]*>/g, '') + ". ";
+              });
+            }
+            window.OMF.Accessibility.speak(textToRead);
           }
         });
       }
