@@ -12,6 +12,7 @@
   // Order matters for execution dependency structure
   const deps = [
     "engine/accessibility.js",
+    "engine/security.js",
     "engine/i18n.js",
     "engine/progress.js",
     "components/mastery-badge.js",

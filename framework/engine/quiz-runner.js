@@ -98,7 +98,10 @@
       const question = this.questions[this.currentIdx];
       const total = this.questions.length;
       const t = (key, replacements) => window.OMF.i18n ? window.OMF.i18n.t(key, replacements) : key;
-      const transPrompt = window.OMF.i18n ? window.OMF.i18n.translatePrompt(question.prompt) : question.prompt;
+      let transPrompt = window.OMF.i18n ? window.OMF.i18n.translatePrompt(question.prompt) : question.prompt;
+      if (window.OMF.Security && window.OMF.Security.sanitizeHTML) {
+        transPrompt = window.OMF.Security.sanitizeHTML(transPrompt);
+      }
 
       // Build dot elements for tracking progress
       let dotsHtml = "";

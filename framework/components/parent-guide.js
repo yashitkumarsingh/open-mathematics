@@ -53,6 +53,16 @@
         speakLabel = "🔊 मार्गदर्शिका सुनें";
       }
 
+      let conceptHtml = data.concept || "";
+      let misconceptions = data.misconceptions || [];
+      let activities = data.activities || [];
+
+      if (window.OMF.Security && window.OMF.Security.sanitizeHTML) {
+        conceptHtml = window.OMF.Security.sanitizeHTML(conceptHtml);
+        misconceptions = misconceptions.map(m => window.OMF.Security.sanitizeHTML(m));
+        activities = activities.map(a => window.OMF.Security.sanitizeHTML(a));
+      }
+
       this.innerHTML = `
         <details class="parent-guide-details">
           <summary class="parent-guide-summary" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
@@ -64,19 +74,19 @@
               <h3 style="margin: 0; border: none; padding: 0;">💡 ${titleLabel}</h3>
               <button id="parent-guide-speak-btn" aria-label="Listen to parent guide" style="background: var(--primary-light); border: none; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--primary-color); border-radius: 20px; padding: 6px 12px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">${speakLabel}</button>
             </div>
-            <p>${data.concept}</p>
+            <p>${conceptHtml}</p>
             
             <h3 style="margin-top: 14px;">❓ ${misconceptionsLabel}</h3>
             <ul>
-              ${data.misconceptions && data.misconceptions.length > 0
-                ? data.misconceptions.map(m => `<li>${m}</li>`).join("")
+              ${misconceptions.length > 0
+                ? misconceptions.map(m => `<li>${m}</li>`).join("")
                 : `<li>None documented.</li>`}
             </ul>
 
             <h3 style="margin-top: 14px;">🏡 ${activitiesLabel}</h3>
             <ul>
-              ${data.activities && data.activities.length > 0
-                ? data.activities.map(a => `<li>${a}</li>`).join("")
+              ${activities.length > 0
+                ? activities.map(a => `<li>${a}</li>`).join("")
                 : `<li>None documented.</li>`}
             </ul>
           </div>
