@@ -1,5 +1,5 @@
 ---
-id: "00-008"
+id: "008-number-bonds-to-10"
 title: "Number Bonds to 10"
 stage: "00-number-sense"
 age_group: "4-6"

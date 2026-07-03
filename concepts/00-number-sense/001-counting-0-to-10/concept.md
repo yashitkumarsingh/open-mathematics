@@ -1,5 +1,5 @@
 ---
-id: "00-001"
+id: "001-counting-0-to-10"
 title: "Counting 0 to 10"
 stage: "00-number-sense"
 age_group: "4-6"

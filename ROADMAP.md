@@ -4,34 +4,35 @@ This roadmap sets out our plan for building the Open Mathematics Foundation from
 
 ---
 
-## 🎯 Release Milestones
+## 🎯 Current Status & Milestones
 
-### 1. MVP (Current Release)
-- **Focus**: Stage 0: Number Sense (Foundation Level).
-- **Deliverables**:
-  - Core Web Components (`<ten-frame>`, `<number-line>`, `<drag-counter>`, `<mastery-badge>`).
-  - Core Engine (`progress.js`, `quiz-runner.js`) with offline CORS-safe loading.
-  - 10 interactive concepts (001 to 010) fully documented and playable.
-  - Reusable Parent Dashboard (`parent-dashboard.html`) with JSON progress import/export.
-  - Curriculum alignments (Australian Curriculum V9, US Common Core).
+### 1. Completed Milestones (Current Release v0.5)
+- **Stage 0: Number Sense (Foundation Level)**: 10 interactive concepts (`001` to `010`) fully documented and playable.
+- **Stage 1: Addition & Subtraction**: 2 interactive concepts (`011` and `012`) combining sets and number line jumps.
+- **Stage 2: Place Value**: 3 interactive concepts (`021` to `023`) introducing tens/ones blocks and mental tens arithmetic.
+- **Manipulative Components**: Custom elements for `<ten-frame>`, `<number-line>`, `<drag-counter>`, and `<base-ten-blocks>`.
+- **Sensory & Parent Access**: Localized guides (English, Spanish, Hindi), ADHD focus missions, dyslexia spacing overrides, glare-reduction sepia filters, and guide Text-to-Speech (TTS) narrations.
+- **Offline A4 Worksheet Generator**: Generates and prints physical practice worksheets matching digital visual frameworks.
+- **CI Quality Gates & Validator**: pre-commit Husky gates and GitHub Actions workflows executing automatic validation tests.
 
-### 2. Beta (Q3 2026)
-- **Focus**: Basic Arithmetic & Place Value.
-- **Deliverables**:
-  - **Stage 1 (Addition & Subtraction)**: Adding visual combining, counting on, fact families, and word problems.
-  - **Stage 2 (Place Value)**: Visualizing tens and ones utilizing our `<base-ten-blocks>` element.
-  - **Automated Validation**: Running automated validations for all newly added concepts in pull requests.
+---
 
-### 3. v1.0 (Q1 2027)
-- **Focus**: Full Primary Curriculum Coverage.
-- **Deliverables**:
-  - **Stage 3 to Stage 8**: Interactive shapes, fractions, data bar graphs, arrays, and problem-solving heuristics.
-  - **Printable Worksheet Generator**: Ability to print offline worksheets matching visual activities.
-  - **Accessibility AA Compliance**: Complete screen-reader testing and keyboard controls on all elements.
+## 🚀 Future Milestones
 
-### 4. Later / Backlog
-- **Focus**: Multi-Language & Multi-Curriculum expansion.
+### 2. Stage 3 & 4 (Q4 2026)
+- **Focus**: Expanding Arithmetic, Multiplication, and Geometry.
 - **Deliverables**:
-  - **Multi-language translation engine**: Fallback translation matrices for Spanish, Hindi, and regional languages.
-  - **Curriculum mappings**: Mappings for UK, Singapore Math, and Indian NCERT frameworks.
-  - **Offline Android/iOS Wraps**: Packaging static HTML files via Cordova or Capacitor for app stores.
+  - **Stage 3 (Multiplication & Division)**: Skip counting, equal groups visualizers, and arrays.
+  - **Stage 4 (Fractions & Decimals)**: Interactive fraction bars, visual partitions, and decimals number lines.
+  - **Exemplar Lessons**: Refine 3-5 additional high-quality interactive manipulates.
+
+### 3. Framework Hardening & v1.0 (Q2 2027)
+- **Focus**: AAA Accessibility & Contributor Safety.
+- **Deliverables**:
+  - **AAA Accessibility Audit**: Fully verify screen-reader ARIA compliance, focus-ring traps, and keyboard controls.
+  - **Prompt HTML Sanitization**: Implement a lightweight client-side HTML sanitizer to protect quiz-runner from contributor-authored prompt XSS injection.
+  - **Educator Dashboard Mode**: Split parent dashboards into dedicated classroom tracking modes for teachers.
+
+### 4. Backlog / Future Expansion
+- **Capacitor Mobile Wraps**: Packaging the serverless HTML app for Android and iOS app stores.
+- **Singaporian & NCERT Mappings**: Expanded mapping lists for Singapore Math and Indian NCERT curriculums.

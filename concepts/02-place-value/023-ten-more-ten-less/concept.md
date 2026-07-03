@@ -1,5 +1,5 @@
 ---
-id: "02-023"
+id: "023-ten-more-ten-less"
 title: "Ten More, Ten Less"
 stage: "02-place-value"
 age_group: "6-8"

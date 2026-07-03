@@ -1,5 +1,5 @@
 ---
-id: "00-010"
+id: "010-mixed-mastery-test"
 title: "Mixed Mastery Test"
 stage: "00-number-sense"
 age_group: "4-6"

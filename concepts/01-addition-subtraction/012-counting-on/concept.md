@@ -1,5 +1,5 @@
 ---
-id: "01-012"
+id: "012-counting-on"
 title: "Counting On"
 stage: "01-addition-subtraction"
 age_group: "5-7"

@@ -1,5 +1,5 @@
 ---
-id: "00-005"
+id: "005-ten-frame-basics"
 title: "Ten Frame Basics"
 stage: "00-number-sense"
 age_group: "4-6"

@@ -1,5 +1,5 @@
 ---
-id: "00-006"
+id: "006-number-line-0-to-10"
 title: "Number Line 0 to 10"
 stage: "00-number-sense"
 age_group: "4-6"

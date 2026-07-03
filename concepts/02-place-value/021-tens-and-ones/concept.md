@@ -1,5 +1,5 @@
 ---
-id: "02-021"
+id: "021-tens-and-ones"
 title: "Tens and Ones"
 stage: "02-place-value"
 age_group: "6-8"

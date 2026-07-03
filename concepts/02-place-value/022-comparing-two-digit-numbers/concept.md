@@ -1,5 +1,5 @@
 ---
-id: "02-022"
+id: "022-comparing-two-digit-numbers"
 title: "Comparing Two-Digit Numbers"
 stage: "02-place-value"
 age_group: "6-8"

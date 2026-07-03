@@ -1,5 +1,5 @@
 ---
-id: "00-009"
+id: "009-zero-as-number"
 title: "Zero as a Number"
 stage: "00-number-sense"
 age_group: "4-6"

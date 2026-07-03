@@ -1,5 +1,5 @@
 ---
-id: "00-003"
+id: "003-compare-more-less-equal"
 title: "Compare More, Less, Equal"
 stage: "00-number-sense"
 age_group: "4-6"

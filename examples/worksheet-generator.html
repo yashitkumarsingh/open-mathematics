@@ -185,16 +185,7 @@
       <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px;">
         <label style="font-weight: 700;">Select a Concept Pack:</label>
         <select id="select-concept" style="padding: 10px; font-size: 1rem; border-radius: var(--border-radius-sm); border: 2px solid var(--primary-color);">
-          <option value="001-counting-0-to-10">001 - Counting 0 to 10</option>
-          <option value="002-counting-10-to-20">002 - Counting 10 to 20</option>
-          <option value="003-compare-more-less-equal">003 - Compare More, Less, Equal</option>
-          <option value="004-match-number-quantity">004 - Match Number to Quantity</option>
-          <option value="005-ten-frame-basics">005 - Ten Frame Basics</option>
-          <option value="006-number-line-0-to-10">006 - Number Line 0 to 10</option>
-          <option value="007-number-bonds-to-5">007 - Number Bonds to 5</option>
-          <option value="008-number-bonds-to-10">008 - Number Bonds to 10</option>
-          <option value="009-zero-as-number">009 - Zero as a Number</option>
-          <option value="010-mixed-mastery-test">010 - Mixed Mastery Test</option>
+          <!-- Populated dynamically from manifest.js -->
         </select>
       </div>
 
@@ -224,24 +215,25 @@
   </div>
 
   <script src="../framework/engine/i18n.js"></script>
+  <script src="../concepts/manifest.js"></script>
   <script>
-    // Concept meta dictionary
-    const CONCEPT_TITLES = {
-      "001-counting-0-to-10": { en: "Counting 0 to 10", es: "Contar del 0 al 10", hi: "0 से 10 तक गिनती" },
-      "002-counting-10-to-20": { en: "Counting 10 to 20", es: "Contar del 10 al 20", hi: "10 से 20 तक गिनती" },
-      "003-compare-more-less-equal": { en: "Compare More, Less, Equal", es: "Comparar más, menos, igual", hi: "अधिक, कम, समान की तुलना करें" },
-      "004-match-number-quantity": { en: "Match Number to Quantity", es: "Emparejar número y cantidad", hi: "संख्या को मात्रा से मिलाएँ" },
-      "005-ten-frame-basics": { en: "Ten Frame Basics", es: "Conceptos básicos del marco de diez", hi: "दस-फ्रेम की बुनियादी बातें" },
-      "006-number-line-0-to-10": { en: "Number Line 0 to 10", es: "Recta numérica del 0 al 10", hi: "संख्या रेखा 0 से 10" },
-      "007-number-bonds-to-5": { en: "Number Bonds to 5", es: "Combinaciones numéricas hasta 5", hi: "5 तक संख्या बंधन" },
-      "008-number-bonds-to-10": { en: "Number Bonds to 10", es: "Combinaciones numéricas hasta 10", hi: "10 तक संख्या बंधन" },
-      "009-zero-as-number": { en: "Zero as a Number", es: "El cero como número", hi: "शून्य एक संख्या के रूप में" },
-      "010-mixed-mastery-test": { en: "Mixed Mastery Test", es: "Prueba de maestría mixta", hi: "मिश्रित महारत परीक्षण" }
-    };
-
     window.OMF = window.OMF || {};
 
     document.addEventListener("DOMContentLoaded", () => {
+      // Dynamic dropdown populate from manifest
+      const select = document.getElementById("select-concept");
+      const stageConcepts = window.OMF.STAGE_CONCEPTS || [];
+      const lang = (window.OMF.i18n && window.OMF.i18n.getLang()) || "en";
+
+      stageConcepts.forEach(c => {
+        const option = document.createElement("option");
+        option.value = c.id;
+        const prefix = c.id.split("-")[0];
+        const titleStr = c.title[lang] || c.title['en'];
+        option.innerText = `${prefix} - ${titleStr}`;
+        select.appendChild(option);
+      });
+
       document.getElementById("btn-generate").addEventListener("click", () => {
         loadConceptQuestions();
       });
@@ -253,11 +245,12 @@
     function loadConceptQuestions() {
       const select = document.getElementById("select-concept");
       const conceptId = select.value;
-      const lang = OMF.i18n ? OMF.i18n.getLang() : 'en';
+      if (!conceptId) return;
 
-      // Title translation
-      const transObj = CONCEPT_TITLES[conceptId] || { en: "Worksheet" };
-      const conceptTitle = transObj[lang] || transObj['en'];
+      const lang = OMF.i18n ? OMF.i18n.getLang() : 'en';
+      const stageConcepts = window.OMF.STAGE_CONCEPTS || [];
+      const conceptMeta = stageConcepts.find(c => c.id === conceptId);
+      const conceptTitle = conceptMeta ? (conceptMeta.title[lang] || conceptMeta.title['en']) : "Worksheet";
       
       const sheetTitleText = lang === 'es' ? `Hoja de Trabajo: ${conceptTitle}` : (lang === 'hi' ? `कार्यपत्रक: ${conceptTitle}` : `Worksheet: ${conceptTitle}`);
       document.getElementById("lbl-worksheet-title").innerText = sheetTitleText;

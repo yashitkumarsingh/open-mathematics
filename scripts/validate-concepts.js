@@ -84,6 +84,10 @@ stages.forEach(stage => {
         errors.push(`[${conceptDir}] Missing 'id' attribute in concept.md frontmatter.`);
         conceptHasError = true;
       } else {
+        if (id !== conceptDir) {
+          errors.push(`[${conceptDir}] Frontmatter ID '${id}' does not match folder name '${conceptDir}'.`);
+          conceptHasError = true;
+        }
         if (conceptIdsSeen.has(id)) {
           errors.push(`[${conceptDir}] Duplicate concept ID found: '${id}'`);
           conceptHasError = true;
@@ -114,6 +118,9 @@ stages.forEach(stage => {
         }
         if (!quiz.conceptId) {
           throw new Error("conceptId attribute is missing in window.OMF.currentQuiz");
+        }
+        if (quiz.conceptId !== conceptDir) {
+          throw new Error(`conceptId '${quiz.conceptId}' does not match folder name '${conceptDir}'`);
         }
         if (!Array.isArray(quiz.questions) || quiz.questions.length === 0) {
           throw new Error("questions array is missing or empty in window.OMF.currentQuiz");

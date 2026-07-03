@@ -386,7 +386,7 @@
 
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
             <button class="btn btn-secondary" id="btn-replay">${t('replayQuiz')}</button>
-            <a class="btn btn-primary" href="../../examples/parent-dashboard.html">${t('backDashboard')}</a>
+            <a class="btn btn-primary" href="../../../examples/parent-dashboard.html">${t('backDashboard')}</a>
           </div>
         </div>
       `;

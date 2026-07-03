@@ -1,5 +1,5 @@
 ---
-id: "00-004"
+id: "004-match-number-quantity"
 title: "Match Number to Quantity"
 stage: "00-number-sense"
 age_group: "4-6"

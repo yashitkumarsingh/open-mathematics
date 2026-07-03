@@ -1,5 +1,5 @@
 ---
-id: "01-011"
+id: "011-addition-as-combining"
 title: "Addition as Combining"
 stage: "01-addition-subtraction"
 age_group: "5-7"
