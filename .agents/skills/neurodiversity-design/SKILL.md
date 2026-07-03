@@ -23,3 +23,9 @@ Ensure all math activities, code changes, and parent materials align with neurod
 
 ## 4. parent guidance
 - Ensure the `parent-guide.md` and `misconceptions.md` files instruct parents on how to diagnose specific developmental mistake patterns (like spatial density bias or digits reverses) and apply correction scripts gently.
+
+## 5. Parent-Facing Accessibility & Sensory Assists
+- **Dyslexia Spacing**: Support parent dyslexia mode by providing high-readability text options: `letter-spacing: 0.11em`, `word-spacing: 0.16em`, and `line-height: 1.8`. Toggled settings must persist via `localStorage` and load automatically in child views.
+- **Glare-Reduction Filters**: Provide parents experiencing visual migraines or sensory overload with sepia overlay filters (`sepia(32%)` contrast reduction) to soften backlight glare.
+- **ADHD Single-Focus Missions**: Prevent executive fatigue by displaying exactly *one* primary recommended lesson card at a time on the parent dashboard. This card must feature a clear action button and a short, translated off-screen activity suggestion.
+- **Audio Guide Narration (TTS)**: Include read-aloud voice support for parent guide notes, parsing misconceptions and physical activity instructions slowly.
