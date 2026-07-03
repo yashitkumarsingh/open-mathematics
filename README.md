@@ -19,7 +19,7 @@ This repository provides step-by-step mathematical learning from early primary l
 ## 🚀 Key Highlights
 
 * **Offline-First & Serverless**: Operates completely under the `file://` protocol. Just double-click any `.html` file to run lessons instantly without Node or local web servers.
-* **Centralized Loader Bootstrapper**: Injects dependencies synchronously using [loader.js](file:///Users/yashitkumarsingh/dev/open-mathematics/framework/loader.js), eliminating duplicate markup across lessons.
+* **Centralized Loader Bootstrapper**: Injects dependencies synchronously using [loader.js](framework/loader.js), eliminating duplicate markup across lessons.
 * **Component-Based Workspaces**: Interactive tasks use custom HTML5 elements (e.g. `<ten-frame>`, `<number-line>`, `<base-ten-blocks>`).
 * **Privacy-Respecting Logs**: Progress data saves entirely in `localStorage`. Backup or restore data anytime via JSON imports and exports.
 
@@ -68,8 +68,8 @@ OMF is designed from the ground up to support neurodivergent learners (ADHD, ASD
 
 ## 🤝 Contributing & Quality Gates
 
-Please read [CONTRIBUTING.md](file:///Users/yashitkumarsingh/dev/open-mathematics/CONTRIBUTING.md) to get started. 
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. 
 
 - **Git Hooks**: We use **Husky** to run our OMF Validator (`validate-concepts.js`) on pre-commit, ensuring syntax and folder files remain compliant.
-- **Code License**: [MIT License](file:///Users/yashitkumarsingh/dev/open-mathematics/LICENSE).
-- **Educational Guide Content**: [Creative Commons Attribution 4.0 (CC BY 4.0)](file:///Users/yashitkumarsingh/dev/open-mathematics/LICENSE).
+- **Code License**: [MIT License](LICENSE).
+- **Educational Guide Content**: [Creative Commons Attribution 4.0 (CC BY 4.0)](LICENSE).
