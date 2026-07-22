@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage 3: Mixed Mastery Test - Student Progress Tracking Schema",
+  "type": "object",
+  "properties": {
+    "conceptId": {
+      "type": "string",
+      "const": "036-stage-3-mastery-test"
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "bestScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "mastered": {
+      "type": "boolean"
+    },
+    "mistakePatterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "operation_confusion",
+          "directional_reversal",
+          "parity_misclassification",
+          "calculation_error"
+        ]
+      }
+    }
+  },
+  "required": ["conceptId", "attempts", "bestScore", "mastered", "mistakePatterns"]
+}

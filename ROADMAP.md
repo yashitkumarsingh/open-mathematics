@@ -10,7 +10,7 @@ This roadmap sets out our plan for building the Open Mathematics Foundation from
 - **Stage 0: Number Sense (Foundation Level)**: 10 interactive concepts (`001` to `010`) fully documented and playable.
 - **Stage 1: Addition & Subtraction**: 2 interactive concepts (`011` and `012`) combining sets and number line jumps.
 - **Stage 2: Place Value**: 3 interactive concepts (`021` to `023`) introducing tens/ones blocks and mental tens arithmetic.
-- **Stage 3: Multiplication & Division**: 3 interactive concepts (`031` to `033`) covering skip counting (2, 5, 10), equal groups, and rectangular arrays.
+- **Stage 3: Multiplication & Division**: 6 interactive concepts (`031` to `036`) covering skip counting (2, 5, 10), equal groups, rectangular arrays, division equal sharing, odd/even parity, and Stage 3 mastery test.
 - **Manipulative Components**: Custom elements for `<ten-frame>`, `<number-line>`, `<drag-counter>`, and `<base-ten-blocks>`.
 - **Sensory & Parent Access**: Localized guides (English, Spanish, Hindi), ADHD focus missions, dyslexia spacing overrides, glare-reduction sepia filters, and guide Text-to-Speech (TTS) narrations.
 - **Offline A4 Worksheet Generator**: Generates and prints physical practice worksheets matching digital visual frameworks.

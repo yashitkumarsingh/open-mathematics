@@ -29,7 +29,10 @@
   const STAGE_3_CONCEPTS = [
     { id: "031-skip-counting-2-5-10", title: { en: "Skip Counting (2, 5, 10)", es: "Contar de en medio (2, 5, 10)", hi: "छोड़कर गिनती (2, 5, 10)" }, path: "../concepts/03-multiplication-division/031-skip-counting-2-5-10/child.html" },
     { id: "032-equal-groups", title: { en: "Equal Groups", es: "Grupos Iguales", hi: "समान समूह" }, path: "../concepts/03-multiplication-division/032-equal-groups/child.html" },
-    { id: "033-arrays-and-multiplication", title: { en: "Arrays & Multiplication", es: "Matrices y Multiplicación", hi: "ऐरे और गुणा" }, path: "../concepts/03-multiplication-division/033-arrays-and-multiplication/child.html" }
+    { id: "033-arrays-and-multiplication", title: { en: "Arrays & Multiplication", es: "Matrices y Multiplicación", hi: "ऐरे और गुणा" }, path: "../concepts/03-multiplication-division/033-arrays-and-multiplication/child.html" },
+    { id: "034-division-as-equal-sharing", title: { en: "Division as Equal Sharing", es: "División como Reparto Equitativo", hi: "समान बंटवारे के रूप में भाग" }, path: "../concepts/03-multiplication-division/034-division-as-equal-sharing/child.html" },
+    { id: "035-odd-and-even-numbers", title: { en: "Odd and Even Numbers", es: "Números Pares e Impares", hi: "सम और विषम संख्याएँ" }, path: "../concepts/03-multiplication-division/035-odd-and-even-numbers/child.html" },
+    { id: "036-stage-3-mastery-test", title: { en: "Stage 3 Mastery Test", es: "Prueba de Maestría de Etapa 3", hi: "चरण 3 महारत परीक्षण" }, path: "../concepts/03-multiplication-division/036-stage-3-mastery-test/child.html" }
   ];
 
   const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS).concat(STAGE_2_CONCEPTS).concat(STAGE_3_CONCEPTS);
@@ -124,6 +127,21 @@
       en: "Cheez-It Array Feast: Build 3x4 grids out of square crackers.",
       es: "Ciudad de Matrices: Dibuja cuadrículas rectangulares en papel cuadriculado.",
       hi: "ऐरे दावत: वर्गाकार क्रैकर्स से 3x4 ग्रिड बनाएं।"
+    },
+    "034-division-as-equal-sharing": {
+      en: "Cookie Sharing Party: Share 12 pretend cookies among 3 stuffed animals.",
+      es: "Fiesta de Galletas: Comparte 12 galletas entre 3 peluches.",
+      hi: "कुकी शेयरिंग पार्टी: 3 खिलौनों के बीच 12 कुकीज़ बाँटें।"
+    },
+    "035-odd-and-even-numbers": {
+      en: "Sock Pair Detective: Match single socks in pairs to spot the odd one out.",
+      es: "Emparejar calcetines: Une calcetines en parejas para ver si falta alguno.",
+      hi: "मोज़े की जोड़ी: अकेले मोज़े को जोड़ों में मिलाकर विषम मोज़ा खोजें।"
+    },
+    "036-stage-3-mastery-test": {
+      en: "Stage 3 Flashcard Challenge: Play a fast-paced game mixing skip jumps, array grids, and fair sharing.",
+      es: "Desafío de Tarjetas de Etapa 3: Juega un juego rápido mezclando saltos, matrices y repartos.",
+      hi: "चरण 3 फ्लैशकार्ड चुनौती: छलांग, ऐरे ग्रिड और निष्पक्ष बंटवारे को मिलाकर एक त्वरित खेल खेलें।"
     }
   };
 

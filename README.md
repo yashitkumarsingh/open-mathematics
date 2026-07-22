@@ -25,7 +25,7 @@ This repository provides step-by-step mathematical learning from early primary l
 
 ---
 
-## 📈 Covered Curriculum Stages (18 Complete Lessons)
+## 📈 Covered Curriculum Stages (21 Complete Lessons)
 
 ### 🔹 Stage 0: Number Sense
 - `001` to `002`: Counting 0 to 10 & 10 to 20
@@ -50,6 +50,9 @@ This repository provides step-by-step mathematical learning from early primary l
 - `031`: Skip Counting (equal jumps by 2s, 5s, and 10s)
 - `032`: Equal Groups (modelling $N$ groups of $M$ items)
 - `033`: Arrays & Multiplication (rectangular row × column grid arrays)
+- `034`: Division as Equal Sharing (fair distribution model)
+- `035`: Odd and Even Numbers (buddy pairing and parity)
+- `036`: Mixed Mastery Test (cumulative Stage 3 assessment)
 
 ---
 

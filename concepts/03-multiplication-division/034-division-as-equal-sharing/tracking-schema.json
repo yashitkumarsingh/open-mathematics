@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage 3: Division as Equal Sharing - Student Progress Tracking Schema",
+  "type": "object",
+  "properties": {
+    "conceptId": {
+      "type": "string",
+      "const": "034-division-as-equal-sharing"
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "bestScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "mastered": {
+      "type": "boolean"
+    },
+    "mistakePatterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "unequal_sharing",
+          "reversed_equation",
+          "incomplete_dealing",
+          "incorrect_share_amount"
+        ]
+      }
+    }
+  },
+  "required": ["conceptId", "attempts", "bestScore", "mastered", "mistakePatterns"]
+}

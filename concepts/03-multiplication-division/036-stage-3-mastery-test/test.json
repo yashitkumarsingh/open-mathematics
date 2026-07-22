@@ -1,0 +1,107 @@
+{
+  "conceptId": "036-stage-3-mastery-test",
+  "parentGuide": {
+    "en": {
+      "concept": "The Stage 3 Mastery Test evaluates cumulative understanding of skip counting, equal groups, rectangular arrays, equal sharing division, and odd/even parity.",
+      "misconceptions": [
+        "Operation confusion: Adding instead of multiplying.",
+        "Directional confusion: Swapping multiplication and division word problem structures."
+      ],
+      "activities": [
+        "Stage 3 Flashcard Challenge: Mixed practice cards.",
+        "The Master Builder Board Game: Roll and solve Stage 3 tasks."
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "number-line",
+      "prompt": {
+        "en": "Mastery Challenge 1: Count by 5s. What comes next? 5, 10, 15, __",
+        "es": "Desafío de Maestría 1: Cuenta de 5 en 5. ¿Qué sigue? 5, 10, 15, __",
+        "hi": "महारत चुनौती 1: 5 से गिनती करें। आगे क्या आता है? 5, 10, 15, __"
+      },
+      "min": 0,
+      "max": 25,
+      "step": 5,
+      "start": 0,
+      "target": 20,
+      "hint": {
+        "en": "5, 10, 15, 20!",
+        "es": "5, 10, 15, 20!",
+        "hi": "5, 10, 15, 20!"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "Mastery Challenge 2: Represent 3 groups of 4 stars. What is the total count?",
+        "es": "Desafío de Maestría 2: Representa 3 grupos de 4 estrellas. ¿Cuál es el total?",
+        "hi": "महारत चुनौती 2: 4 तारों के 3 समूहों का प्रतिनिधित्व करें। कुल गिनती क्या है?"
+      },
+      "groups": 3,
+      "itemsPerGroup": 4,
+      "target": 12,
+      "hint": {
+        "en": "3 × 4 = 12 stars.",
+        "es": "3 × 4 = 12 estrellas.",
+        "hi": "3 × 4 = 12 तारे।"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "Mastery Challenge 3: An array has 2 rows and 5 columns. How many dots in total?",
+        "es": "Desafío de Maestría 3: Una matriz tiene 2 filas y 5 columnas. ¿Cuántos puntos hay en total?",
+        "hi": "महारत चुनौती 3: एक ऐरे में 2 पंक्तियाँ और 5 कॉलम हैं। कुल कितने बिंदु हैं?"
+      },
+      "groups": 2,
+      "itemsPerGroup": 5,
+      "target": 10,
+      "hint": {
+        "en": "2 rows × 5 columns = 10 dots.",
+        "es": "2 filas × 5 columnas = 10 puntos.",
+        "hi": "2 पंक्तियाँ × 5 कॉलम = 10 बिंदु।"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "Mastery Challenge 4: Share 15 coins equally among 3 cups. How many coins per cup?",
+        "es": "Desafío de Maestría 4: Comparte 15 monedas por igual entre 3 tazas. ¿Cuántas monedas por taza?",
+        "hi": "महारत चुनौती 4: 15 सिक्कों को 3 कपों में समान रूप से बाँटें। प्रति कप कितने सिक्के?"
+      },
+      "groups": 3,
+      "itemsPerGroup": 5,
+      "target": 5,
+      "hint": {
+        "en": "15 ÷ 3 = 5.",
+        "es": "15 ÷ 3 = 5.",
+        "hi": "15 ÷ 3 = 5।"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "number-line",
+      "prompt": {
+        "en": "Mastery Challenge 5: Is 18 Odd or Even?",
+        "es": "Desafío de Maestría 5: ¿El 18 es Par o Impar?",
+        "hi": "महारत चुनौती 5: क्या 18 सम है या विषम?"
+      },
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "start": 0,
+      "target": 18,
+      "hint": {
+        "en": "18 ends in 8. Any number ending in 8 is EVEN!",
+        "es": "El 18 termina en 8. ¡Cualquier número que termine en 8 es PAR!",
+        "hi": "18 का अंत 8 पर होता है। 8 पर समाप्त होने वाली कोई भी संख्या सम होती है!"
+      }
+    }
+  ]
+}
