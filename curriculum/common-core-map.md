@@ -48,6 +48,20 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 
 ---
 
+## 🔹 Grade 2 & Grade 3 Domains & Standards (Stage 3)
+
+### 1. Number & Operations in Base Ten (2.NBT)
+* **2.NBT.A.2**: Count within 1000; skip-count by 5s, 10s, and 100s.
+  - **Concepts**: `031-skip-counting-2-5-10`
+
+### 2. Operations & Algebraic Thinking (2.OA / 3.OA)
+* **2.OA.C.4**: Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns.
+  - **Concepts**: `033-arrays-and-multiplication`
+* **3.OA.A.1**: Interpret products of whole numbers, e.g., interpret 5 × 7 as the total number of objects in 5 groups of 7 objects each.
+  - **Concepts**: `032-equal-groups`, `033-arrays-and-multiplication`
+
+---
+
 ## 📊 Alignment Matrix
 
 | Concept ID | Common Core Code | Description / Focus |
@@ -67,3 +81,6 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 | **021-tens-and-ones** | 1.NBT.B.2 | Compose and decompose numbers into tens and ones columns |
 | **022-comparing-two-digit-numbers** | 1.NBT.B.3 | Compare two-digit values using place columns and symbols |
 | **023-ten-more-ten-less** | 1.NBT.C.5 | Mentally find 10 more or 10 less and model using rods |
+| **031-skip-counting-2-5-10** | 2.NBT.A.2 | Skip-count by 2s, 5s, and 10s on number scales |
+| **032-equal-groups** | 3.OA.A.1 | Interpret products as N equal groups of size M |
+| **033-arrays-and-multiplication** | 2.OA.C.4, 3.OA.A.1 | Rectangular grid arrays expressing rows × columns |

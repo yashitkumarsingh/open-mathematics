@@ -38,6 +38,16 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 * Solve problems involving addition and subtraction, and represent them using models.
   - **Mapped Concepts**: `011-addition-as-combining`, `012-counting-on`
 
+## 🔹 Year 2 Curriculum Outcomes (Stage 3)
+
+### AC9M2N01 (Skip count by twos, fives, and tens)
+* Count by twos, fives and tens from any starting point, forward and backward.
+  - **Mapped Concepts**: `031-skip-counting-2-5-10`
+
+### AC9M2N04 (Represent multiplication as equal groups and arrays)
+* Represent multiplication and division problems using equal groups, arrays, and repeated addition.
+  - **Mapped Concepts**: `032-equal-groups`, `033-arrays-and-multiplication`
+
 ---
 
 ## 📊 Alignment Matrix
@@ -59,3 +69,6 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 | **021-tens-and-ones** | Tens and Ones | AC9M1N01 (Place columns decomposition to 30) |
 | **022-comparing-two-digit-numbers** | Comparing Numbers | AC9M1N02 (Place column comparisons with symbols) |
 | **023-ten-more-ten-less** | Ten More, Ten Less | AC9M1N01 (Mental tens increments using rods) |
+| **031-skip-counting-2-5-10** | Skip Counting (2, 5, 10) | AC9M2N01 (Skip counting sequence patterns) |
+| **032-equal-groups** | Equal Groups | AC9M2N04 (Multiplication as equal-sized collections) |
+| **033-arrays-and-multiplication** | Arrays & Multiplication | AC9M2N04 (Rectangular row × column grids) |

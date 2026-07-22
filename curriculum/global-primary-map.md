@@ -43,6 +43,10 @@ Developing multiplication as repeated addition of equal groups, and division as 
   - Division as sharing (how many in each group?) and grouping (how many groups?).
   - Commutative, associative, and distributive properties.
   - Fact relationships (inverses).
+* **Mapped OMF Concepts**:
+  - `031-skip-counting-2-5-10`: Skip counting on number scales by 2s, 5s, 10s.
+  - `032-equal-groups`: Visual models of $N$ equal groups of size $M$.
+  - `033-arrays-and-multiplication`: Rectangular grid arrays ($\text{rows} \times \text{columns}$) & visual commutativity.
 
 ### Stage 4: Fractions & Decimals (Ages 8-10)
 Extending the number system to parts of a whole.
