@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage 3: Equal Groups - Student Progress Tracking Schema",
+  "type": "object",
+  "properties": {
+    "conceptId": {
+      "type": "string",
+      "const": "032-equal-groups"
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "bestScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "mastered": {
+      "type": "boolean"
+    },
+    "mistakePatterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "group_item_reversal",
+          "additive_one_by_one",
+          "unequal_group_attempt",
+          "incorrect_total"
+        ]
+      }
+    }
+  },
+  "required": ["conceptId", "attempts", "bestScore", "mastered", "mistakePatterns"]
+}

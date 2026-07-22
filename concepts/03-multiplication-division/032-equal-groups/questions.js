@@ -1,0 +1,122 @@
+window.OMF = window.OMF || {};
+window.OMF.currentQuiz = {
+  "conceptId": "032-equal-groups",
+  "parentGuide": {
+    "en": {
+      "concept": "Equal groups means dividing objects into sets where every container holds the exact same number of items. This models multiplication.",
+      "misconceptions": [
+        "<strong>Swapping groups & items:</strong> Confusing the number of groups with the size of each group.",
+        "<strong>Unequal groups:</strong> Trying to multiply groups with different item counts."
+      ],
+      "activities": [
+        "<strong>Muffin Tin Groups:</strong> Place 3 beans in 4 muffin cups and count total.",
+        "<strong>Snack Plate Equalizer:</strong> Make 3 plates of 4 crackers each."
+      ]
+    },
+    "es": {
+      "concept": "Grupos iguales significa dividir objetos en conjuntos donde cada contenedor tiene el mismo número de elementos.",
+      "misconceptions": [
+        "<strong>Confundir grupos y elementos:</strong> Confundir el número de grupos con el tamaño de cada grupo."
+      ],
+      "activities": [
+        "<strong>Grupos en moldes:</strong> Coloca 3 frijoles en 4 tazas de muffin."
+      ]
+    },
+    "hi": {
+      "concept": "समान समूहों का अर्थ है वस्तुओं को ऐसे सेटों में विभाजित करना जहाँ प्रत्येक कंटेनर में समान संख्या में वस्तुएं हों।",
+      "misconceptions": [
+        "<strong>समूहों और वस्तुओं का भ्रम:</strong> समूहों की संख्या को प्रत्येक समूह के आकार के साथ मिलाना।"
+      ],
+      "activities": [
+        "<strong>मफिन टिन समूह:</strong> 4 मफिन कप में 3-3 फलियां रखें।"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "There are 3 baskets with 4 apples in each basket. How many apples are there in total?",
+        "es": "Hay 3 canastas con 4 manzanas en cada una. ¿Cuántas manzanas hay en total?",
+        "hi": "3 टोकरियाँ हैं और प्रत्येक टोकरी में 4 सेब हैं। कुल कितने सेब हैं?"
+      },
+      "groups": 3,
+      "itemsPerGroup": 4,
+      "target": 12,
+      "hint": {
+        "en": "Add 4 three times: 4 + 4 + 4 = 12.",
+        "es": "Suma 4 tres veces: 4 + 4 + 4 = 12.",
+        "hi": "4 को तीन बार जोड़ें: 4 + 4 + 4 = 12।"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "Represent 4 groups of 2 stars. What is the total count?",
+        "es": "Representa 4 grupos de 2 estrellas. ¿Cuál es el recuento total?",
+        "hi": "2 तारों के 4 समूहों का प्रतिनिधित्व करें। कुल गिनती क्या है?"
+      },
+      "groups": 4,
+      "itemsPerGroup": 2,
+      "target": 8,
+      "hint": {
+        "en": "Skip count by 2s four times: 2, 4, 6, 8.",
+        "es": "Cuenta de 2 en 2 cuatro veces: 2, 4, 6, 8.",
+        "hi": "2 से चार बार गिनती करें: 2, 4, 6, 8।"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "There are 2 boxes with 5 books in each box. How many books are there in total?",
+        "es": "Hay 2 cajas con 5 libros en cada una. ¿Cuántos libros hay en total?",
+        "hi": "2 बक्से हैं और प्रत्येक बक्से में 5 किताबें हैं। कुल कितनी किताबें हैं?"
+      },
+      "groups": 2,
+      "itemsPerGroup": 5,
+      "target": 10,
+      "hint": {
+        "en": "5 + 5 = 10.",
+        "es": "5 + 5 = 10.",
+        "hi": "5 + 5 = 10।"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "What is the total of 5 groups of 3 dots?",
+        "es": "¿Cuál es el total de 5 grupos de 3 puntos?",
+        "hi": "3 बिंदुओं के 5 समूहों का कुल योग क्या है?"
+      },
+      "groups": 5,
+      "itemsPerGroup": 3,
+      "target": 15,
+      "hint": {
+        "en": "Add 3 five times: 3 + 3 + 3 + 3 + 3 = 15.",
+        "es": "Suma 3 cinco veces: 3 + 3 + 3 + 3 + 3 = 15.",
+        "hi": "3 को पाँच बार जोड़ें: 3 + 3 + 3 + 3 + 3 = 15।"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "drag-counter",
+      "prompt": {
+        "en": "Show 3 groups of 5 counters. How many counters are there altogether?",
+        "es": "Muestra 3 grupos de 5 fichas. ¿Cuántas fichas hay en total?",
+        "hi": "5 काउंटरों के 3 समूह दिखाएं। कुल मिलाकर कितने काउंटर हैं?"
+      },
+      "groups": 3,
+      "itemsPerGroup": 5,
+      "target": 15,
+      "hint": {
+        "en": "Skip count by 5s three times: 5, 10, 15.",
+        "es": "Cuenta de 5 en 5 tres veces: 5, 10, 15.",
+        "hi": "5 से तीन बार गिनती करें: 5, 10, 15।"
+      }
+    }
+  ]
+};

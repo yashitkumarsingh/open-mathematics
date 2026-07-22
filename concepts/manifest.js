@@ -26,7 +26,13 @@
     { id: "023-ten-more-ten-less", title: { en: "Ten More, Ten Less", es: "Diez Más, Diez Menos", hi: "दस अधिक, दस कम" }, path: "../concepts/02-place-value/023-ten-more-ten-less/child.html" }
   ];
 
-  const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS).concat(STAGE_2_CONCEPTS);
+  const STAGE_3_CONCEPTS = [
+    { id: "031-skip-counting-2-5-10", title: { en: "Skip Counting (2, 5, 10)", es: "Contar de en medio (2, 5, 10)", hi: "छोड़कर गिनती (2, 5, 10)" }, path: "../concepts/03-multiplication-division/031-skip-counting-2-5-10/child.html" },
+    { id: "032-equal-groups", title: { en: "Equal Groups", es: "Grupos Iguales", hi: "समान समूह" }, path: "../concepts/03-multiplication-division/032-equal-groups/child.html" },
+    { id: "033-arrays-and-multiplication", title: { en: "Arrays & Multiplication", es: "Matrices y Multiplicación", hi: "ऐरे और गुणा" }, path: "../concepts/03-multiplication-division/033-arrays-and-multiplication/child.html" }
+  ];
+
+  const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS).concat(STAGE_2_CONCEPTS).concat(STAGE_3_CONCEPTS);
 
   const manifestActivities = {
     "001-counting-0-to-10": {
@@ -103,6 +109,21 @@
       en: "Magic Ten-Ruler Jump: Stand on 13 and make a giant leap forward to 23 (10 more). Jump back for 10 less.",
       es: "Salto Mágico de Diez: Párate en el 13 y da un gran salto directo al 23. Salta atrás para 10 menos.",
       hi: "जादू दहाई छलांग: 13 पर खड़े हों और सीधे 23 (10 अधिक) पर कूदें। 10 कम के लिए पीछे कूदें।"
+    },
+    "031-skip-counting-2-5-10": {
+      en: "Sidewalk Frog Jumps: Draw a chalk line and hop by 2s, 5s, or 10s.",
+      es: "Saltos de Rana: Dibuja una línea de tiza y salta de 2 en 2 o de 5 en 5.",
+      hi: "मेढक कूद: चाक रेखा खींचें और 2 या 5 से कूदें।"
+    },
+    "032-equal-groups": {
+      en: "Muffin Tin Groups: Place 3 beans in 4 muffin cups and count total.",
+      es: "Grupos en moldes: Coloca 3 frijoles en 4 tazas de muffin.",
+      hi: "मफिन टिन समूह: 4 मफिन कप में 3-3 फलियां रखें।"
+    },
+    "033-arrays-and-multiplication": {
+      en: "Cheez-It Array Feast: Build 3x4 grids out of square crackers.",
+      es: "Ciudad de Matrices: Dibuja cuadrículas rectangulares en papel cuadriculado.",
+      hi: "ऐरे दावत: वर्गाकार क्रैकर्स से 3x4 ग्रिड बनाएं।"
     }
   };
 
@@ -110,6 +131,7 @@
   window.OMF.STAGE_0_CONCEPTS = STAGE_0_CONCEPTS;
   window.OMF.STAGE_1_CONCEPTS = STAGE_1_CONCEPTS;
   window.OMF.STAGE_2_CONCEPTS = STAGE_2_CONCEPTS;
+  window.OMF.STAGE_3_CONCEPTS = STAGE_3_CONCEPTS;
   window.OMF.STAGE_CONCEPTS = STAGE_CONCEPTS;
   window.OMF.manifestActivities = manifestActivities;
 })();

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage 3: Skip Counting (2, 5, 10) - Student Progress Tracking Schema",
+  "type": "object",
+  "properties": {
+    "conceptId": {
+      "type": "string",
+      "const": "031-skip-counting-2-5-10"
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "bestScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "mastered": {
+      "type": "boolean"
+    },
+    "mistakePatterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "off_by_one",
+          "mixed_step_size",
+          "boundary_freeze",
+          "incorrect_target"
+        ]
+      }
+    }
+  },
+  "required": ["conceptId", "attempts", "bestScore", "mastered", "mistakePatterns"]
+}
