@@ -44,9 +44,15 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 * Count by twos, fives and tens from any starting point, forward and backward.
   - **Mapped Concepts**: `031-skip-counting-2-5-10`
 
-### AC9M2N04 (Represent multiplication as equal groups and arrays)
+### AC9M2N04 (Represent multiplication and division as equal groups and arrays)
 * Represent multiplication and division problems using equal groups, arrays, and repeated addition.
-  - **Mapped Concepts**: `032-equal-groups`, `033-arrays-and-multiplication`
+  - **Mapped Concepts**: `032-equal-groups`, `033-arrays-and-multiplication`, `034-division-as-equal-sharing`
+
+## 🔹 Year 3 Curriculum Outcomes (Stage 3 Parity)
+
+### AC9M3N01 (Recognise and describe odd and even numbers)
+* Recognise, represent and describe odd and even numbers.
+  - **Mapped Concepts**: `035-odd-and-even-numbers`
 
 ---
 
@@ -72,3 +78,6 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 | **031-skip-counting-2-5-10** | Skip Counting (2, 5, 10) | AC9M2N01 (Skip counting sequence patterns) |
 | **032-equal-groups** | Equal Groups | AC9M2N04 (Multiplication as equal-sized collections) |
 | **033-arrays-and-multiplication** | Arrays & Multiplication | AC9M2N04 (Rectangular row × column grids) |
+| **034-division-as-equal-sharing** | Division as Equal Sharing | AC9M2N04 (Fair distribution among groups) |
+| **035-odd-and-even-numbers** | Odd and Even Numbers | AC9M3N01 (Pairing and ones-digit parity) |
+| **036-stage-3-mastery-test** | Stage 3 Mastery Test | Synthesised Review (Stage 3 Level) |

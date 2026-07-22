@@ -55,10 +55,14 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
   - **Concepts**: `031-skip-counting-2-5-10`
 
 ### 2. Operations & Algebraic Thinking (2.OA / 3.OA)
+* **2.OA.C.3**: Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s.
+  - **Concepts**: `035-odd-and-even-numbers`
 * **2.OA.C.4**: Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns.
   - **Concepts**: `033-arrays-and-multiplication`
 * **3.OA.A.1**: Interpret products of whole numbers, e.g., interpret 5 × 7 as the total number of objects in 5 groups of 7 objects each.
   - **Concepts**: `032-equal-groups`, `033-arrays-and-multiplication`
+* **3.OA.A.2**: Interpret whole-number quotients of whole numbers, e.g., interpret 56 ÷ 8 as the number of objects in each share when 56 objects are partitioned equally into 8 shares.
+  - **Concepts**: `034-division-as-equal-sharing`
 
 ---
 
@@ -84,3 +88,6 @@ This document maps the **Open Mathematics Foundation** (Stage 0, 1, and 2) to th
 | **031-skip-counting-2-5-10** | 2.NBT.A.2 | Skip-count by 2s, 5s, and 10s on number scales |
 | **032-equal-groups** | 3.OA.A.1 | Interpret products as N equal groups of size M |
 | **033-arrays-and-multiplication** | 2.OA.C.4, 3.OA.A.1 | Rectangular grid arrays expressing rows × columns |
+| **034-division-as-equal-sharing** | 3.OA.A.2 | Interpret quotients as equal share amounts |
+| **035-odd-and-even-numbers** | 2.OA.C.3 | Test odd/even parity by pairing objects in twos |
+| **036-stage-3-mastery-test** | Mixed CCSS | Cumulative assessment of CCSS Stage 3 standards |

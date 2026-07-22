@@ -47,6 +47,9 @@ Developing multiplication as repeated addition of equal groups, and division as 
   - `031-skip-counting-2-5-10`: Skip counting on number scales by 2s, 5s, 10s.
   - `032-equal-groups`: Visual models of $N$ equal groups of size $M$.
   - `033-arrays-and-multiplication`: Rectangular grid arrays ($\text{rows} \times \text{columns}$) & visual commutativity.
+  - `034-division-as-equal-sharing`: Fair distribution division into equal groups.
+  - `035-odd-and-even-numbers`: Buddy pairing and ones-digit parity identification.
+  - `036-stage-3-mastery-test`: Mixed assessment across Stage 3 multiplication & division.
 
 ### Stage 4: Fractions & Decimals (Ages 8-10)
 Extending the number system to parts of a whole.
