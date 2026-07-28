@@ -716,3 +716,96 @@ html.dyslexia-mode * {
 body.warm-mode {
   filter: sepia(0.32) contrast(0.96) saturate(0.9) !important;
 }
+
+/* --- High-Contrast & Colorblind Theme Modes (Issue #22) --- */
+
+/* High Contrast Mode */
+body.high-contrast-mode,
+[data-theme="high-contrast"] {
+  --bg-color: #ffffff;
+  --text-main: #000000;
+  --text-secondary: #111111;
+  --primary-color: #002b80;
+  --primary-light: #e6f0ff;
+  --success-color: #006600;
+  --success-light: #e6ffe6;
+  --warning-color: #802b00;
+  --warning-light: #fff0e6;
+  --card-bg: #ffffff;
+  --card-shadow: 0 0 0 3px #000000;
+  --card-shadow-hover: 0 0 0 4px #002b80;
+}
+
+body.high-contrast-mode .card,
+[data-theme="high-contrast"] .card {
+  border: 3px solid #000000 !important;
+}
+
+body.high-contrast-mode .btn,
+[data-theme="high-contrast"] .btn {
+  border: 2px solid #000000 !important;
+}
+
+/* Deuteranopia (Red-Green Color Blindness - Green-blindness) Mode */
+body.deuteranopia-mode,
+[data-theme="deuteranopia"] {
+  --primary-color: hsl(210, 75%, 40%);     /* Deep Cobalt Blue */
+  --primary-light: hsl(210, 75%, 93%);
+  --success-color: hsl(190, 85%, 32%);     /* Deep Teal / Cyan */
+  --success-light: hsl(190, 85%, 92%);
+  --warning-color: hsl(40, 95%, 44%);      /* Deep Amber Gold */
+  --warning-light: hsl(40, 95%, 93%);
+}
+
+/* Protanopia (Red-Green Color Blindness - Red-blindness) Mode */
+body.protanopia-mode,
+[data-theme="protanopia"] {
+  --primary-color: hsl(220, 70%, 42%);     /* Vibrant Royal Blue */
+  --primary-light: hsl(220, 70%, 93%);
+  --success-color: hsl(175, 80%, 30%);     /* Emerald Teal */
+  --success-light: hsl(175, 80%, 92%);
+  --warning-color: hsl(45, 90%, 42%);      /* Pure Yellow-Gold */
+  --warning-light: hsl(45, 90%, 93%);
+}
+
+/* --- Non-Color Correctness Indicators (Pattern Overlays & Icons) --- */
+
+/* Option Buttons Correct/Incorrect Visual Badging */
+.quiz-option-btn.correct,
+.btn-option.correct {
+  border: 3px solid var(--success-color) !important;
+  position: relative;
+}
+
+.quiz-option-btn.correct::after,
+.btn-option.correct::after {
+  content: " ✓";
+  font-weight: 900;
+  color: var(--success-color);
+  margin-left: 8px;
+}
+
+.quiz-option-btn.incorrect,
+.btn-option.incorrect {
+  border: 3px dashed var(--warning-color) !important;
+  position: relative;
+}
+
+.quiz-option-btn.incorrect::after,
+.btn-option.incorrect::after {
+  content: " ✕";
+  font-weight: 900;
+  color: var(--warning-color);
+  margin-left: 8px;
+}
+
+/* Feedback Box Patterning & Indicators */
+.feedback-box.correct {
+  border-left: 8px solid var(--success-color) !important;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.015) 10px, rgba(0,0,0,0.015) 20px);
+}
+
+.feedback-box.incorrect {
+  border-left: 8px dashed var(--warning-color) !important;
+}
+

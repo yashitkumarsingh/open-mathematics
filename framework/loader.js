@@ -36,5 +36,14 @@
     if (localStorage.getItem("omf_warm") === "true") {
       document.body.classList.add("warm-mode");
     }
+    if (localStorage.getItem("omf_high_contrast") === "true") {
+      document.body.classList.add("high-contrast-mode");
+    }
+    const colorblindMode = localStorage.getItem("omf_colorblind");
+    if (colorblindMode === "deuteranopia") {
+      document.body.classList.add("deuteranopia-mode");
+    } else if (colorblindMode === "protanopia") {
+      document.body.classList.add("protanopia-mode");
+    }
   });
 })();

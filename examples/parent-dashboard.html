@@ -179,6 +179,20 @@
           <span class="lang-es">Filtro de Brillo</span>
           <span class="lang-hi">चमक फ़िल्टर</span>
         </button>
+        <!-- High Contrast Toggle -->
+        <button id="toggle-contrast" class="btn btn-secondary" style="height: 40px; padding: 0 16px; border: 2px solid hsl(210, 17%, 80%); display: flex; align-items: center; gap: 6px; font-weight: 600;">
+          <span>👁️</span>
+          <span class="lang-en">High Contrast</span>
+          <span class="lang-es">Alto Contraste</span>
+          <span class="lang-hi">उच्च कंट्रास्ट</span>
+        </button>
+        <!-- Colorblind Toggle -->
+        <button id="toggle-colorblind" class="btn btn-secondary" style="height: 40px; padding: 0 16px; border: 2px solid hsl(210, 17%, 80%); display: flex; align-items: center; gap: 6px; font-weight: 600;">
+          <span>🎨</span>
+          <span class="lang-en">Colorblind Mode</span>
+          <span class="lang-es">Modo Daltónico</span>
+          <span class="lang-hi">कलरब्लाइंड मोड</span>
+        </button>
       </div>
     </section>
 
@@ -365,6 +379,45 @@
         localStorage.setItem("omf_warm", active ? "true" : "false");
         btnWarm.style.backgroundColor = active ? "var(--warning-light)" : "white";
         btnWarm.style.borderColor = active ? "var(--warning-color)" : "hsl(210, 17%, 80%)";
+      });
+
+      const btnContrast = document.getElementById("toggle-contrast");
+      if (localStorage.getItem("omf_high_contrast") === "true") {
+        document.body.classList.add("high-contrast-mode");
+        btnContrast.style.backgroundColor = "var(--primary-light)";
+        btnContrast.style.borderColor = "var(--primary-color)";
+      }
+      btnContrast.addEventListener("click", () => {
+        const active = document.body.classList.toggle("high-contrast-mode");
+        localStorage.setItem("omf_high_contrast", active ? "true" : "false");
+        btnContrast.style.backgroundColor = active ? "var(--primary-light)" : "white";
+        btnContrast.style.borderColor = active ? "var(--primary-color)" : "hsl(210, 17%, 80%)";
+      });
+
+      const btnColorblind = document.getElementById("toggle-colorblind");
+      const currentColorblind = localStorage.getItem("omf_colorblind");
+      if (currentColorblind === "deuteranopia" || currentColorblind === "protanopia") {
+        document.body.classList.add(currentColorblind + "-mode");
+        btnColorblind.style.backgroundColor = "var(--primary-light)";
+        btnColorblind.style.borderColor = "var(--primary-color)";
+      }
+      btnColorblind.addEventListener("click", () => {
+        if (document.body.classList.contains("deuteranopia-mode")) {
+          document.body.classList.remove("deuteranopia-mode");
+          document.body.classList.add("protanopia-mode");
+          localStorage.setItem("omf_colorblind", "protanopia");
+          btnColorblind.style.backgroundColor = "var(--primary-light)";
+        } else if (document.body.classList.contains("protanopia-mode")) {
+          document.body.classList.remove("protanopia-mode");
+          localStorage.setItem("omf_colorblind", "none");
+          btnColorblind.style.backgroundColor = "white";
+          btnColorblind.style.borderColor = "hsl(210, 17%, 80%)";
+        } else {
+          document.body.classList.add("deuteranopia-mode");
+          localStorage.setItem("omf_colorblind", "deuteranopia");
+          btnColorblind.style.backgroundColor = "var(--primary-light)";
+          btnColorblind.style.borderColor = "var(--primary-color)";
+        }
       });
 
       refreshDashboard();
