@@ -17,7 +17,8 @@
 
   const STAGE_1_CONCEPTS = [
     { id: "011-addition-as-combining", title: { en: "Addition as Combining", es: "Suma como Combinación", hi: "जोड़ का अर्थ संयोजन" }, path: "../concepts/01-addition-subtraction/011-addition-as-combining/child.html" },
-    { id: "012-counting-on", title: { en: "Counting On", es: "Contar hacia Adelante", hi: "आगे गिनती" }, path: "../concepts/01-addition-subtraction/012-counting-on/child.html" }
+    { id: "012-counting-on", title: { en: "Counting On", es: "Contar hacia Adelante", hi: "आगे गिनती" }, path: "../concepts/01-addition-subtraction/012-counting-on/child.html" },
+    { id: "013-subtraction-as-taking-away", title: { en: "Subtraction as Taking Away", es: "Resta como Quitar", hi: "घटाव का अर्थ निकालना" }, path: "../concepts/01-addition-subtraction/013-subtraction-as-taking-away/child.html" }
   ];
 
   const STAGE_2_CONCEPTS = [
@@ -97,6 +98,11 @@
       en: "Chalk Path Hop: Hop forward from a starting box, counting steps forward on the sidewalk.",
       es: "Saltos de tiza: Salta hacia adelante desde una casilla inicial, contando los pasos en el suelo.",
       hi: "चाक पथ कूद: प्रारंभिक बॉक्स से आगे कूदें और फुटपाथ पर आगे बढ़ने वाले कदमों को गिनें।"
+    },
+    "013-subtraction-as-taking-away": {
+      en: "Snack Take-Away: Place 6 crackers on a plate. Eat 2 and count how many remain.",
+      es: "Merienda Quitar: Coloca 6 galletas en un plato. Come 2 y cuenta cuántas quedan.",
+      hi: "बिस्कुट घटाना: एक प्लेट में 6 बिस्कुट रखें। 2 खाएं और पूछें कि कितने बचे हैं।"
     },
     "021-tens-and-ones": {
       en: "Roll and Build: Place bundles of 10 straws in the Tens column and loose ones in the Ones.",
