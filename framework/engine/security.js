@@ -10,13 +10,13 @@
       tempDiv.innerHTML = htmlString;
       
       const allowedTags = [
-        "DIV", "SPAN", "STRONG", "EM", "BR", "P", "B", "I", "IMG",
+        "DIV", "SPAN", "STRONG", "EM", "BR", "P", "B", "I", "S", "SUB", "SUP", "CODE", "DEL", "INS", "U", "SMALL", "IMG",
         "BASE-TEN-BLOCKS", "TEN-FRAME", "NUMBER-LINE", "DRAG-COUNTER"
       ];
       
       const allowedAttrs = [
         "style", "tens", "ones", "interactive", "value", 
-        "min", "max", "step", "src", "alt", "width", "height"
+        "min", "max", "step", "src", "alt", "width", "height", "class", "id"
       ];
 
       function cleanNode(node) {
@@ -32,12 +32,15 @@
               // Clean attributes
               const attributes = Array.from(child.attributes);
               for (const attr of attributes) {
-                if (!allowedAttrs.includes(attr.name)) {
+                const attrName = attr.name.toLowerCase();
+                const attrVal = attr.value.toLowerCase();
+                
+                // Strip inline event handlers or non-whitelisted attributes
+                if (attrName.startsWith("on") || !allowedAttrs.includes(attrName) || attrVal.includes("javascript:")) {
                   child.removeAttribute(attr.name);
-                } else if (attr.name === "style") {
+                } else if (attrName === "style") {
                   // Prevent script strings or expression evasion vectors inside styles
-                  const styleVal = attr.value.toLowerCase();
-                  if (styleVal.includes("javascript:") || styleVal.includes("expression(") || styleVal.includes("url(")) {
+                  if (attrVal.includes("expression(") || attrVal.includes("url(") || attrVal.includes("position:")) {
                     child.removeAttribute("style");
                   }
                 }
