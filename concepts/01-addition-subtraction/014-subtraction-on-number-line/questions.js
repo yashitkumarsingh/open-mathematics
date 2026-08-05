@@ -1,0 +1,127 @@
+window.OMF = window.OMF || {};
+window.OMF.currentQuiz = {
+  "conceptId": "014-subtraction-on-number-line",
+  "parentGuide": {
+    "en": {
+      "concept": "Subtraction on a number line is modeling difference as backward steps to the left toward 0. The starting point is the total, and each backward hop reduces the position.",
+      "misconceptions": [
+        "<strong>Counting Starting Notch:</strong> Remind children to count the hop spaces moved, not the starting mark line.",
+        "<strong>Direction Error:</strong> Emphasize that subtraction always hops left (backward) toward 0."
+      ],
+      "activities": [
+        "<strong>Chalk Backward Hop:</strong> Draw a 0-10 chalk scale on the ground. Stand on 7 and hop backward 3 steps.",
+        "<strong>Ruler Car Slide:</strong> Slide a toy car backward on a tape measure from 9 to 5."
+      ]
+    },
+    "es": {
+      "concept": "La resta en la recta numérica representa la diferencia como pasos hacia atrás hacia el 0.",
+      "misconceptions": [
+        "<strong>Contar la marca inicial:</strong> Recuerda contar los saltos realizados, no la línea de inicio."
+      ],
+      "activities": [
+        "<strong>Salto de Tiza:</strong> Dibuja una escala del 0 al 10. Párate en el 7 y salta hacia atrás 3 pasos."
+      ]
+    },
+    "hi": {
+      "concept": "संख्या रेखा पर घटाव का अर्थ 0 की ओर पीछे के कदम बढ़ाना है।",
+      "misconceptions": [
+        "<strong>प्रारंभिक रेखा को गिनना:</strong> बच्चों को शुरुआती लाइन के बजाय तय की गई छलांगों को गिनने की याद दिलाएं।"
+      ],
+      "activities": [
+        "<strong>चाक से पीछे कूदना:</strong> जमीन पर 0-10 पैमाना बनाएं। 7 पर खड़े हों और 3 कदम पीछे कूदें।"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": {
+        "en": "Start at 6 on the number line. Hop backward 2 steps. What number do you land on? <br><br> 6 - 2 = ?",
+        "es": "Empieza en el 6 en la recta numérica. Salta 2 pasos hacia atrás. ¿En qué número aterrizas? <br><br> 6 - 2 = ?",
+        "hi": "संख्या रेखा पर 6 से शुरू करें। 2 कदम पीछे कूदें। आप किस संख्या पर पहुंचते हैं? <br><br> 6 - 2 = ?"
+      },
+      "options": [
+        {"label": "3", "value": 3},
+        {"label": "4", "value": 4},
+        {"label": "5", "value": 5}
+      ],
+      "target": 4,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q2",
+      "type": "number-line",
+      "prompt": {
+        "en": "Use the number line to solve 7 - 3.",
+        "es": "Usa la recta numérica para resolver 7 - 3.",
+        "hi": "7 - 3 को हल करने के लिए संख्या रेखा का उपयोग करें।"
+      },
+      "target": 4,
+      "min": 0,
+      "max": 10,
+      "hint": {
+        "en": "Start at 7 and count 3 steps to the left.",
+        "es": "Empieza en el 7 y cuenta 3 pasos hacia la izquierda.",
+        "hi": "7 से शुरू करें और बाईं ओर 3 कदम गिनें।"
+      },
+      "mistakePatterns": {
+        "3": "undercounts",
+        "5": "overcounts"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": {
+        "en": "Start at 8 on the number line and hop backward 4 steps. What is 8 - 4?",
+        "es": "Empieza en el 8 y salta 4 pasos hacia atrás. ¿Cuánto es 8 - 4?",
+        "hi": "संख्या रेखा पर 8 से शुरू करें और 4 कदम पीछे कूदें। 8 - 4 क्या है?"
+      },
+      "options": [
+        {"label": "3", "value": 3},
+        {"label": "4", "value": 4},
+        {"label": "5", "value": 5}
+      ],
+      "target": 4,
+      "mistakePattern": "incorrect_choice"
+    },
+    {
+      "id": "q4",
+      "type": "number-line",
+      "prompt": {
+        "en": "Move the indicator on the number line to show 9 - 5.",
+        "es": "Mueve el indicador en la recta numérica para mostrar 9 - 5.",
+        "hi": "9 - 5 दिखाने के लिए संख्या रेखा पर संकेतक को ले जाएं।"
+      },
+      "target": 4,
+      "min": 0,
+      "max": 10,
+      "hint": {
+        "en": "Start at 9 and jump left 5 notches.",
+        "es": "Empieza en el 9 y salta 5 marcas a la izquierda.",
+        "hi": "9 से शुरू करें और 5 स्थान बाईं ओर कूदें।"
+      },
+      "mistakePatterns": {
+        "3": "undercounts",
+        "5": "overcounts"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": {
+        "en": "Start at 10. Take 3 backward hops. Where do you land? <br><br> 10 - 3 = ?",
+        "es": "Empieza en el 10. Da 3 saltos hacia atrás. ¿Dónde aterrizas? <br><br> 10 - 3 = ?",
+        "hi": "10 से शुरू करें। 3 कदम पीछे कूदें। आप कहाँ पहुँचते हैं? <br><br> 10 - 3 = ?"
+      },
+      "options": [
+        {"label": "6", "value": 6},
+        {"label": "7", "value": 7},
+        {"label": "8", "value": 8}
+      ],
+      "target": 7,
+      "mistakePattern": "incorrect_choice"
+    }
+  ]
+};
