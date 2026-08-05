@@ -19,7 +19,8 @@
     { id: "011-addition-as-combining", title: { en: "Addition as Combining", es: "Suma como Combinación", hi: "जोड़ का अर्थ संयोजन" }, path: "../concepts/01-addition-subtraction/011-addition-as-combining/child.html" },
     { id: "012-counting-on", title: { en: "Counting On", es: "Contar hacia Adelante", hi: "आगे गिनती" }, path: "../concepts/01-addition-subtraction/012-counting-on/child.html" },
     { id: "013-subtraction-as-taking-away", title: { en: "Subtraction as Taking Away", es: "Resta como Quitar", hi: "घटाव का अर्थ निकालना" }, path: "../concepts/01-addition-subtraction/013-subtraction-as-taking-away/child.html" },
-    { id: "014-subtraction-on-number-line", title: { en: "Subtraction on Number Line", es: "Resta en la Recta Numérica", hi: "संख्या रेखा पर घटाव" }, path: "../concepts/01-addition-subtraction/014-subtraction-on-number-line/child.html" }
+    { id: "014-subtraction-on-number-line", title: { en: "Subtraction on Number Line", es: "Resta en la Recta Numérica", hi: "संख्या रेखा पर घटाव" }, path: "../concepts/01-addition-subtraction/014-subtraction-on-number-line/child.html" },
+    { id: "015-mixed-addition-subtraction", title: { en: "Mixed Addition & Subtraction", es: "Práctica Mixta de Suma y Resta", hi: "मिश्रित जोड़ और घटाव" }, path: "../concepts/01-addition-subtraction/015-mixed-addition-subtraction/child.html" }
   ];
 
   const STAGE_2_CONCEPTS = [
@@ -109,6 +110,11 @@
       en: "Sidewalk Chalk Hop: Draw a 0-10 scale on pavement, stand on 7, and hop backward 3 steps.",
       es: "Salto de Tiza: Dibuja una escala del 0 al 10 en el suelo, párate en el 7 y salta 3 pasos hacia atrás.",
       hi: "चाक से पीछे कूदना: जमीन पर 0-10 पैमाना बनाएं, 7 पर खड़े हों और 3 कदम पीछे कूदें।"
+    },
+    "015-mixed-addition-subtraction": {
+      en: "Domino Fact Family: Pick a domino and write out the 2 addition and 2 subtraction equations.",
+      es: "Familia con Dominó: Elige un dominó y escribe sus 2 sumas y 2 restas.",
+      hi: "डोमिनो संख्या परिवार: एक डोमिनो चुनें और इसके 2 जोड़ और 2 घटाव समीकरण लिखें।"
     },
     "021-tens-and-ones": {
       en: "Roll and Build: Place bundles of 10 straws in the Tens column and loose ones in the Ones.",
