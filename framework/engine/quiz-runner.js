@@ -232,6 +232,24 @@
           this.activeComponent = baseTen;
           break;
 
+        case "hundred-chart":
+          const hundredChart = document.createElement("hundred-chart");
+          if (question.interactive !== false) {
+            hundredChart.setAttribute("interactive", "true");
+          }
+          if (question.highlightStep) {
+            hundredChart.setAttribute("highlight-step", question.highlightStep);
+          }
+          if (question.showOddEven) {
+            hundredChart.setAttribute("show-odd-even", "true");
+          }
+          if (question.selected) {
+            hundredChart.setAttribute("selected", question.selected);
+          }
+          container.appendChild(hundredChart);
+          this.activeComponent = hundredChart;
+          break;
+
         default:
           container.innerHTML = `<p style="color: var(--warning-color);">Unsupported question type: ${question.type}</p>`;
       }

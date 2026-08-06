@@ -11,7 +11,7 @@
       
       const allowedTags = [
         "DIV", "SPAN", "STRONG", "EM", "BR", "P", "B", "I", "S", "SUB", "SUP", "CODE", "DEL", "INS", "U", "SMALL", "IMG",
-        "BASE-TEN-BLOCKS", "TEN-FRAME", "NUMBER-LINE", "DRAG-COUNTER"
+        "BASE-TEN-BLOCKS", "TEN-FRAME", "NUMBER-LINE", "DRAG-COUNTER", "HUNDRED-CHART"
       ];
       
       const allowedAttrs = [

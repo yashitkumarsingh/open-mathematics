@@ -225,6 +225,72 @@ header h1 {
   border-style: solid;
 }
 
+/* Hundred Chart Component */
+.hundred-chart-container {
+  width: 100%;
+  max-width: 560px;
+  margin: 16px auto;
+  overflow-x: auto;
+}
+
+.hundred-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.hundred-chart-cell {
+  min-width: 48px;
+  min-height: 48px;
+  aspect-ratio: 1;
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary-light);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-elastic);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.hundred-chart-cell:hover {
+  transform: scale(1.08);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hundred-chart-cell.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.hundred-chart-cell.highlighted {
+  background-color: var(--warning-light);
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+}
+
+.hundred-chart-cell.selected.highlighted {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.hundred-chart-cell.even {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.hundred-chart-cell.odd {
+  border-bottom: 3px dashed var(--warning-color);
+}
+
 /* Number Line */
 .number-line-container {
   display: flex;
