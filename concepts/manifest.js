@@ -28,7 +28,8 @@
     { id: "021-tens-and-ones", title: { en: "Tens and Ones", es: "Decenas y Unidades", hi: "दहाई और इकाई" }, path: "../concepts/02-place-value/021-tens-and-ones/child.html" },
     { id: "022-comparing-two-digit-numbers", title: { en: "Comparing Numbers", es: "Comparar Números", hi: "संख्याओं की तुलना" }, path: "../concepts/02-place-value/022-comparing-two-digit-numbers/child.html" },
     { id: "023-ten-more-ten-less", title: { en: "Ten More, Ten Less", es: "Diez Más, Diez Menos", hi: "दस अधिक, दस कम" }, path: "../concepts/02-place-value/023-ten-more-ten-less/child.html" },
-    { id: "024-expanded-form-tens", title: { en: "Expanded Form & Tens Decompositions", es: "Forma Desarrollada y Decenas", hi: "विस्तारित रूप और दहाई मान" }, path: "../concepts/02-place-value/024-expanded-form-tens/child.html" }
+    { id: "024-expanded-form-tens", title: { en: "Expanded Form & Tens Decompositions", es: "Forma Desarrollada y Decenas", hi: "विस्तारित रूप और दहाई मान" }, path: "../concepts/02-place-value/024-expanded-form-tens/child.html" },
+    { id: "025-hundreds-tens-ones", title: { en: "Hundreds, Tens, and Ones", es: "Centenas, Decenas y Unidades", hi: "सैकड़ा, दहाई और इकाई" }, path: "../concepts/02-place-value/025-hundreds-tens-ones/child.html" }
   ];
 
   const STAGE_3_CONCEPTS = [
@@ -142,6 +143,11 @@
       en: "Straw Bundle Expansion: Lay out bundles of 10 and loose straws to represent 30 + 6 = 36.",
       es: "Expansión con Pajitas: Coloca paquetes de 10 y unidades para formar 30 + 6 = 36.",
       hi: "तीली बंडल विस्तार: 30 + 6 = 36 को दर्शाने के लिए 10 के बंडल और खुली तीलियाँ रखें।"
+    },
+    "025-hundreds-tens-ones": {
+      en: "3-Column Place Value Mat: Build numbers on a Hundreds-Tens-Ones mat.",
+      es: "Matriz de 3 Columnas: Construye números en un tapete de Centenas-Decenas-Unidades.",
+      hi: "3-कॉलम स्थान मान मैट: सैकड़ा-दहाई-इकाई मैट पर संख्याएं बनाएं।"
     },
     "031-skip-counting-2-5-10": {
       en: "Sidewalk Frog Jumps: Draw a chalk line and hop by 2s, 5s, or 10s.",
