@@ -20,7 +20,8 @@
     { id: "012-counting-on", title: { en: "Counting On", es: "Contar hacia Adelante", hi: "आगे गिनती" }, path: "../concepts/01-addition-subtraction/012-counting-on/child.html" },
     { id: "013-subtraction-as-taking-away", title: { en: "Subtraction as Taking Away", es: "Resta como Quitar", hi: "घटाव का अर्थ निकालना" }, path: "../concepts/01-addition-subtraction/013-subtraction-as-taking-away/child.html" },
     { id: "014-subtraction-on-number-line", title: { en: "Subtraction on Number Line", es: "Resta en la Recta Numérica", hi: "संख्या रेखा पर घटाव" }, path: "../concepts/01-addition-subtraction/014-subtraction-on-number-line/child.html" },
-    { id: "015-mixed-addition-subtraction", title: { en: "Mixed Addition & Subtraction", es: "Práctica Mixta de Suma y Resta", hi: "मिश्रित जोड़ और घटाव" }, path: "../concepts/01-addition-subtraction/015-mixed-addition-subtraction/child.html" }
+    { id: "015-mixed-addition-subtraction", title: { en: "Mixed Addition & Subtraction", es: "Práctica Mixta de Suma y Resta", hi: "मिश्रित जोड़ और घटाव" }, path: "../concepts/01-addition-subtraction/015-mixed-addition-subtraction/child.html" },
+    { id: "016-stage-1-mastery-test", title: { en: "Stage 1 Mixed Mastery Test", es: "Prueba de Maestría Mixta Etapa 1", hi: "चरण 1 मिश्रित महारत परीक्षण" }, path: "../concepts/01-addition-subtraction/016-stage-1-mastery-test/child.html" }
   ];
 
   const STAGE_2_CONCEPTS = [
@@ -115,6 +116,11 @@
       en: "Domino Fact Family: Pick a domino and write out the 2 addition and 2 subtraction equations.",
       es: "Familia con Dominó: Elige un dominó y escribe sus 2 sumas y 2 restas.",
       hi: "डोमिनो संख्या परिवार: एक डोमिनो चुनें और इसके 2 जोड़ और 2 घटाव समीकरण लिखें।"
+    },
+    "016-stage-1-mastery-test": {
+      en: "Stage 1 Board Game Relay: Solve cards to move a pawn forward along a 10-square track.",
+      es: "Juego de Tablero Etapa 1: Resuelve tarjetas para mover un peón por un camino de 10 casillas.",
+      hi: "चरण 1 बोर्ड गेम रिले: 10-वर्ग ट्रैक पर एक गोट आगे बढ़ाने के लिए कार्ड हल करें।"
     },
     "021-tens-and-ones": {
       en: "Roll and Build: Place bundles of 10 straws in the Tens column and loose ones in the Ones.",
