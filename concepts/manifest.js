@@ -27,7 +27,8 @@
   const STAGE_2_CONCEPTS = [
     { id: "021-tens-and-ones", title: { en: "Tens and Ones", es: "Decenas y Unidades", hi: "दहाई और इकाई" }, path: "../concepts/02-place-value/021-tens-and-ones/child.html" },
     { id: "022-comparing-two-digit-numbers", title: { en: "Comparing Numbers", es: "Comparar Números", hi: "संख्याओं की तुलना" }, path: "../concepts/02-place-value/022-comparing-two-digit-numbers/child.html" },
-    { id: "023-ten-more-ten-less", title: { en: "Ten More, Ten Less", es: "Diez Más, Diez Menos", hi: "दस अधिक, दस कम" }, path: "../concepts/02-place-value/023-ten-more-ten-less/child.html" }
+    { id: "023-ten-more-ten-less", title: { en: "Ten More, Ten Less", es: "Diez Más, Diez Menos", hi: "दस अधिक, दस कम" }, path: "../concepts/02-place-value/023-ten-more-ten-less/child.html" },
+    { id: "024-expanded-form-tens", title: { en: "Expanded Form & Tens Decompositions", es: "Forma Desarrollada y Decenas", hi: "विस्तारित रूप और दहाई मान" }, path: "../concepts/02-place-value/024-expanded-form-tens/child.html" }
   ];
 
   const STAGE_3_CONCEPTS = [
@@ -136,6 +137,11 @@
       en: "Magic Ten-Ruler Jump: Stand on 13 and make a giant leap forward to 23 (10 more). Jump back for 10 less.",
       es: "Salto Mágico de Diez: Párate en el 13 y da un gran salto directo al 23. Salta atrás para 10 menos.",
       hi: "जादू दहाई छलांग: 13 पर खड़े हों और सीधे 23 (10 अधिक) पर कूदें। 10 कम के लिए पीछे कूदें।"
+    },
+    "024-expanded-form-tens": {
+      en: "Straw Bundle Expansion: Lay out bundles of 10 and loose straws to represent 30 + 6 = 36.",
+      es: "Expansión con Pajitas: Coloca paquetes de 10 y unidades para formar 30 + 6 = 36.",
+      hi: "तीली बंडल विस्तार: 30 + 6 = 36 को दर्शाने के लिए 10 के बंडल और खुली तीलियाँ रखें।"
     },
     "031-skip-counting-2-5-10": {
       en: "Sidewalk Frog Jumps: Draw a chalk line and hop by 2s, 5s, or 10s.",
