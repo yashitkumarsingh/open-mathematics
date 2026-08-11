@@ -29,7 +29,8 @@
     { id: "022-comparing-two-digit-numbers", title: { en: "Comparing Numbers", es: "Comparar Números", hi: "संख्याओं की तुलना" }, path: "../concepts/02-place-value/022-comparing-two-digit-numbers/child.html" },
     { id: "023-ten-more-ten-less", title: { en: "Ten More, Ten Less", es: "Diez Más, Diez Menos", hi: "दस अधिक, दस कम" }, path: "../concepts/02-place-value/023-ten-more-ten-less/child.html" },
     { id: "024-expanded-form-tens", title: { en: "Expanded Form & Tens Decompositions", es: "Forma Desarrollada y Decenas", hi: "विस्तारित रूप और दहाई मान" }, path: "../concepts/02-place-value/024-expanded-form-tens/child.html" },
-    { id: "025-hundreds-tens-ones", title: { en: "Hundreds, Tens, and Ones", es: "Centenas, Decenas y Unidades", hi: "सैकड़ा, दहाई और इकाई" }, path: "../concepts/02-place-value/025-hundreds-tens-ones/child.html" }
+    { id: "025-hundreds-tens-ones", title: { en: "Hundreds, Tens, and Ones", es: "Centenas, Decenas y Unidades", hi: "सैकड़ा, दहाई और इकाई" }, path: "../concepts/02-place-value/025-hundreds-tens-ones/child.html" },
+    { id: "026-stage-2-mastery-test", title: { en: "Stage 2 Mixed Mastery Test", es: "Prueba de Maestría Mixta Etapa 2", hi: "चरण 2 मिश्रित महारत परीक्षण" }, path: "../concepts/02-place-value/026-stage-2-mastery-test/child.html" }
   ];
 
   const STAGE_3_CONCEPTS = [
@@ -148,6 +149,11 @@
       en: "3-Column Place Value Mat: Build numbers on a Hundreds-Tens-Ones mat.",
       es: "Matriz de 3 Columnas: Construye números en un tapete de Centenas-Decenas-Unidades.",
       hi: "3-कॉलम स्थान मान मैट: सैकड़ा-दहाई-इकाई मैट पर संख्याएं बनाएं।"
+    },
+    "026-stage-2-mastery-test": {
+      en: "Place Value Race: Draw cards to make a 3-digit number and state its expanded form.",
+      es: "Carrera de Valor de Posición: Forma números de 3 dígitos y di su forma desarrollada.",
+      hi: "स्थान मान रेस: 3-अंकीय संख्या बनाएं और उसका विस्तारित रूप बताएं।"
     },
     "031-skip-counting-2-5-10": {
       en: "Sidewalk Frog Jumps: Draw a chalk line and hop by 2s, 5s, or 10s.",
