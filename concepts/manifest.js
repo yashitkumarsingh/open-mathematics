@@ -42,7 +42,11 @@
     { id: "036-stage-3-mastery-test", title: { en: "Stage 3 Mastery Test", es: "Prueba de Maestría de Etapa 3", hi: "चरण 3 महारत परीक्षण" }, path: "../concepts/03-multiplication-division/036-stage-3-mastery-test/child.html" }
   ];
 
-  const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS).concat(STAGE_2_CONCEPTS).concat(STAGE_3_CONCEPTS);
+  const STAGE_4_CONCEPTS = [
+    { id: "041-equal-partitions-halves-quarters", title: { en: "Equal Partitions & Halves/Quarters", es: "Particiones Iguales y Mitades/Cuartos", hi: "समान विभाजन और आधे/चौथाई" }, path: "../concepts/04-fractions-decimals/041-equal-partitions-halves-quarters/child.html" }
+  ];
+
+  const STAGE_CONCEPTS = STAGE_0_CONCEPTS.concat(STAGE_1_CONCEPTS).concat(STAGE_2_CONCEPTS).concat(STAGE_3_CONCEPTS).concat(STAGE_4_CONCEPTS);
 
   const manifestActivities = {
     "001-counting-0-to-10": {
@@ -184,6 +188,11 @@
       en: "Stage 3 Flashcard Challenge: Play a fast-paced game mixing skip jumps, array grids, and fair sharing.",
       es: "Desafío de Tarjetas de Etapa 3: Juega un juego rápido mezclando saltos, matrices y repartos.",
       hi: "चरण 3 फ्लैशकार्ड चुनौती: छलांग, ऐरे ग्रिड और निष्पक्ष बंटवारे को मिलाकर एक त्वरित खेल खेलें।"
+    },
+    "041-equal-partitions-halves-quarters": {
+      en: "Pizza Slicing Challenge: Cut paper pizzas into halves and quarters to compare slice sizes.",
+      es: "Reto de la Pizza: Corta pizzas de papel en mitades y cuartos.",
+      hi: "पिज्जा स्लाइसिंग चैलेंज: टुकड़ों के आकार की तुलना करने के लिए पेपर पिज्जा को आधे और चौथाई में काटें।"
     }
   };
 
@@ -192,6 +201,7 @@
   window.OMF.STAGE_1_CONCEPTS = STAGE_1_CONCEPTS;
   window.OMF.STAGE_2_CONCEPTS = STAGE_2_CONCEPTS;
   window.OMF.STAGE_3_CONCEPTS = STAGE_3_CONCEPTS;
+  window.OMF.STAGE_4_CONCEPTS = STAGE_4_CONCEPTS;
   window.OMF.STAGE_CONCEPTS = STAGE_CONCEPTS;
   window.OMF.manifestActivities = manifestActivities;
 })();
